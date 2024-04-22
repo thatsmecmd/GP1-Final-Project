@@ -142,9 +142,11 @@ height = 34.0
 script = ExtResource("1_ojta2")
 
 [node name="playerSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_j1mo4")
 animation = &"idle"
-frame_progress = 0.472642
+frame_progress = 0.839238
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CapsuleShape2D_ehwu1")
