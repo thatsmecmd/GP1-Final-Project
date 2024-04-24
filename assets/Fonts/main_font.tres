@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ddu5v0s6t3rx6"]
+
+[ext_resource type="FontFile" uid="uid://bfj8xry61toky" path="res://assets/Fonts/antiquity-print.ttf" id="1_3hsas"]
+
+[resource]
+default_font = ExtResource("1_3hsas")
