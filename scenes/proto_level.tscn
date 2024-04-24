@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://y78q4wyiih3r"]
+[gd_scene load_steps=8 format=3 uid="uid://y78q4wyiih3r"]
 
 [ext_resource type="Texture2D" uid="uid://dykn80fhmoqo6" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Tiles.png" id="1_sgok4"]
 [ext_resource type="PackedScene" uid="uid://crh8lhq232k5l" path="res://scenes/player.tscn" id="2_g11ce"]
+[ext_resource type="PackedScene" uid="uid://beswc0nlkf77y" path="res://scenes/main_return.tscn" id="3_conec"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxo0a"]
 texture = ExtResource("1_sgok4")
@@ -723,3 +724,7 @@ position = Vector2(6, 442)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(3, 3)
+
+[node name="mainReturn" parent="." instance=ExtResource("3_conec")]
+position = Vector2(-1578, -239)
+scale = Vector2(4.05075, 1.36707)
