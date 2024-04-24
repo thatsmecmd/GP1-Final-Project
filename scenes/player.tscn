@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://crh8lhq232k5l"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_ojta2"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_ojta2"]
 [ext_resource type="Texture2D" uid="uid://b54d14s5kcuhx" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Death/Death-Sheet.png" id="2_dmfg2"]
 [ext_resource type="Texture2D" uid="uid://od3q7ca5hlin" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Idle/Idle-Sheet.png" id="3_74653"]
 [ext_resource type="Texture2D" uid="uid://cc7bqgw7i70pv" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Run/Run-Sheet.png" id="4_4vhpr"]
