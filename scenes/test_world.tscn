@@ -11,5 +11,3 @@ texture = ExtResource("1_4h1c1")
 
 [node name="player" parent="." instance=ExtResource("2_vu3q1")]
 scale = Vector2(6.04159, 3.58856)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
