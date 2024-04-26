@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://chnuoce8hbd7b"]
+
+[ext_resource type="Texture2D" uid="uid://cq8kqwou4nh8k" path="res://assets/Effect and Bullet 16x16/Purple Effect and Bullet 16x16.png" id="1_4q8fj"]
+[ext_resource type="Script" path="res://scripts/attacks/magic_shot.gd" id="1_w6n36"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tr40a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvneo"]
+atlas = ExtResource("1_4q8fj")
+region = Rect2(480, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_daoaj"]
+atlas = ExtResource("1_4q8fj")
+region = Rect2(495, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn16l"]
+atlas = ExtResource("1_4q8fj")
+region = Rect2(513, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8lrs"]
+atlas = ExtResource("1_4q8fj")
+region = Rect2(527, 0, 18, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmo0g"]
+atlas = ExtResource("1_4q8fj")
+region = Rect2(544, 0, 18, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5wv30"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvneo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daoaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn16l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8lrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmo0g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="MagicShot" type="Area2D"]
+script = ExtResource("1_w6n36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(0.90295, 0.857324)
+shape = SubResource("CircleShape2D_tr40a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5wv30")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="AnimatedSprite2D"]
+amount = 200
+lifetime = 10.0
+emission_shape = 1
+emission_sphere_radius = 8.0
+gravity = Vector2(0, 25)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+angular_velocity_max = 180.0
+color = Color(0.466667, 0.32549, 0.482353, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://crh8lhq232k5l"]
+[gd_scene load_steps=25 format=3 uid="uid://crh8lhq232k5l"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ojta2"]
 [ext_resource type="Texture2D" uid="uid://b54d14s5kcuhx" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Death/Death-Sheet.png" id="2_dmfg2"]
 [ext_resource type="Texture2D" uid="uid://od3q7ca5hlin" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Idle/Idle-Sheet.png" id="3_74653"]
 [ext_resource type="Texture2D" uid="uid://cc7bqgw7i70pv" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Run/Run-Sheet.png" id="4_4vhpr"]
+[ext_resource type="Texture2D" uid="uid://ba03aycflyk22" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Hands/Hands.png" id="5_gdycx"]
+[ext_resource type="Texture2D" uid="uid://cno7gtexritug" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Wood/Wood.png" id="6_ub875"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvrvd"]
 atlas = ExtResource("2_dmfg2")
@@ -150,3 +152,19 @@ frame_progress = 0.839238
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CapsuleShape2D_ehwu1")
+
+[node name="ProjectileSpawner" type="Node2D" parent="."]
+position = Vector2(11, -16)
+
+[node name="hands" type="Sprite2D" parent="."]
+position = Vector2(2, 8)
+scale = Vector2(0.878549, 0.89075)
+texture = ExtResource("5_gdycx")
+region_enabled = true
+region_rect = Rect2(0, 5, 32, 10)
+
+[node name="staff" type="Sprite2D" parent="."]
+position = Vector2(11, -1)
+texture = ExtResource("6_ub875")
+region_enabled = true
+region_rect = Rect2(97, 20, 14, 42)
