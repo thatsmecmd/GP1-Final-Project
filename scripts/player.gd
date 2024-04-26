@@ -21,6 +21,7 @@ func _physics_process(delta):
 	spawn_point = $ProjectileSpawner.global_position
 	animate()
 	primary_attack()
+	secondary_attack()
 	flip()
 	var playerInput = get_input()
 	velocity = lerp(velocity, playerInput * speed, delta * acceleration)
@@ -45,7 +46,7 @@ func primary_attack():
 	if Input.is_action_just_pressed("primary"):
 		var spawn = $ProjectileSpawner.global_position
 		print(spawn)
-		Abilities.magic_shot(spawn, 20)
+		Abilities.tracking_arrow(spawn, 1)
 	#
 		#var new_attack = primary_attack_scene.instantiate() as Area2D
 		#var spawn_pos = $ProjectileSpawner.global_position
@@ -53,5 +54,11 @@ func primary_attack():
 		#new_attack.direction = get_global_mouse_position() - spawn_pos
 		#new_attack.position = spawn_pos
 		#player.get_parent().add_child(new_attack)
+		
+func secondary_attack():
+	if Input.is_action_just_pressed("secondary"):
+		var spawn = $ProjectileSpawner.global_position
+		Abilities.magic_disk(spawn,20)
+		
 		
 	

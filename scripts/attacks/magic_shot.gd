@@ -14,6 +14,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body is TileMap:
+		print("Tilemap enter")
 		self.queue_free()
 		
 	if body.has_method("take_hit"):

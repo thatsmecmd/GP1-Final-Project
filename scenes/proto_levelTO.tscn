@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://5qmxcq7bdaa2"]
+[gd_scene load_steps=9 format=3 uid="uid://b1muse3na2uu6"]
 
 [ext_resource type="Texture2D" uid="uid://dykn80fhmoqo6" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Tiles.png" id="1_6w4m0"]
 [ext_resource type="PackedScene" uid="uid://crh8lhq232k5l" path="res://scenes/player.tscn" id="2_34v8p"]
 [ext_resource type="PackedScene" uid="uid://beswc0nlkf77y" path="res://scenes/main_return.tscn" id="3_ko20i"]
-[ext_resource type="PackedScene" uid="uid://wlxe2uk4p0b1" path="res://scenes/test_target.tscn" id="4_g7wl4"]
+[ext_resource type="PackedScene" path="res://scenes/test_target.tscn" id="4_g7wl4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxo0a"]
 texture = ExtResource("1_6w4m0")
@@ -705,7 +705,7 @@ texture = ExtResource("1_6w4m0")
 11:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_di3o5"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_m0tiu")
 
 [node name="proto_level" type="Node2D"]
@@ -732,3 +732,7 @@ position = Vector2(-1578, -239)
 scale = Vector2(4.05075, 1.36707)
 
 [node name="TestTarget" parent="." instance=ExtResource("4_g7wl4")]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.615686, 0.615686, 0.615686, 1)
+blend_mode = 1
