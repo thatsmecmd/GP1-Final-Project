@@ -769,6 +769,7 @@ position = Vector2(-208, -191)
 
 [node name="player" parent="." instance=ExtResource("2_34v8p")]
 position = Vector2(160, -12)
+speed = 250
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(3, 3)
