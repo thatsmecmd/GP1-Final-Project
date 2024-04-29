@@ -4,11 +4,10 @@ extends CharacterBody2D
 @onready var player_sprite = $playerSprite
 @onready var player = $"." as CharacterBody2D
 
-
 @export var speed = 500
 @export var acceleration = 10
 
-
+signal hit
 var input: Vector2
 func get_input():
 	input.x = Input.get_action_strength("right") - Input.get_action_strength("left")

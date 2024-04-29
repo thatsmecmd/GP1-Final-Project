@@ -1,7 +1,37 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dj3bjscfypv45"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dj3bjscfypv45"]
 
 [ext_resource type="FontFile" uid="uid://b0yx2lcga2yoc" path="res://assets/Fonts/DungeonFont.ttf" id="1_adauu"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wmql5"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_16wl8"]
+color = Color(0, 0, 0, 0)
+thickness = 10
+vertical = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lco72"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wuy3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2ql2"]
+bg_color = Color(0.807843, 0, 0.192157, 1)
+border_width_bottom = 3
+border_color = Color(0.533333, 0, 0.113725, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 2
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 2
+
 [resource]
 default_font = ExtResource("1_adauu")
-default_font_size = 35
+default_font_size = 50
+Button/styles/focus = SubResource("StyleBoxEmpty_wmql5")
+Button/styles/hover = SubResource("StyleBoxLine_16wl8")
+Button/styles/normal = SubResource("StyleBoxEmpty_lco72")
+Button/styles/pressed = SubResource("StyleBoxFlat_1wuy3")
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 5
+ProgressBar/font_sizes/font_size = 25
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_h2ql2")
