@@ -1,0 +1,102 @@
+[gd_scene load_steps=12 format=3 uid="uid://cv0tj5eche3pm"]
+
+[ext_resource type="Script" path="res://scripts/attacks/magic_disk.gd" id="1_l1fwv"]
+[ext_resource type="Texture2D" uid="uid://cq8kqwou4nh8k" path="res://assets/Effect and Bullet 16x16/Purple Effect and Bullet 16x16.png" id="1_xgo2y"]
+[ext_resource type="Texture2D" uid="uid://c3yta62dkekra" path="res://textures/light.tres" id="3_i6fsy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2dbpk"]
+friction = 0.5
+bounce = 0.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_br3qe"]
+atlas = ExtResource("1_xgo2y")
+region = Rect2(304, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nq8x"]
+atlas = ExtResource("1_xgo2y")
+region = Rect2(320, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2oqo"]
+atlas = ExtResource("1_xgo2y")
+region = Rect2(336, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7dei"]
+atlas = ExtResource("1_xgo2y")
+region = Rect2(352, 0, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xayhu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_br3qe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nq8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2oqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7dei")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cwu0d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_phgvv"]
+
+[node name="magic_disk" type="RigidBody2D"]
+texture_filter = 4
+collision_layer = 16
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_2dbpk")
+gravity_scale = 0.0
+script = ExtResource("1_l1fwv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xayhu")
+frame = 1
+frame_progress = 0.959458
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(-0.831111, 0.810929)
+shape = SubResource("CircleShape2D_cwu0d")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+scale = Vector2(1, 0.952277)
+shape = SubResource("CircleShape2D_phgvv")
+
+[node name="InitalizerSafety" type="Timer" parent="."]
+autostart = true
+
+[node name="Lifetime" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 200
+lifetime = 10.0
+emission_shape = 1
+emission_sphere_radius = 8.0
+gravity = Vector2(0, 25)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+angular_velocity_max = 180.0
+color = Color(0.466667, 0.32549, 0.482353, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.466667, 0.32549, 0.482353, 1)
+texture = ExtResource("3_i6fsy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="InitalizerSafety" to="." method="_on_initalizer_safety_timeout"]
+[connection signal="timeout" from="Lifetime" to="." method="_on_lifetime_timeout"]
