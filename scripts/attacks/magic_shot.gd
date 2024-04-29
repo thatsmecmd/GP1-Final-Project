@@ -16,8 +16,13 @@ func _on_body_entered(body):
 	if body is TileMap:
 		print("Tilemap enter")
 		self.queue_free()
+	
+	if body.has_node("StatSystem"):
 		
-	if body.has_method("take_hit"):
-		body.take_hit(damage)
+		var stats = body.get_node("StatSystem")
+		stats.take_damage(10)
 		self.queue_free()
+	#if body.has_method("take_hit"):
+		#body.take_hit(damage)
+		#self.queue_free()
 		

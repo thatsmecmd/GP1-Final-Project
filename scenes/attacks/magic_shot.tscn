@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://chnuoce8hbd7b"]
+[gd_scene load_steps=11 format=3 uid="uid://chnuoce8hbd7b"]
 
 [ext_resource type="Texture2D" uid="uid://cq8kqwou4nh8k" path="res://assets/Effect and Bullet 16x16/Purple Effect and Bullet 16x16.png" id="1_4q8fj"]
 [ext_resource type="Script" path="res://scripts/attacks/magic_shot.gd" id="1_w6n36"]
+[ext_resource type="Texture2D" uid="uid://c3yta62dkekra" path="res://textures/light.tres" id="3_e7bmp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tr40a"]
 
@@ -49,7 +50,8 @@ animations = [{
 }]
 
 [node name="MagicShot" type="Area2D"]
-collision_mask = 2
+collision_layer = 16
+collision_mask = 5
 script = ExtResource("1_w6n36")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -70,5 +72,10 @@ initial_velocity_min = 20.0
 initial_velocity_max = 50.0
 angular_velocity_max = 180.0
 color = Color(0.466667, 0.32549, 0.482353, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.482353, 0.329412, 0.501961, 1)
+energy = 0.5
+texture = ExtResource("3_e7bmp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

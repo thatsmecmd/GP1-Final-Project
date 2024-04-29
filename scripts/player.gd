@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var hands = $hands
 @onready var staff = $staff
 @onready var player = $"." as CharacterBody2D
+@onready var animations = $Animations as AnimationPlayer
 
 
 @export var speed = 100
@@ -45,8 +46,8 @@ func flip():
 func primary_attack():
 	if Input.is_action_just_pressed("primary"):
 		var spawn = $ProjectileSpawner.global_position
-		print(spawn)
-		Abilities.tracking_arrow(spawn, 1)
+		Abilities.primary(spawn, 1)
+		#Abilities.magic_shot(spawn, 5)
 	#
 		#var new_attack = primary_attack_scene.instantiate() as Area2D
 		#var spawn_pos = $ProjectileSpawner.global_position
@@ -58,7 +59,15 @@ func primary_attack():
 func secondary_attack():
 	if Input.is_action_just_pressed("secondary"):
 		var spawn = $ProjectileSpawner.global_position
-		Abilities.magic_disk(spawn,20)
+		Abilities.secondary(spawn, 20)
+		#Abilities.possessed_knife(spawn, 1)
+		#Abilities.magic_disk(spawn,20)
 		
 		
+func _on_stat_system_dead():
+	animations.play("dead")
+
+func _on_animations_animation_finished(anim_name):
+	if anim_name == "dead":
+		self.queue_free()
 	

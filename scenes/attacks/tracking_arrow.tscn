@@ -9,25 +9,54 @@ size = Vector2(14, 7)
 [sub_resource type="CircleShape2D" id="CircleShape2D_50gbr"]
 
 [node name="tracking_arrow" type="Area2D"]
+collision_layer = 16
+collision_mask = 5
 script = ExtResource("1_1lwdb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("2_m3g65")
 region_enabled = true
 region_rect = Rect2(32.6085, 3.86385, 14.7988, 7.16192)
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_664th")
 
 [node name="tracking_area" type="Area2D" parent="."]
+visible = false
+collision_layer = 16
+collision_mask = 4
 
 [node name="tracking" type="CollisionShape2D" parent="tracking_area"]
-scale = Vector2(9.03275, 9.17771)
+scale = Vector2(26.5265, 21.4961)
 shape = SubResource("CircleShape2D_50gbr")
 
 [node name="TrackingPing" type="Timer" parent="."]
 autostart = true
+
+[node name="burst" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(-9, 0)
+emitting = false
+amount = 25
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 7.35
+gravity = Vector2(10, -10)
+initial_velocity_max = 50.0
+angular_velocity_max = 50.0
+
+[node name="trail" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(-9, 0)
+amount = 50
+emission_shape = 1
+emission_sphere_radius = 2.0
+gravity = Vector2(0, 0)
+angular_velocity_max = 200.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="tracking_area" to="." method="_on_tracking_area_body_entered"]

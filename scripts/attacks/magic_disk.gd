@@ -10,7 +10,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(linear_velocity.x)
 	if linear_velocity.x < 5 && can_destroy:
 		self.queue_free()
 	
@@ -27,5 +26,6 @@ func _on_lifetime_timeout():
 
 
 func _on_area_2d_body_entered(body):
-	if body.has_method("take_hit"):
-		body.take_hit(damage)
+	if body.has_node("StatSystem"):
+		var stats = body.get_node("StatSystem")
+		stats.take_damage(10)
