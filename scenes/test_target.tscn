@@ -21,5 +21,7 @@ texture = ExtResource("1_tqt3k")
 
 [node name="StatSystem" parent="." instance=ExtResource("3_6vgnh")]
 max_health = 1000
+defense = 100
+dodge = 10
 
 [connection signal="dead" from="StatSystem" to="." method="_on_stat_system_dead"]

@@ -252,5 +252,11 @@ libraries = {
 "": SubResource("AnimationLibrary_qufpu")
 }
 
+[node name="MeleeRight" type="Node2D" parent="."]
+position = Vector2(23, -7)
+
+[node name="MeleeLeft" type="Node2D" parent="."]
+position = Vector2(-20, -7)
+
 [connection signal="dead" from="StatSystem" to="." method="_on_stat_system_dead"]
 [connection signal="animation_finished" from="Animations" to="." method="_on_animations_animation_finished"]
