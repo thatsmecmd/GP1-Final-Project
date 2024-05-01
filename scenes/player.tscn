@@ -246,11 +246,18 @@ initial_velocity_max = 50.0
 angular_velocity_max = 720.0
 
 [node name="StatSystem" parent="." instance=ExtResource("7_k4vhr")]
+max_health = 1000
 
 [node name="Animations" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_qufpu")
 }
+
+[node name="MeleeRight" type="Node2D" parent="."]
+position = Vector2(23, -7)
+
+[node name="MeleeLeft" type="Node2D" parent="."]
+position = Vector2(-20, -7)
 
 [connection signal="dead" from="StatSystem" to="." method="_on_stat_system_dead"]
 [connection signal="hit" from="StatSystem" to="." method="_on_stat_system_hit"]
