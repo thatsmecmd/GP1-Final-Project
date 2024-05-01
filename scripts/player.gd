@@ -14,7 +14,7 @@ var spawn_point = 0
 @onready var meele_spawn = $MeleeRight
 @onready var stats =  $StatSystem
 
-signal hit
+signal player_hit
 var input: Vector2
 func _ready():
 	stats.max_health = Global.max_health
@@ -102,4 +102,4 @@ func save_stats():
 
 
 func _on_stat_system_hit():
-	emit_signal("hit")
+	emit_signal("player_hit")

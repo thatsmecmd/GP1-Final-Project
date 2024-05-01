@@ -778,3 +778,5 @@ zoom = Vector2(3, 3)
 [node name="AudioListener2D" type="AudioListener2D" parent="player"]
 
 [node name="UI" parent="." instance=ExtResource("11_akxe4")]
+
+[connection signal="player_hit" from="player" to="UI" method="_on_player_player_hit"]
