@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cc7bqgw7i70pv" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Run/Run-Sheet.png" id="4_4vhpr"]
 [ext_resource type="Texture2D" uid="uid://ba03aycflyk22" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Hands/Hands.png" id="5_gdycx"]
 [ext_resource type="Texture2D" uid="uid://cno7gtexritug" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Wood/Wood.png" id="6_ub875"]
-[ext_resource type="PackedScene" uid="uid://fiet0evwc1x6" path="res://scenes/stat_system.tscn" id="7_k4vhr"]
+[ext_resource type="PackedScene" path="res://scenes/stat_system.tscn" id="7_k4vhr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvrvd"]
 atlas = ExtResource("2_dmfg2")
