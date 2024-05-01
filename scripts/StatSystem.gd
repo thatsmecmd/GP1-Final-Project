@@ -20,6 +20,7 @@ func take_damage(damage):
 			damage = 1
 		current_health -= damage
 		print(current_health)
+		emit_signal("hit")
 	else:
 		print("Dodged!")
 		pass
@@ -30,6 +31,7 @@ func ap_attack(damage):
 	if dodge <= dodge_sim:
 		print("hit")
 		current_health -= damage
+		emit_signal("hit")
 	else:
 		print("Dodged!")
 		pass
@@ -38,8 +40,10 @@ func sure_attack(damage):
 	if damage < 1:
 		damage = 1
 	current_health -= damage
+	emit_signal("hit")
 func inert_attack(damage):
-	current_health -= damage 
+	current_health -= damage
+	emit_signal("hit")
 func reduce_attack(reduction):
 	attack = attack - reduction
 func reduce_defense(reduction):

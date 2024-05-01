@@ -12,10 +12,18 @@ extends CharacterBody2D
 @export var acceleration = 10
 var spawn_point = 0
 @onready var meele_spawn = $MeleeRight
+@onready var stats =  $StatSystem
 
 signal hit
 var input: Vector2
 func _ready():
+	stats.max_health = Global.max_health
+	stats.reset_health()
+	stats.attack = Global.attack
+	stats.defense = Global.defense
+	stats.dodge = Global.defense
+	stats.current_health = Global.current_health
+	print(stats.max_health)
 	Abilities.player = $"."
 	Abilities.set_primary("overhead_strike")
 	Abilities.set_secondary("flurry_of_blades")
@@ -23,7 +31,8 @@ func get_input():
 	input.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	input.y = Input.get_action_strength("down") - Input.get_action_strength("up")
 	return input.normalized()
-
+func _process(delta):
+	save_stats()
 func _physics_process(delta):
 	spawn_point = $ProjectileSpawner.global_position
 	animate()
@@ -81,4 +90,14 @@ func _on_stat_system_dead():
 func _on_animations_animation_finished(anim_name):
 	if anim_name == "dead":
 		self.queue_free()
+		
+func save_stats():
+	Global.max_health = stats.max_health
+	Global.defense = stats.defense 
+	Global.attack = stats.attack
+	Global.dodge = stats.dodge
 	
+
+
+func _on_stat_system_hit():
+	emit_signal("hit")
