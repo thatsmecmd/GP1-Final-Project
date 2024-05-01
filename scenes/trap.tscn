@@ -1,28 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcic7yn2ubpvr"]
+[gd_scene load_steps=5 format=3 uid="uid://dcic7yn2ubpvr"]
 
 [ext_resource type="Texture2D" uid="uid://ch2kb3irrav8f" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Trap_closed.png" id="1_dn2tg"]
 [ext_resource type="Script" path="res://scripts/trap.gd" id="1_gm5gx"]
 [ext_resource type="Texture2D" uid="uid://b7vksnrpkt6dt" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Trap_open.png" id="3_5mvjn"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcw2s"]
+size = Vector2(551.724, 586.207)
+
 [node name="trap" type="Node2D"]
 script = ExtResource("1_gm5gx")
 
 [node name="closed" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("1_dn2tg")
 
 [node name="open" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(0, -4)
 scale = Vector2(0.029, 0.029)
 texture = ExtResource("3_5mvjn")
 
+[node name="Area2D" type="Area2D" parent="open"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="open/Area2D"]
+position = Vector2(-4.11066e-06, 120.69)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_vcw2s")
+
 [node name="Timer_open" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [node name="Timer_closed" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 4.0
 one_shot = true
 
+[connection signal="body_entered" from="open/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer_open" to="." method="_on_timer_open_timeout"]
 [connection signal="timeout" from="Timer_closed" to="." method="_on_timer_closed_timeout"]

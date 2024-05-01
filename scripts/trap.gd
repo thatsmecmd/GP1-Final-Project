@@ -20,3 +20,11 @@ func _on_timer_closed_timeout():
 	closed.visible = false
 	open.visible = true
 	T_open.start()
+
+
+func _on_area_2d_body_entered(body):
+	if body.has_node("StatSystem"):
+		var stats = body.get_node("StatSystem")
+		stats.take_damage(5)
+	else:
+		pass
