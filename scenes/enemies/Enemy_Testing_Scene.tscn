@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwsvlxjwhg2wh"]
+
+[ext_resource type="Script" path="res://scenes/enemies/pointerFollower.gd" id="1_0a3fc"]
+[ext_resource type="PackedScene" uid="uid://ske46jk5c082" path="res://scenes/enemies/skeleton_warrior.tscn" id="2_fx6is"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1050, 173)
+script = ExtResource("1_0a3fc")
+
+[node name="Skeleton_Warrior" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_fx6is")]
+target = NodePath("../Node2D")

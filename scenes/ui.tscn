@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bccayam2ern5x"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_l0ggl"]
+[ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="2_rk13c"]
+[ext_resource type="Script" path="res://scripts/healthbar.gd" id="3_cbfmg"]
+
+[sub_resource type="Gradient" id="Gradient_rqkog"]
+colors = PackedColorArray(1, 1, 1, 0, 0.912271, 4.71681e-06, 6.73831e-07, 0.611765)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qf1xj"]
+gradient = SubResource("Gradient_rqkog")
+fill = 1
+fill_from = Vector2(0.490826, 0.513761)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_l0ggl")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+texture_filter = 1
+offset_right = 441.0
+offset_bottom = 27.0
+theme = ExtResource("2_rk13c")
+script = ExtResource("3_cbfmg")
+
+[node name="DamageRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = SubResource("GradientTexture2D_qf1xj")
+
+[connection signal="take_damage" from="." to="HealthBar" method="_on_ui_take_damage"]

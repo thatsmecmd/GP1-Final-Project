@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmsam2kbx3ca4"]
+
+[ext_resource type="Script" path="res://scripts/DamageTester.gd" id="1_sl0os"]
+[ext_resource type="Texture2D" uid="uid://bwu8xik8wj1l8" path="res://icon.svg" id="2_oq6xw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_llrre"]
+size = Vector2(119, 117)
+
+[node name="DamageTester" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_sl0os")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -2.5)
+shape = SubResource("RectangleShape2D_llrre")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_oq6xw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
