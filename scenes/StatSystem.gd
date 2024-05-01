@@ -5,6 +5,7 @@ var is_dead = false
 @export var attack = 10
 @export var defense = 0
 @export var dodge = 0
+@export var exp_yield = 0
 var current_health = 1
 signal dead
 
@@ -55,9 +56,11 @@ func add_dodge(buff):
 	#prevent imortality 
 	if dodge >= 100:
 		dodge = 99
+func reset_health():
+	current_health = max_health
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	current_health = max_health
+	reset_health()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
