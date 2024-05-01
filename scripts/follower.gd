@@ -4,7 +4,7 @@ class_name Follower
 @export var target: Node2D # the target to follo
 @export var range: float # The range in which the follower stops following the target
 @export var speed: float # The speed at which the follower walks
-@export var health: float # The amount of health the follower has
+#@export var health: float # The amount of health the follower has
 
 @export var walk_string: String
 @export var die_string: String
@@ -15,14 +15,14 @@ var is_dead: bool = false # check if the follower is dead
 var sprite: AnimatedSprite2D # The follower's sprite
 var stopped = false # if the follower is stopped or not
 var flipped = false
+@onready var stats = $StatSystem # all the enemy's stats.
 
 func _ready():
 	sync_to_physics = false
 	sprite = get_node("AnimatedSprite2D")
+	#stats.
 	
 func _physics_process(delta):	
-	if(health <= 0 && !is_dead):
-		die()
 	# checks if the target exists or if it's dead. If it doesn't, return.
 	if(!target or is_dead):
 		return
@@ -65,10 +65,7 @@ func flip(direction: Vector2):
 		print(scale.x, ", ", side)
 	
 # take damage 
-func take_damage(damage: float):
-	# apply the damage
-	health -= damage
-	
+func _on_statsystem_hit(damage: float):
 	# use a tween to indicate that the enemy was hit
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate", Color.RED, 0.1)
@@ -79,7 +76,7 @@ func is_in_range(direction: Vector2):
 	return (direction.length() < range)
 	
 # kills the follower
-func die():
+func _on_statsystem_dead():
 	is_dead = true
 	sprite.play(die_string)
 	await sprite.animation_finished
