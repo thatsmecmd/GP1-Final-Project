@@ -102,4 +102,5 @@ func save_stats():
 
 
 func _on_stat_system_hit():
+	save_stats()
 	emit_signal("player_hit")
