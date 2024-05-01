@@ -228,12 +228,10 @@ _data = {
 "walk": SubResource("Animation_50ydg")
 }
 
-[node name="Skeleton_Warrior" type="Area2D" node_paths=PackedStringArray("target")]
+[node name="Skeleton_Warrior" type="AnimatableBody2D"]
 position = Vector2(667, 193)
-scale = Vector2(3, 3)
 script = ExtResource("1_0v4mg")
-target = NodePath("")
-range = 40.0
+range = 30.0
 speed = 2.5
 health = 100.0
 walk_string = "walk"
