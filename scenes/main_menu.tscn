@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1dbwo47lhe83"]
+[gd_scene load_steps=6 format=3 uid="uid://c1dbwo47lhe83"]
 
 [ext_resource type="Script" path="res://scripts/mainMenu.gd" id="1_3pwqm"]
 [ext_resource type="Texture2D" uid="uid://b4on7exho2xpb" path="res://assets/Tower 6.png" id="2_vr3sp"]
 [ext_resource type="Theme" uid="uid://ddu5v0s6t3rx6" path="res://assets/Fonts/main_font.tres" id="3_h8l0w"]
 [ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="4_raxnr"]
-[ext_resource type="FontFile" uid="uid://b0yx2lcga2yoc" path="res://assets/Fonts/DungeonFont.ttf" id="5_mj1cg"]
-
-[sub_resource type="Theme" id="Theme_vhkko"]
-Button/fonts/font = ExtResource("5_mj1cg")
+[ext_resource type="Theme" uid="uid://degy52b8tdyrn" path="res://assets/Fonts/option_theme.tres" id="5_4scr4"]
 
 [node name="mainMenu" type="CanvasLayer"]
 script = ExtResource("1_3pwqm")
@@ -66,10 +63,11 @@ text = "Quit"
 alignment = 0
 
 [node name="OptionVBox" type="VBoxContainer" parent="."]
-offset_left = 413.0
-offset_top = 202.0
-offset_right = 453.0
-offset_bottom = 242.0
+visible = false
+offset_left = 360.0
+offset_top = 165.0
+offset_right = 815.0
+offset_bottom = 516.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 
@@ -83,7 +81,9 @@ text = "OPTIONS"
 layout_mode = 2
 
 [node name="VolumeLabel" type="Label" parent="OptionVBox/Options"]
+texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("4_raxnr")
 text = "Volume"
 
@@ -91,44 +91,68 @@ text = "Volume"
 layout_mode = 2
 
 [node name="DisplayLabel" type="Label" parent="OptionVBox/Options"]
+texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("4_raxnr")
 text = "Display
 "
 
 [node name="DisplayButtons" type="HBoxContainer" parent="OptionVBox/Options"]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="Button" type="Button" parent="OptionVBox/Options/DisplayButtons"]
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("5_4scr4")
+text = "Default"
 
 [node name="Button2" type="Button" parent="OptionVBox/Options/DisplayButtons"]
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("5_4scr4")
+text = "Windowed"
 
 [node name="Button3" type="Button" parent="OptionVBox/Options/DisplayButtons"]
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("5_4scr4")
+text = "Fullscreen"
 
 [node name="LanguageLabel" type="Label" parent="OptionVBox/Options"]
+texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("4_raxnr")
-text = "Languages
-"
+text = "Languages"
 
 [node name="LanguageButtons" type="HBoxContainer" parent="OptionVBox/Options"]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="EnglishButton" type="Button" parent="OptionVBox/Options/LanguageButtons"]
+texture_filter = 1
 layout_mode = 2
-theme = SubResource("Theme_vhkko")
+size_flags_horizontal = 4
+theme = ExtResource("5_4scr4")
 text = "English"
 
 [node name="FrenchButton" type="Button" parent="OptionVBox/Options/LanguageButtons"]
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("5_4scr4")
 text = "French"
 
 [node name="SpanishButton" type="Button" parent="OptionVBox/Options/LanguageButtons"]
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("5_4scr4")
 text = "Spanish"
+
+[node name="MarginContainer" type="MarginContainer" parent="OptionVBox/Options"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
 
 [node name="ExitButtons" type="HBoxContainer" parent="OptionVBox/Options"]
 layout_mode = 2
@@ -136,13 +160,19 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="BackButton" type="Button" parent="OptionVBox/Options/ExitButtons"]
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("5_4scr4")
 text = "Back"
 
 [node name="SaveButton" type="Button" parent="OptionVBox/Options/ExitButtons"]
+texture_filter = 1
 layout_mode = 2
+theme = ExtResource("5_4scr4")
 text = "Save"
 
 [connection signal="pressed" from="MainVbox/ButtonsVBox/playButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainVbox/ButtonsVBox/optionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MainVbox/ButtonsVBox/quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="OptionVBox/Options/ExitButtons/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="OptionVBox/Options/ExitButtons/SaveButton" to="." method="_on_save_button_pressed"]

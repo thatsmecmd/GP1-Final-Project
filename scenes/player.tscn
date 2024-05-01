@@ -253,4 +253,5 @@ libraries = {
 }
 
 [connection signal="dead" from="StatSystem" to="." method="_on_stat_system_dead"]
+[connection signal="hit" from="StatSystem" to="." method="_on_stat_system_hit"]
 [connection signal="animation_finished" from="Animations" to="." method="_on_animations_animation_finished"]

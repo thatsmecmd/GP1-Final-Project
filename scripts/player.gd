@@ -11,8 +11,9 @@ extends CharacterBody2D
 @export var speed = 500
 @export var acceleration = 10
 var spawn_point = 0
+signal player_hit
+signal player_dead
 
-signal hit
 var input: Vector2
 func get_input():
 	input.x = Input.get_action_strength("right") - Input.get_action_strength("left")
@@ -67,8 +68,12 @@ func secondary_attack():
 		
 func _on_stat_system_dead():
 	animations.play("dead")
+	emit_signal("player_dead")
+
+func _on_stat_system_hit():
+	emit_signal("player_hit")
 
 func _on_animations_animation_finished(anim_name):
 	if anim_name == "dead":
 		self.queue_free()
-	
+
