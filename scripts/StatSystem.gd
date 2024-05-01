@@ -1,4 +1,5 @@
 extends Node
+class_name StatSystem
 
 var is_dead = false
 @export var max_health = 100
