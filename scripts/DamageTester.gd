@@ -12,6 +12,14 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	if body.has_node("StatSystem"):
-		var stats = body.get_node("StatSystem")
+	#if body.has_node("StatSystem"):
+		#var stats = body.get_node("StatSystem")
+		#stats.take_damage(10)
+	pass
+
+
+func _on_area_entered(area):
+	print("Feet struck")
+	if area.get_parent().has_node("StatSystem"):
+		var stats = area.get_parent().get_node("StatSystem")
 		stats.take_damage(10)

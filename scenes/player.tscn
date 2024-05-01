@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://crh8lhq232k5l"]
+[gd_scene load_steps=30 format=3 uid="uid://crh8lhq232k5l"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ojta2"]
 [ext_resource type="Texture2D" uid="uid://b54d14s5kcuhx" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Death/Death-Sheet.png" id="2_dmfg2"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cc7bqgw7i70pv" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Run/Run-Sheet.png" id="4_4vhpr"]
 [ext_resource type="Texture2D" uid="uid://ba03aycflyk22" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Hands/Hands.png" id="5_gdycx"]
 [ext_resource type="Texture2D" uid="uid://cno7gtexritug" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Wood/Wood.png" id="6_ub875"]
-[ext_resource type="PackedScene" path="res://scenes/stat_system.tscn" id="7_k4vhr"]
+[ext_resource type="PackedScene" uid="uid://fiet0evwc1x6" path="res://scenes/stat_system.tscn" id="7_k4vhr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvrvd"]
 atlas = ExtResource("2_dmfg2")
@@ -201,6 +201,9 @@ _data = {
 "dead": SubResource("Animation_tltps")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vg005"]
+size = Vector2(20, 5)
+
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 7
@@ -258,6 +261,14 @@ position = Vector2(23, -7)
 
 [node name="MeleeLeft" type="Node2D" parent="."]
 position = Vector2(-20, -7)
+
+[node name="TrapHitbox" type="Area2D" parent="."]
+position = Vector2(2, 14)
+collision_layer = 2
+collision_mask = 4
+
+[node name="TrapHitbox" type="CollisionShape2D" parent="TrapHitbox"]
+shape = SubResource("RectangleShape2D_vg005")
 
 [connection signal="dead" from="StatSystem" to="." method="_on_stat_system_dead"]
 [connection signal="hit" from="StatSystem" to="." method="_on_stat_system_hit"]

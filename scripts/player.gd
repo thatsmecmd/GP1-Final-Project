@@ -64,6 +64,7 @@ func primary_attack():
 	if Input.is_action_just_pressed("primary"):
 		if Abilities.primary_ability["type"] == "melee":
 			print("Melee attacking...")
+			print(Global.current_health)
 			var spawn = meele_spawn.position
 			Abilities.primary(spawn, 1)
 		elif Abilities.primary_ability["type"] == "ranged":
@@ -92,6 +93,7 @@ func _on_animations_animation_finished(anim_name):
 		self.queue_free()
 		
 func save_stats():
+	Global.current_health = stats.current_health
 	Global.max_health = stats.max_health
 	Global.defense = stats.defense 
 	Global.attack = stats.attack
