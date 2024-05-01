@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0e7t3g3yec6b"]
+
+[ext_resource type="Script" path="res://scripts/Scaling.gd" id="1_vkj33"]
+
+[node name="Scaling" type="Node"]
+script = ExtResource("1_vkj33")
+hp_scale = 5
+def_scale = 5
+attack_scale = 5
+exp_yield_scale = 5

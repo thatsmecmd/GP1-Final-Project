@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcjji04kgkrtn"]
 
-[ext_resource type="Script" path="res://scripts/test_target.gd" id="1_r40ug"]
-[ext_resource type="Texture2D" uid="uid://bwu8xik8wj1l8" path="res://icon.svg" id="2_dyyx5"]
-[ext_resource type="PackedScene" uid="uid://fiet0evwc1x6" path="res://scenes/stat_system.tscn" id="3_hks4t"]
+[ext_resource type="Script" path="res://scripts/test_target.gd" id="1_d43bi"]
+[ext_resource type="Texture2D" uid="uid://bwu8xik8wj1l8" path="res://icon.svg" id="1_tqt3k"]
+[ext_resource type="PackedScene" uid="uid://fiet0evwc1x6" path="res://scenes/stat_system.tscn" id="3_6vgnh"]
+[ext_resource type="PackedScene" uid="uid://c0e7t3g3yec6b" path="res://scenes/scaling.tscn" id="4_3mjlb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5i30m"]
 size = Vector2(120, 119)
@@ -10,16 +11,18 @@ size = Vector2(120, 119)
 [node name="TestTarget" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 16
-script = ExtResource("1_r40ug")
+script = ExtResource("1_d43bi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_5i30m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_dyyx5")
+texture = ExtResource("1_tqt3k")
 
-[node name="StatSystem" parent="." instance=ExtResource("3_hks4t")]
+[node name="Scaling" parent="." instance=ExtResource("4_3mjlb")]
+
+[node name="StatSystem" parent="." instance=ExtResource("3_6vgnh")]
 max_health = 1000
 
 [connection signal="dead" from="StatSystem" to="." method="_on_stat_system_dead"]
