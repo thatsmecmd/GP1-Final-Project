@@ -28,9 +28,6 @@ func _on_body_entered(body):
 	$"PickupOverlay".visible = true
 	$OverlayTime.start()
 
-
-
-
 func _on_overlay_time_timeout():
 	if !multi_use:
 		self.queue_free()

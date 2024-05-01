@@ -13,21 +13,9 @@ func _ready():
 func _process(delta):
 	pass
 
-
-func _on_button_pressed():
-	var health_tween = create_tween()
-	if(!(Global.current_health <= 0)):
-		Global.current_health -= 0.20 * health_bar.get_max()
-		health_tween.tween_property(health_bar, "value", Global.current_health, 0.1)
-	
-	var red_tween = create_tween()
-	red_tween.tween_property(damage_rect, "modulate", Color("ffffff"), 0.1)
-	red_tween.tween_property(damage_rect, "modulate", Color.TRANSPARENT, 0.1)
-
 func _on_ui_take_damage():
 	var health_tween = create_tween()
 	if(!(Global.current_health <= 0)):
-		Global.current_health -= 0.20 * health_bar.get_max()
 		health_tween.tween_property(health_bar, "value", Global.current_health, 0.1)
 	
 	var red_tween = create_tween()

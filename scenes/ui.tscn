@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bccayam2ern5x"]
 
-[ext_resource type="Script" path="res://scenes/ui.gd" id="1_l0ggl"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_l0ggl"]
 [ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="2_rk13c"]
 [ext_resource type="Script" path="res://scripts/healthbar.gd" id="3_cbfmg"]
 
@@ -28,11 +28,4 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = SubResource("GradientTexture2D_qf1xj")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 376.0
-offset_top = 195.0
-offset_right = 600.0
-offset_bottom = 245.0
-
 [connection signal="take_damage" from="." to="HealthBar" method="_on_ui_take_damage"]
-[connection signal="pressed" from="Button" to="HealthBar" method="_on_button_pressed"]

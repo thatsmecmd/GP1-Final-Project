@@ -7,11 +7,12 @@ var is_dead = false
 @export var dodge = 0
 var current_health = 1
 signal dead
-
+signal hit
 
 func take_damage(damage):
 	damage = damage - defense 
 	current_health -= damage
+	emit_signal("hit")
 	print(current_health)
 func dot():
 	pass

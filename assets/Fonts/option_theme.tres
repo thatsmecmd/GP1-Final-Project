@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://degy52b8tdyrn"]
+
+[ext_resource type="FontFile" uid="uid://b0yx2lcga2yoc" path="res://assets/Fonts/DungeonFont.ttf" id="1_hheh5"]
+
+[resource]
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_hheh5")
