@@ -4,7 +4,6 @@ class_name Follower
 @export var target: Node2D # the target to follo
 @export var range: float # The range in which the follower stops following the target
 @export var speed: float # The speed at which the follower walks
-#@export var health: float # The amount of health the follower has
 
 @export var walk_string: String
 @export var die_string: String
@@ -15,12 +14,13 @@ var is_dead: bool = false # check if the follower is dead
 var sprite: AnimatedSprite2D # The follower's sprite
 var stopped = false # if the follower is stopped or not
 var flipped = false
-@onready var stats = $StatSystem # all the enemy's stats.
+@onready var stats: StatSystem = $StatSystem # all the enemy's stats.
 
 func _ready():
 	sync_to_physics = false
 	sprite = get_node("AnimatedSprite2D")
-	#stats.
+	stats.dead.connect(_on_statsystem_dead)
+	stats.hit.connect(_on_statsystem_hit)
 	
 func _physics_process(delta):	
 	# checks if the target exists or if it's dead. If it doesn't, return.
