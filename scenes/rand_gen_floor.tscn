@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgtqrt47j1o6t"]
+
+[ext_resource type="Script" path="res://scripts/rand_gen_floor.gd" id="1_y1c1t"]
+
+[node name="rand_gen_floor" type="Node"]
+script = ExtResource("1_y1c1t")

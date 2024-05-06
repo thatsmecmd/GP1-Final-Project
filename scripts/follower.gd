@@ -1,32 +1,34 @@
-extends Area2D
+extends AnimatableBody2D
 class_name Follower
 
 @export var target: Node2D # the target to follo
 @export var range: float # The range in which the follower stops following the target
 @export var speed: float # The speed at which the follower walks
-@export var health: float # The amount of health the follower has
-@export var attacking: bool = false # if the follower is currently attacking
 
 @export var walk_string: String
 @export var die_string: String
 @export var idle_string: String
 
+var attacking: bool = false # if the follower is currently attacking
 var is_dead: bool = false # check if the follower is dead
-var sprite: AnimatedSprite2D
-var stopped = false
+var sprite: AnimatedSprite2D # The follower's sprite
+var stopped = false # if the follower is stopped or not
+var flipped = false
+@onready var stats: StatSystem = $StatSystem # all the enemy's stats.
 
 func _ready():
+	sync_to_physics = false
 	sprite = get_node("AnimatedSprite2D")
+	stats.dead.connect(_on_statsystem_dead)
+	stats.hit.connect(_on_statsystem_hit)
 	
 func _physics_process(delta):	
-	if(health <= 0 && !is_dead):
-		die()
 	# checks if the target exists or if it's dead. If it doesn't, return.
 	if(!target or is_dead):
 		return
 	
 	# get the directional vector
-	var direction = target.position - position
+	var direction = target.global_position - global_position
 	
 	# if the enemy is not in range, move the player. Else, stop moving and play idle animation
 	# This whole mess is there to prevet the stopping from playing every frame, only the first time the enemy
@@ -46,22 +48,24 @@ func _physics_process(delta):
 # moves the follower towards the target
 func move(direction: Vector2):
 	sprite.play(walk_string)
-	position += direction * speed
+	var move_vector: Vector2 = direction * speed
+	move_and_collide(move_vector)
 
 # flips the follower to look in the target's direction
 func flip(direction: Vector2):
-	var side: int
-	if(direction.x > 0):
+	# look at the scale and the direction. Only flip if they are different:
+	var side: int = 1
+	if direction.x >= 0: 
 		side = 1
-	else:
+	if direction.x < 0: 
 		side = -1
-	scale.x =  abs(scale.x) * side
+		
+	if not scale.x == side:
+		scale.x = abs(scale.x) * -1
+		print(scale.x, ", ", side)
 	
 # take damage 
-func take_damage(damage: float):
-	# apply the damage
-	health -= damage
-	
+func _on_statsystem_hit(damage: float):
 	# use a tween to indicate that the enemy was hit
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "modulate", Color.RED, 0.1)
@@ -72,7 +76,7 @@ func is_in_range(direction: Vector2):
 	return (direction.length() < range)
 	
 # kills the follower
-func die():
+func _on_statsystem_dead():
 	is_dead = true
 	sprite.play(die_string)
 	await sprite.animation_finished

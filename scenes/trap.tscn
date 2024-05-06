@@ -11,20 +11,22 @@ size = Vector2(551.724, 586.207)
 script = ExtResource("1_gm5gx")
 
 [node name="closed" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("1_dn2tg")
 
 [node name="open" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -4)
 scale = Vector2(0.029, 0.029)
 texture = ExtResource("3_5mvjn")
 
 [node name="Area2D" type="Area2D" parent="open"]
+collision_layer = 4
+collision_mask = 6
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="open/Area2D"]
 position = Vector2(-4.11066e-06, 120.69)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vcw2s")
 
 [node name="Timer_open" type="Timer" parent="."]
