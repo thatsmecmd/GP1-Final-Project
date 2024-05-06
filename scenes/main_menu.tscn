@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/mainMenu.gd" id="1_3pwqm"]
 [ext_resource type="Texture2D" uid="uid://b4on7exho2xpb" path="res://assets/Tower 6.png" id="2_vr3sp"]
-[ext_resource type="Theme" uid="uid://ddu5v0s6t3rx6" path="res://assets/Fonts/main_font.tres" id="3_h8l0w"]
-[ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="4_raxnr"]
-[ext_resource type="Theme" path="res://assets/Fonts/option_theme.tres" id="5_4scr4"]
+[ext_resource type="Theme" uid="uid://ddu5v0s6t3rx6" path="res://assets/fonts/main_font.tres" id="3_h8l0w"]
+[ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/fonts/sub_theme.tres" id="4_raxnr"]
+[ext_resource type="Theme" uid="uid://degy52b8tdyrn" path="res://assets/fonts/option_theme.tres" id="5_4scr4"]
 
 [node name="mainMenu" type="CanvasLayer"]
 script = ExtResource("1_3pwqm")

@@ -3,12 +3,11 @@ extends CharacterBody2D
 
 @onready var player_sprite = $playerSprite
 @onready var hands = $hands
-@onready var staff = $staff
 @onready var player = $"." as CharacterBody2D
 @onready var animations = $Animations as AnimationPlayer
 
 
-@export var speed = 500
+@export var speed = 250
 @export var acceleration = 10
 var spawn_point = 0
 @onready var meele_spawn = $MeleeRight
@@ -21,12 +20,11 @@ func _ready():
 	stats.reset_health()
 	stats.attack = Global.attack
 	stats.defense = Global.defense
-	stats.dodge = Global.defense
+	stats.dodge = Global.dodge
 	stats.current_health = Global.current_health
 	print(stats.max_health)
 	Abilities.player = $"."
-	Abilities.set_primary("overhead_strike")
-	Abilities.set_secondary("flurry_of_blades")
+	
 func get_input():
 	input.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	input.y = Input.get_action_strength("down") - Input.get_action_strength("up")
@@ -34,6 +32,8 @@ func get_input():
 func _process(delta):
 	save_stats()
 func _physics_process(delta):
+	#print("Current hp: ", Global.current_health)
+	#print("Max hp: ", Global.max_health)
 	spawn_point = $ProjectileSpawner.global_position
 	animate()
 	primary_attack()

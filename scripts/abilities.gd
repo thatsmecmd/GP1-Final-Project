@@ -7,6 +7,7 @@ extends Node2D
 @onready var possessed_knife_scene = preload("res://scenes/attacks/possessed_knife.tscn")
 @onready var overhead_strike_scene = preload("res://scenes/attacks/overhead_strike.tscn")
 @onready var flurry_of_blades_scene = preload("res://scenes/attacks/flurry_of_blades.tscn")
+@onready var fallen_star_scene = preload("res://scenes/attacks/fallen_star.tscn")
 #Cast conditionals
 var direction_flip = false
 var can_overhead_strike = true
@@ -23,37 +24,57 @@ var abilities = {
 		"cast" : "magic_shot",
 		"name" : "Magic Shot",
 		"flavor" : "A simple shot of magic!",
-		"type" : "ranged"
+		"type" : "ranged",
+		"sprite" : "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01b.png",
+		"action" : "primary"
 	},
 	"magic_disk" : {
 		"cast" : "magic_disk",
 		"name" : "Magic Disc",
 		"flavor" : "Bouncy!",
-		"type" : "ranged"
+		"type" : "ranged",
+		"sprite": "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01c.png",
+		"action": "secondary"
 	},
 	"tracking_arrow" : {
 		"cast" : "tracking_arrow",
 		"name" : "Tracking Arrow",
 		"flavor" : "Think you could get away?",
-		"type" : "ranged"
+		"type" : "ranged",
+		"sprite": "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01d.png",
+		"action": "primary"
 	},
 	"possessed_knife" : {
 		"cast" : "possessed_knife",
 		"name" : "Possessed Knives",
 		"flavor" : "They hunger...",
-		"type" : "ranged"
+		"type" : "ranged",
+		"sprite" : "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/sword_03e.png",
+		"action": "secondary"
 	},
 	"overhead_strike":{
 		"cast" : "overhead_strike",
 		"name" : "Overhead Strike",
 		"flavor" : "PLACEHOLDER",
-		"type" : "melee"
+		"type" : "melee",
+		"sprite" : "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_03a.png",
+		"action" : "primary"
 	},
 	"flurry_of_blades":{
 		"cast" : "flurry_of_blades",
 		"name" : "Flurry Of Blades",
 		"flavor" : "Death by a thousand cuts",
-		"type" : "melee"
+		"type" : "melee",
+		"sprite" : "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_03b.png",
+		"action" : "secondary"
+	},
+	"fallen_stars":{
+		"cast" : "fallen_stars",
+		"name" : "Fallen Stars",
+		"flavor" : "PLACEHOLDER",
+		"type" : "ranged",
+		"sprite": "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01e.png",
+		"action": "primary"
 	}
 }
 
@@ -118,6 +139,31 @@ func flurry_of_blades(spawn, damage):
 			sprite.flip_h = true
 		new_attack.position = spawn
 		player.add_child(new_attack)
+func fallen_stars(_spawn, damage):
+	var new_attack1 = fallen_star_scene.instantiate() as Area2D
+	var new_attack2 = fallen_star_scene.instantiate() as Area2D
+	var new_attack3 = fallen_star_scene.instantiate() as Area2D
+	
+	var starspawn1 = (get_global_mouse_position() + Vector2(0,-1000))
+	var starspawn2 = starspawn1 + Vector2(300,0)
+	var starspawn3 = starspawn1 - Vector2(300,0)
+
+	new_attack1.damage = damage
+	new_attack2.damage = damage
+	new_attack3.damage = damage
+	
+	new_attack1.position = starspawn1
+	new_attack2.position = starspawn2
+	new_attack3.position = starspawn3
+	
+	new_attack1.direction = get_global_mouse_position() - starspawn1
+	new_attack2.direction = get_global_mouse_position() - starspawn2
+	new_attack3.direction = get_global_mouse_position() - starspawn3
+	get_parent().add_child(new_attack1)
+	get_parent().add_child(new_attack2)
+	get_parent().add_child(new_attack3)
+	
+	
 #Setters for abilities
 func set_primary(ability):
 	primary_ability = abilities[ability]
