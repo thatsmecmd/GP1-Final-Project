@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bccayam2ern5x"]
 
-[ext_resource type="Script" path="res://scripts/ui.gd" id="1_l0ggl"]
+[ext_resource type="Script" path="res://scripts/UI/ui.gd" id="1_l0ggl"]
 [ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="2_rk13c"]
-[ext_resource type="Script" path="res://scripts/healthbar.gd" id="3_cbfmg"]
+[ext_resource type="Script" path="res://scripts/UI/healthbar.gd" id="3_cbfmg"]
 
 [sub_resource type="Gradient" id="Gradient_rqkog"]
 colors = PackedColorArray(1, 1, 1, 0, 0.912271, 4.71681e-06, 6.73831e-07, 0.611765)
