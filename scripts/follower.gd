@@ -13,8 +13,9 @@ var attacking: bool = false # if the follower is currently attacking
 var is_dead: bool = false # check if the follower is dead
 var sprite: AnimatedSprite2D # The follower's sprite
 var stopped = false # if the follower is stopped or not
-var flipped = false
 @onready var stats: StatSystem = $StatSystem # all the enemy's stats.
+var is_flipped = false # if the follower is flipped or not
+const flip_tolerance = 0.1  # tolerance for flipping. Do not touch
 
 func _ready():
 	sync_to_physics = false
@@ -53,17 +54,13 @@ func move(direction: Vector2):
 
 # flips the follower to look in the target's direction
 func flip(direction: Vector2):
-	# look at the scale and the direction. Only flip if they are different:
-	var side: int = 1
-	if direction.x >= 0: 
-		side = 1
-	if direction.x < 0: 
-		side = -1
-		
-	if not scale.x == side:
-		scale.x = abs(scale.x) * -1
-		print(scale.x, ", ", side)
-	
+	if direction.x < -flip_tolerance and !is_flipped:
+		is_flipped = true
+		scale.x *= -1  # Flip scale horizontally if direction.x is negative and not already flipped
+	elif direction.x >= flip_tolerance and is_flipped:
+		is_flipped = false
+		scale.x *= -1  # Flip scale back to original if direction.x is non-negative and currently flipped
+
 # take damage 
 func _on_statsystem_hit(damage: float):
 	# use a tween to indicate that the enemy was hit

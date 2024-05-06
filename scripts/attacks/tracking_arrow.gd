@@ -14,10 +14,6 @@ func _process(delta):
 	var movement = direction.normalized() * speed * delta
 	position += movement
 
-
-
-
-
 func _on_tracking_area_body_entered(body):
 	if body.has_node("StatSystem"):
 		direction = body.global_position - self.global_position

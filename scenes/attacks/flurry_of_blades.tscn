@@ -39,6 +39,7 @@ animations = [{
 
 [node name="flurry_of_blades" type="Area2D"]
 position = Vector2(-3, -1)
+scale = Vector2(1.30303, 1.16286)
 collision_layer = 16
 collision_mask = 4
 script = ExtResource("1_fniol")

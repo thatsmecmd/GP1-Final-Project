@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://c1dbwo47lhe83"]
 
-[ext_resource type="Script" path="res://scripts/mainMenu.gd" id="1_3pwqm"]
+[ext_resource type="Script" path="res://scripts/UI/mainMenu.gd" id="1_3pwqm"]
 [ext_resource type="Texture2D" uid="uid://b4on7exho2xpb" path="res://assets/Tower 6.png" id="2_vr3sp"]
 [ext_resource type="Theme" uid="uid://ddu5v0s6t3rx6" path="res://assets/Fonts/main_font.tres" id="3_h8l0w"]
 [ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="4_raxnr"]
-[ext_resource type="Theme" path="res://assets/Fonts/option_theme.tres" id="5_4scr4"]
+[ext_resource type="Theme" uid="uid://degy52b8tdyrn" path="res://assets/Fonts/option_theme.tres" id="5_4scr4"]
 
 [node name="mainMenu" type="CanvasLayer"]
 script = ExtResource("1_3pwqm")
@@ -42,7 +42,7 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("4_raxnr")
-text = "Play"
+text = "PLAY"
 alignment = 0
 
 [node name="optionsButton" type="Button" parent="MainVbox/ButtonsVBox"]
@@ -51,7 +51,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("4_raxnr")
-text = "Options"
+text = "OPTIONS_TITLE"
 alignment = 0
 
 [node name="quitButton" type="Button" parent="MainVbox/ButtonsVBox"]
@@ -59,17 +59,18 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("4_raxnr")
-text = "Quit"
+text = "QUIT"
 alignment = 0
 
 [node name="OptionVBox" type="VBoxContainer" parent="."]
 visible = false
-offset_left = 360.0
-offset_top = 165.0
-offset_right = 815.0
-offset_bottom = 516.0
+offset_left = 358.0
+offset_top = 119.0
+offset_right = 813.0
+offset_bottom = 520.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
+metadata/_edit_use_anchors_ = true
 
 [node name="OptionsLabel" type="Label" parent="OptionVBox"]
 texture_filter = 1
@@ -85,7 +86,7 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("4_raxnr")
-text = "Volume"
+text = "VOLUME"
 
 [node name="VolumeSlider" type="HSlider" parent="OptionVBox/Options"]
 layout_mode = 2
@@ -95,8 +96,7 @@ texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("4_raxnr")
-text = "Display
-"
+text = "DISPLAY"
 
 [node name="DisplayButtons" type="HBoxContainer" parent="OptionVBox/Options"]
 layout_mode = 2
@@ -106,26 +106,26 @@ size_flags_horizontal = 4
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("5_4scr4")
-text = "Default"
+text = "DISPLAY_DEFAULT"
 
 [node name="Button2" type="Button" parent="OptionVBox/Options/DisplayButtons"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("5_4scr4")
-text = "Windowed"
+text = "DISPLAY_WIND"
 
 [node name="Button3" type="Button" parent="OptionVBox/Options/DisplayButtons"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("5_4scr4")
-text = "Fullscreen"
+text = "DISPLAY_FULL"
 
 [node name="LanguageLabel" type="Label" parent="OptionVBox/Options"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("4_raxnr")
-text = "Languages"
+text = "LANGUAGE"
 
 [node name="LanguageButtons" type="HBoxContainer" parent="OptionVBox/Options"]
 layout_mode = 2
@@ -142,13 +142,13 @@ text = "English"
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("5_4scr4")
-text = "French"
+text = "Français"
 
 [node name="SpanishButton" type="Button" parent="OptionVBox/Options/LanguageButtons"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("5_4scr4")
-text = "Spanish"
+text = "Español"
 
 [node name="MarginContainer" type="MarginContainer" parent="OptionVBox/Options"]
 custom_minimum_size = Vector2(0, 25)
@@ -163,16 +163,19 @@ size_flags_vertical = 4
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("5_4scr4")
-text = "Back"
+text = "BACK"
 
 [node name="SaveButton" type="Button" parent="OptionVBox/Options/ExitButtons"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("5_4scr4")
-text = "Save"
+text = "SAVE"
 
 [connection signal="pressed" from="MainVbox/ButtonsVBox/playButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainVbox/ButtonsVBox/optionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MainVbox/ButtonsVBox/quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="OptionVBox/Options/LanguageButtons/EnglishButton" to="." method="_on_english_button_pressed"]
+[connection signal="pressed" from="OptionVBox/Options/LanguageButtons/FrenchButton" to="." method="_on_french_button_pressed"]
+[connection signal="pressed" from="OptionVBox/Options/LanguageButtons/SpanishButton" to="." method="_on_spanish_button_pressed"]
 [connection signal="pressed" from="OptionVBox/Options/ExitButtons/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="OptionVBox/Options/ExitButtons/SaveButton" to="." method="_on_save_button_pressed"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://1lxd8m4qqxfo"]
+
+[ext_resource type="Script" path="res://scripts/attacks/random_ability_pickup.gd" id="1_bsbwe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ebblm"]
+
+[node name="ability_pickup" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_bsbwe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.1748, 1.20241)
+shape = SubResource("CircleShape2D_ebblm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="PickupOverlay" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PickupOverlay"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="NameLabel" type="Label" parent="PickupOverlay/VBoxContainer"]
+layout_mode = 2
+text = "Test"
+
+[node name="DescriptionLabel" type="Label" parent="PickupOverlay/VBoxContainer"]
+layout_mode = 2
+text = "Test"
+
+[node name="OverlayTime" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="ItemLabel" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -38.0
+offset_right = 20.0
+offset_bottom = -15.0
+theme_override_font_sizes/font_size = 8
+text = "test"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="OverlayTime" to="." method="_on_overlay_time_timeout"]
