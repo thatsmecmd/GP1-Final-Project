@@ -30,7 +30,7 @@ position = Vector2(-4.11066e-06, 120.69)
 shape = SubResource("RectangleShape2D_vcw2s")
 
 [node name="Timer_open" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.5
 one_shot = true
 
 [node name="Timer_closed" type="Timer" parent="."]
