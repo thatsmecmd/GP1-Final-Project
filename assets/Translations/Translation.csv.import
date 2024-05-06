@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://civgal85isliw"
+
+[deps]
+
+files=["res://assets/Translations/Translation.en.translation", "res://assets/Translations/Translation.fr.translation", "res://assets/Translations/Translation.es.translation"]
+
+source_file="res://assets/Translations/Translation.csv"
+dest_files=["res://assets/Translations/Translation.en.translation", "res://assets/Translations/Translation.fr.translation", "res://assets/Translations/Translation.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0

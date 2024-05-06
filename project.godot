@@ -53,6 +53,10 @@ secondary={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/Translations/Translation.en.translation", "res://assets/Translations/Translation.es.translation", "res://assets/Translations/Translation.fr.translation")
+
 [layer_names]
 
 2d_physics/layer_1="Walls"
