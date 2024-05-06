@@ -2,10 +2,14 @@
 
 [ext_resource type="Script" path="res://scripts/WariorEnnemy.gd" id="1_0v4mg"]
 [ext_resource type="Texture2D" uid="uid://owy8f3ovo35o" path="res://assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Warrior/Death/Death-Sheet.png" id="2_qoqtk"]
+[ext_resource type="PackedScene" path="res://scenes/scaling.tscn" id="3_0bukj"]
 [ext_resource type="Texture2D" uid="uid://bpwwhx3fggoy5" path="res://assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Warrior/Idle/Idle-Sheet.png" id="3_7rhbt"]
 [ext_resource type="Texture2D" uid="uid://c3adw6s244m2h" path="res://assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Warrior/Run/Run-Sheet.png" id="4_l3r2k"]
-[ext_resource type="Texture2D" uid="uid://cno7gtexritug" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Wood/Wood.png" id="5_upl3p"]
 [ext_resource type="PackedScene" uid="uid://fiet0evwc1x6" path="res://scenes/stat_system.tscn" id="6_vccwi"]
+[ext_resource type="Texture2D" uid="uid://oajsnodn4nsj" path="res://assets/attacks/overhead/A200-1.png" id="7_bnhmt"]
+[ext_resource type="Texture2D" uid="uid://uglwy0jvfdll" path="res://assets/attacks/overhead/A200-2.png" id="8_6ees5"]
+[ext_resource type="Texture2D" uid="uid://cgnspidakh6fl" path="res://assets/attacks/overhead/A200-3.png" id="9_qc6po"]
+[ext_resource type="Texture2D" uid="uid://casp3nt4yyk4o" path="res://assets/attacks/overhead/A200-4.png" id="10_5de8l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eqqnd"]
 
@@ -139,104 +143,43 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsraa"]
-size = Vector2(8, 24.3333)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1w1km"]
-atlas = ExtResource("5_upl3p")
-region = Rect2(0, 0, 14, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pe85b"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_138xf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1w1km")
+"texture": ExtResource("7_bnhmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6ees5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qc6po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5de8l")
 }],
-"loop": true,
-"name": &"default",
-"speed": 5.0
+"loop": false,
+"name": &"Attack",
+"speed": 6.0
 }]
 
-[sub_resource type="Animation" id="Animation_li6ti"]
-resource_name = "attack"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-17.6667, -8.66667), Vector2(6.66667, -1), Vector2(16, -8.33333), Vector2(-17.6667, -8.66667)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.4, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.878925, 0.330255, 0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Area2D:monitoring")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Area2D:monitorable")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_50ydg"]
-resource_name = "walk"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-17.6667, -8.66667), Vector2(-15, -8.66667), Vector2(-17.6667, -8.66667), Vector2(-15, -8.66667), Vector2(-17.6667, -8.66667)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_cah22"]
-_data = {
-"attack": SubResource("Animation_li6ti"),
-"walk": SubResource("Animation_50ydg")
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iec6g"]
+size = Vector2(244.444, 255.556)
 
 [node name="Skeleton_Warrior" type="AnimatableBody2D"]
 position = Vector2(667, 193)
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_0v4mg")
 range = 30.0
 speed = 2.5
 walk_string = "walk"
 die_string = "die"
 idle_string = "idle"
+
+[node name="StatSystem" parent="." instance=ExtResource("6_vccwi")]
+
+[node name="Scaling" parent="." instance=ExtResource("3_0bukj")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_eqqnd")
@@ -249,23 +192,21 @@ animation = &"idle"
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Weapon" type="Node2D" parent="."]
-position = Vector2(-17.6667, -8.66667)
+[node name="Attack" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(14, -6.00001)
+scale = Vector2(0.0821094, 0.0879688)
+sprite_frames = SubResource("SpriteFrames_138xf")
+animation = &"Attack"
 
-[node name="Area2D" type="Area2D" parent="Weapon"]
+[node name="Area2D" type="Area2D" parent="Attack"]
+collision_layer = 16
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Area2D"]
-position = Vector2(1, -2.5)
-shape = SubResource("RectangleShape2D_wsraa")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Area2D"]
+position = Vector2(55.5557, 127.778)
+shape = SubResource("RectangleShape2D_iec6g")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
-sprite_frames = SubResource("SpriteFrames_pe85b")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Weapon"]
-libraries = {
-"": SubResource("AnimationLibrary_cah22")
-}
-
-[node name="StatSystem" parent="." instance=ExtResource("6_vccwi")]
-
+[connection signal="hit" from="StatSystem" to="." method="_on_stat_system_hit"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Attack/Area2D" to="." method="_on_area_2d_body_entered"]

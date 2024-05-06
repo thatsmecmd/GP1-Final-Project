@@ -4,23 +4,14 @@
 [ext_resource type="Script" path="res://scenes/enemies/Enemy_Area.gd" id="2_k0sd4"]
 [ext_resource type="PackedScene" uid="uid://crh8lhq232k5l" path="res://scenes/player.tscn" id="3_x51y1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5p0fy"]
-size = Vector2(682, 389)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5jvk"]
+size = Vector2(686, 385)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1050, 173)
 script = ExtResource("1_0a3fc")
-
-[node name="Enemy_Area" type="Area2D" parent="."]
-collision_mask = 2
-script = ExtResource("2_k0sd4")
-number_of_enemy = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Area"]
-position = Vector2(352, 203.5)
-shape = SubResource("RectangleShape2D_5p0fy")
 
 [node name="player" parent="." instance=ExtResource("3_x51y1")]
 position = Vector2(487, 521)
@@ -36,3 +27,15 @@ offset_left = -6.0
 offset_top = 414.0
 offset_right = 714.0
 offset_bottom = 422.0
+
+[node name="Enemy_Area2D" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("2_k0sd4")
+number_of_enemy = {
+"Orc_Warrior": 1,
+"Skeleton_Warrior": 3
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Area2D"]
+position = Vector2(356, 206.5)
+shape = SubResource("RectangleShape2D_f5jvk")

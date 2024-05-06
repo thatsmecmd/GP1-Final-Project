@@ -75,4 +75,3 @@ func _process(delta):
 		is_dead = true
 		print("dead")
 		emit_signal("dead")
-		

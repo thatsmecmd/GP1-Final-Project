@@ -3,7 +3,8 @@ extends Node2D
 @export var enemy: String = "Skeleton_Warrior"
 
 var enemies = {
-	"Skeleton_Warrior": "res://scenes/enemies/skeleton_warrior.tscn"
+	"Skeleton_Warrior": "res://scenes/enemies/skeleton_warrior.tscn",
+	"Orc_Warrior": "res://scenes/enemies/orc_warrior.tscn"
 }
 
 # Called when the node enters the scene tree for the first time.

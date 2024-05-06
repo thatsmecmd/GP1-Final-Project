@@ -20,10 +20,8 @@ func attack():
 		timer.start()
 		attack_sprite.play("Attack")
 		attack_sprite.visible = true
-		weapon_hitbox.monitoring = true
 		await attack_sprite.animation_finished
 		attack_sprite.visible = false
-		weapon_hitbox.monitoring = false
 
 
 func _on_timer_timeout():
@@ -32,10 +30,3 @@ func _on_timer_timeout():
 func switch_target(is_player, new_target = get_parent()):
 	target_is_player = is_player
 	target = new_target
-
-
-func _on_area_2d_body_entered(body):
-	# if the body that's entered has a StatSystem, make it take damage
-	var bodyStats = body.get_node("StatSystem") as StatSystem
-	if(bodyStats):
-		bodyStats.take_damage(stats.attack)
