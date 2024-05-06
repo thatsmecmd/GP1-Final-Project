@@ -55,9 +55,8 @@ visible = false
 shape = SubResource("CircleShape2D_mjyjc")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-scale = Vector2(0.378923, 0.410402)
+scale = Vector2(0.735568, 0.702476)
 color = Color(0.278431, 0.686275, 0.980392, 1)
-energy = 0.5
 texture = ExtResource("2_n7k3h")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]

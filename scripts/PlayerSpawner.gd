@@ -5,7 +5,7 @@ extends Node2D
 func _ready():
 	var player_scene = preload("res://scenes/player.tscn")
 	if Global.player_class == "Knight":
-		player_scene = preload("res://scenes/player.tscn")
+		player_scene = preload("res://scenes/knight.tscn")
 	elif Global.player_class == "Rogue":
 		player_scene = preload("res://scenes/rogue.tscn")
 	elif Global.player_class == "Wizzard":

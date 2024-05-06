@@ -144,14 +144,10 @@ func fallen_stars(_spawn, damage):
 	var new_attack2 = fallen_star_scene.instantiate() as Area2D
 	var new_attack3 = fallen_star_scene.instantiate() as Area2D
 	
-	
 	var starspawn1 = (get_global_mouse_position() + Vector2(0,-1000))
-	print(starspawn1)
-	
 	var starspawn2 = starspawn1 + Vector2(300,0)
 	var starspawn3 = starspawn1 - Vector2(300,0)
-	print(starspawn2)
-	print(starspawn3)
+
 	new_attack1.damage = damage
 	new_attack2.damage = damage
 	new_attack3.damage = damage

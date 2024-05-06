@@ -66,7 +66,7 @@ text = "A no-good vagabond
 hp: 100
 damage: 15
 defense: 5
-dodge 10"
+dodge 20"
 
 [node name="RogueSelect" type="Button" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
@@ -89,7 +89,7 @@ expand_mode = 4
 [node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer4"]
 layout_mode = 2
 text = "A Stalwart Defender 
-hp: 100
+hp: 200
 damage: 10
 defense: 20
 dodge 0"
@@ -103,3 +103,4 @@ layout_mode = 2
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/WizzardSelect" to="." method="_on_wizzard_select_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/RogueSelect" to="." method="_on_rogue_select_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer4/KnightSelect" to="." method="_on_knight_select_pressed"]
