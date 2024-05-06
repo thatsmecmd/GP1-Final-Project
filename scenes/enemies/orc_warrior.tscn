@@ -199,6 +199,7 @@ sprite_frames = SubResource("SpriteFrames_1sicx")
 animation = &"Attack"
 
 [node name="Area2D" type="Area2D" parent="Attack"]
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Area2D"]
 position = Vector2(55.5557, 127.778)

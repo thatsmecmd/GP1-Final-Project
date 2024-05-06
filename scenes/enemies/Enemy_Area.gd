@@ -5,7 +5,8 @@ const SPAWN_POINT_SRC = "res://scenes/enemies/spawn_point.tscn"
 
 @export var number_of_enemy = {
 	"Skeleton_Warrior": 0,
-	"Orc_Warrior": 0
+	"Orc_Warrior": 0,
+	"Skeleton_Mage": 0
 }
 @onready var area: CollisionShape2D = $CollisionShape2D # the area shape
 @onready var spawn_point_scene = preload(SPAWN_POINT_SRC) # the spawn point scene

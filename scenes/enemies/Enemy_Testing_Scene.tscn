@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwsvlxjwhg2wh"]
+[gd_scene load_steps=5 format=3 uid="uid://dwsvlxjwhg2wh"]
 
 [ext_resource type="Script" path="res://scenes/enemies/pointerFollower.gd" id="1_0a3fc"]
 [ext_resource type="Script" path="res://scenes/enemies/Enemy_Area.gd" id="2_k0sd4"]
@@ -6,9 +6,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f5jvk"]
 size = Vector2(686, 385)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3bqu"]
-size = Vector2(345, 213.5)
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,23 +32,11 @@ offset_bottom = 422.0
 collision_mask = 2
 script = ExtResource("2_k0sd4")
 number_of_enemy = {
-"Orc_Warrior": 1,
-"Skeleton_Warrior": 3
+"Orc_Warrior": 0,
+"Skeleton_Mage": 3,
+"Skeleton_Warrior": 0
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Area2D"]
 position = Vector2(356, 206.5)
 shape = SubResource("RectangleShape2D_f5jvk")
-
-[node name="Enemy_Area2D2" type="Area2D" parent="."]
-collision_layer = 32
-collision_mask = 2
-script = ExtResource("2_k0sd4")
-number_of_enemy = {
-"Orc_Warrior": 1,
-"Skeleton_Warrior": 1
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Area2D2"]
-position = Vector2(931, 157.25)
-shape = SubResource("RectangleShape2D_e3bqu")

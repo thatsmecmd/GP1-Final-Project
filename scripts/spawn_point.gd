@@ -4,7 +4,8 @@ extends Node2D
 
 var enemies = {
 	"Skeleton_Warrior": "res://scenes/enemies/skeleton_warrior.tscn",
-	"Orc_Warrior": "res://scenes/enemies/orc_warrior.tscn"
+	"Orc_Warrior": "res://scenes/enemies/orc_warrior.tscn",
+	"Skeleton_Mage": "res://scenes/enemies/skeleton_mage.tscn"
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -23,8 +24,10 @@ func _ready():
 
 func _on_enemy_area_body_entered(body):
 	if(body is CharacterBody2D):
-		get_child(0).switch_target(true, body)
+		if(get_child(0)):
+			get_child(0).switch_target(true, body)
 
 
 func _on_enemy_area_body_exited(body):
-	get_child(0).switch_target(false)
+	if(get_child(0)):
+		get_child(0).switch_target(false)
