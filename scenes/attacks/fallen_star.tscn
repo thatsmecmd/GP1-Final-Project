@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://e3cqm6cgebd"]
+
+[ext_resource type="Script" path="res://scripts/attacks/fallen_star.gd" id="1_rwpby"]
+[ext_resource type="Texture2D" uid="uid://dhca1o24n7cbl" path="res://assets/Effect and Bullet 16x16/Water Effect and Bullet 16x16.png" id="1_wt7g5"]
+[ext_resource type="Texture2D" uid="uid://c3yta62dkekra" path="res://textures/light.tres" id="2_n7k3h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_724l0"]
+atlas = ExtResource("1_wt7g5")
+region = Rect2(224, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wonj7"]
+atlas = ExtResource("1_wt7g5")
+region = Rect2(240, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nunbf"]
+atlas = ExtResource("1_wt7g5")
+region = Rect2(256, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63417"]
+atlas = ExtResource("1_wt7g5")
+region = Rect2(272, 192, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vpf47"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_724l0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wonj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nunbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63417")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mjyjc"]
+
+[node name="FallenStar" type="Area2D"]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("1_rwpby")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vpf47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_mjyjc")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.378923, 0.410402)
+color = Color(0.278431, 0.686275, 0.980392, 1)
+energy = 0.5
+texture = ExtResource("2_n7k3h")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2(0.378923, 0.410402)
+amount = 100
+emission_shape = 1
+emission_sphere_radius = 8.0
+gravity = Vector2(0, 25)
+angular_velocity_max = 180.0
+color = Color(0.290196, 0.756863, 1, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

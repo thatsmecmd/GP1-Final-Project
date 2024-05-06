@@ -1,0 +1,105 @@
+[gd_scene load_steps=3 format=3 uid="uid://md1qs38ci005"]
+
+[ext_resource type="Script" path="res://scripts/CharacterSelect.gd" id="1_qlctr"]
+[ext_resource type="Texture2D" uid="uid://oajsnodn4nsj" path="res://assets/attacks/overhead/A200-1.png" id="2_jsm88"]
+
+[node name="CharacterSelect" type="CanvasLayer"]
+script = ExtResource("1_qlctr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -195.0
+offset_right = 201.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(230, 400)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Wizzard"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_jsm88")
+expand_mode = 4
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "A Follower of the arcane arts
+hp: 125
+damage: 20
+defense: 0
+dodge: 5"
+clip_text = true
+
+[node name="WizzardSelect" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Select"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(230, 400)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Rogue"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("2_jsm88")
+expand_mode = 4
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "A no-good vagabond 
+hp: 100
+damage: 15
+defense: 5
+dodge 10"
+
+[node name="RogueSelect" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Select"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(230, 400)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "Knight"
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("2_jsm88")
+expand_mode = 4
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "A Stalwart Defender 
+hp: 100
+damage: 10
+defense: 20
+dodge 0"
+
+[node name="KnightSelect" type="Button" parent="HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "Select"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/WizzardSelect" to="." method="_on_wizzard_select_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/RogueSelect" to="." method="_on_rogue_select_pressed"]

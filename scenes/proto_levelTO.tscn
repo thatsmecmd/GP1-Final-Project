@@ -1,7 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://be6ratsaib5sr"]
 
 [ext_resource type="Texture2D" uid="uid://dykn80fhmoqo6" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Tiles.png" id="1_6w4m0"]
-[ext_resource type="PackedScene" uid="uid://crh8lhq232k5l" path="res://scenes/player.tscn" id="2_34v8p"]
 [ext_resource type="PackedScene" uid="uid://beswc0nlkf77y" path="res://scenes/main_return.tscn" id="3_ko20i"]
 [ext_resource type="PackedScene" uid="uid://bwukj8jxjsqt4" path="res://scenes/test_target.tscn" id="4_g7wl4"]
 [ext_resource type="PackedScene" uid="uid://diva5mx4nwkga" path="res://scenes/attacks/ability_pickup.tscn" id="5_vb5bg"]
@@ -10,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://1l7vlaof6ur7" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/arrow_02e.png" id="8_wksmi"]
 [ext_resource type="Texture2D" uid="uid://cysh8rkqb8jxp" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01a.png" id="9_3ki6b"]
 [ext_resource type="PackedScene" uid="uid://bmsam2kbx3ca4" path="res://scenes/TestFolder/damage_tester.tscn" id="10_xqvnv"]
-[ext_resource type="PackedScene" uid="uid://bccayam2ern5x" path="res://scenes/ui.tscn" id="11_akxe4"]
+[ext_resource type="PackedScene" uid="uid://1lxd8m4qqxfo" path="res://scenes/attacks/random_ability_pickup.tscn" id="12_glsis"]
+[ext_resource type="PackedScene" uid="uid://cqnxq2k3iwuxv" path="res://scenes/player_spawner.tscn" id="12_q7hjt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxo0a"]
 texture = ExtResource("1_6w4m0")
@@ -768,15 +768,8 @@ action = "secondary"
 [node name="DamageTester" parent="." instance=ExtResource("10_xqvnv")]
 position = Vector2(-208, -191)
 
-[node name="player" parent="." instance=ExtResource("2_34v8p")]
-position = Vector2(160, -12)
-speed = 250
+[node name="ability_pickup5" parent="." instance=ExtResource("12_glsis")]
+position = Vector2(95, 159)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(3, 3)
-
-[node name="AudioListener2D" type="AudioListener2D" parent="player"]
-
-[node name="UI" parent="." instance=ExtResource("11_akxe4")]
-
-[connection signal="player_hit" from="player" to="UI" method="_on_player_player_hit"]
+[node name="PlayerSpawner" parent="." instance=ExtResource("12_q7hjt")]
+position = Vector2(205, -57)
