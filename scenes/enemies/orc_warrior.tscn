@@ -203,3 +203,5 @@ animation = &"Attack"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Area2D"]
 position = Vector2(55.5557, 127.778)
 shape = SubResource("RectangleShape2D_rpn64")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
