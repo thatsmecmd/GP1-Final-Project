@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfa0csq1dxr6v"]
+
+[ext_resource type="Texture2D" uid="uid://bl85ryhcj3ddo" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_02g.png" id="1_e0e88"]
+[ext_resource type="Script" path="res://scripts/stat_pickup.gd" id="1_kip14"]
+[ext_resource type="Texture2D" uid="uid://c3yta62dkekra" path="res://textures/light.tres" id="3_i7udf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oxh36"]
+
+[node name="StatPickup" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_kip14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oxh36")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e0e88")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.742376, 0.707388)
+energy = 0.7
+texture = ExtResource("3_i7udf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
