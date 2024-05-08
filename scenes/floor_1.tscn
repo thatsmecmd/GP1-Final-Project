@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgygdxsall143"]
+[gd_scene load_steps=20 format=3 uid="uid://cgygdxsall143"]
 
 [ext_resource type="Texture2D" uid="uid://dykn80fhmoqo6" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Tiles.png" id="1_snkxw"]
 [ext_resource type="PackedScene" uid="uid://blrlbl401bemg" path="res://scenes/end_door.tscn" id="2_1x44y"]
 [ext_resource type="PackedScene" uid="uid://dkuej8lhcsdo4" path="res://scenes/key_collectible.tscn" id="3_xoc8k"]
 [ext_resource type="PackedScene" uid="uid://dcic7yn2ubpvr" path="res://scenes/trap.tscn" id="4_r5ox2"]
-[ext_resource type="PackedScene" uid="uid://crh8lhq232k5l" path="res://scenes/player.tscn" id="5_npu3u"]
+[ext_resource type="PackedScene" path="res://scenes/player_spawner.tscn" id="5_g20u4"]
+[ext_resource type="PackedScene" uid="uid://bwenmbak5c01l" path="res://scenes/loot_room.tscn" id="6_miuqb"]
+[ext_resource type="Script" path="res://scenes/enemies/Enemy_Area.gd" id="7_nife5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gk3tv"]
 texture = ExtResource("1_snkxw")
@@ -1237,6 +1239,24 @@ scenes/3/scene = ExtResource("4_r5ox2")
 [sub_resource type="TileSet" id="TileSet_axjlk"]
 sources/0 = SubResource("TileSetScenesCollectionSource_8wlra")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pm5y"]
+size = Vector2(310, 185)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51xbs"]
+size = Vector2(60, 377)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0jl5a"]
+size = Vector2(325, 260)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fpdtq"]
+size = Vector2(375, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nqlf"]
+size = Vector2(169, 121)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmvmc"]
+size = Vector2(424, 185)
+
 [node name="floor1" type="Node2D"]
 
 [node name="background" type="TileMap" parent="."]
@@ -1256,14 +1276,99 @@ layer_0/tile_data = PackedInt32Array(393241, 0, 196608, 458777, 0, 196608, 52431
 [node name="end_door" parent="." instance=ExtResource("2_1x44y")]
 position = Vector2(1224, -464)
 
-[node name="player" parent="." instance=ExtResource("5_npu3u")]
-position = Vector2(99, 190)
-speed = 250
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-zoom = Vector2(2, 2)
-
 [node name="key_collectible" parent="." instance=ExtResource("3_xoc8k")]
-position = Vector2(1776, 457)
+position = Vector2(1239, -149)
+
+[node name="PlayerSpawner" parent="." instance=ExtResource("5_g20u4")]
+position = Vector2(1222, -95)
+
+[node name="LootRoom" parent="." instance=ExtResource("6_miuqb")]
+position = Vector2(132, 182)
+
+[node name="enemy_spawner" type="Node2D" parent="."]
+
+[node name="Enemy_Area2D" type="Area2D" parent="enemy_spawner"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("7_nife5")
+number_of_enemy = {
+"Orc_Warrior": 0,
+"Skeleton_Mage": 0,
+"Skeleton_Warrior": 2
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_spawner/Enemy_Area2D"]
+position = Vector2(510, 171)
+shape = SubResource("RectangleShape2D_4pm5y")
+
+[node name="Enemy_Area2D2" type="Area2D" parent="enemy_spawner"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("7_nife5")
+number_of_enemy = {
+"Orc_Warrior": 2,
+"Skeleton_Mage": 0,
+"Skeleton_Warrior": 0
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_spawner/Enemy_Area2D2"]
+position = Vector2(848, 175.5)
+shape = SubResource("RectangleShape2D_51xbs")
+
+[node name="Enemy_Area2D3" type="Area2D" parent="enemy_spawner"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("7_nife5")
+number_of_enemy = {
+"Orc_Warrior": 0,
+"Skeleton_Mage": 2,
+"Skeleton_Warrior": 0
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_spawner/Enemy_Area2D3"]
+position = Vector2(1226.5, 390)
+shape = SubResource("RectangleShape2D_0jl5a")
+
+[node name="Enemy_Area2D4" type="Area2D" parent="enemy_spawner"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("7_nife5")
+number_of_enemy = {
+"Orc_Warrior": 1,
+"Skeleton_Mage": 1,
+"Skeleton_Warrior": 1
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_spawner/Enemy_Area2D4"]
+position = Vector2(1615.5, 416)
+shape = SubResource("RectangleShape2D_fpdtq")
+
+[node name="Enemy_Area2D5" type="Area2D" parent="enemy_spawner"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("7_nife5")
+number_of_enemy = {
+"Orc_Warrior": 0,
+"Skeleton_Mage": 1,
+"Skeleton_Warrior": 0
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_spawner/Enemy_Area2D5"]
+position = Vector2(1063.5, 47.5)
+shape = SubResource("RectangleShape2D_5nqlf")
+
+[node name="Enemy_Area2D6" type="Area2D" parent="enemy_spawner"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("7_nife5")
+number_of_enemy = {
+"Orc_Warrior": 2,
+"Skeleton_Mage": 2,
+"Skeleton_Warrior": 0
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_spawner/Enemy_Area2D6"]
+position = Vector2(1225, -304.5)
+shape = SubResource("RectangleShape2D_tmvmc")
 
 [connection signal="key_collect" from="key_collectible" to="end_door" method="_on_key_collectible_key_collect"]

@@ -12,4 +12,4 @@ func _on_key_collectible_key_collect():
 
 func _on_area_2d_body_entered(body):
 	print("door entered")
-	get_tree().change_scene_to_file("res://scenes/default_room.tscn")
+	get_tree().change_scene_to_file("res://scenes/rand_gen_floor.tscn")
