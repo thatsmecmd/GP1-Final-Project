@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://cgygdxsall143"]
 
 [ext_resource type="Texture2D" uid="uid://dykn80fhmoqo6" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Tiles.png" id="1_snkxw"]
-[ext_resource type="PackedScene" uid="uid://blrlbl401bemg" path="res://scenes/end_door.tscn" id="2_1x44y"]
-[ext_resource type="PackedScene" uid="uid://dkuej8lhcsdo4" path="res://scenes/key_collectible.tscn" id="3_xoc8k"]
+[ext_resource type="PackedScene" path="res://scenes/end_door.tscn" id="2_1x44y"]
+[ext_resource type="PackedScene" path="res://scenes/key_collectible.tscn" id="3_xoc8k"]
 [ext_resource type="PackedScene" uid="uid://dcic7yn2ubpvr" path="res://scenes/trap.tscn" id="4_r5ox2"]
 [ext_resource type="PackedScene" uid="uid://crh8lhq232k5l" path="res://scenes/player.tscn" id="5_npu3u"]
 
@@ -1258,9 +1258,8 @@ position = Vector2(1224, -464)
 
 [node name="player" parent="." instance=ExtResource("5_npu3u")]
 position = Vector2(99, 190)
-speed = 250
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D2" type="Camera2D" parent="player"]
 zoom = Vector2(2, 2)
 
 [node name="key_collectible" parent="." instance=ExtResource("3_xoc8k")]
