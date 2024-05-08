@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ddbef33bpxdgj"]
+[gd_scene load_steps=33 format=3 uid="uid://ddbef33bpxdgj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_2ts6x"]
 [ext_resource type="Texture2D" uid="uid://dmbg3aiisrata" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Knight/Death/Death-Sheet.png" id="2_65b73"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://fiet0evwc1x6" path="res://scenes/stat_system.tscn" id="7_fkycn"]
 [ext_resource type="PackedScene" uid="uid://bccayam2ern5x" path="res://scenes/ui.tscn" id="8_rd6si"]
 [ext_resource type="PackedScene" uid="uid://d0y4sflbf30ra" path="res://scenes/soundtrack.tscn" id="9_pwql4"]
+[ext_resource type="Texture2D" uid="uid://c3yta62dkekra" path="res://textures/light.tres" id="10_jeth5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_utv20"]
 atlas = ExtResource("2_65b73")
@@ -287,6 +288,11 @@ region_enabled = true
 region_rect = Rect2(118.842, 19.0394, 17.4463, 24.2809)
 
 [node name="Soundtrack" parent="." instance=ExtResource("9_pwql4")]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(2.26831, 2.21439)
+energy = 0.5
+texture = ExtResource("10_jeth5")
 
 [connection signal="player_hit" from="." to="UI" method="_on_player_player_hit"]
 [connection signal="dead" from="StatSystem" to="." method="_on_stat_system_dead"]
