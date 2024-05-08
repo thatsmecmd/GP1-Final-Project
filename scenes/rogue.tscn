@@ -294,7 +294,9 @@ scale = Vector2(2.26831, 2.21439)
 energy = 0.5
 texture = ExtResource("10_winev")
 
+[connection signal="player_healed" from="." to="UI" method="_on_player_player_healed"]
 [connection signal="player_hit" from="." to="UI" method="_on_player_player_hit"]
 [connection signal="dead" from="StatSystem" to="." method="_on_stat_system_dead"]
+[connection signal="healed" from="StatSystem" to="." method="_on_stat_system_healed"]
 [connection signal="hit" from="StatSystem" to="." method="_on_stat_system_hit"]
 [connection signal="animation_finished" from="Animations" to="." method="_on_animations_animation_finished"]

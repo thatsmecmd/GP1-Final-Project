@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://crh8lhq232k5l"]
+[gd_scene load_steps=33 format=3 uid="uid://crh8lhq232k5l"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ojta2"]
 [ext_resource type="Texture2D" uid="uid://b54d14s5kcuhx" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Death/Death-Sheet.png" id="2_dmfg2"]
@@ -8,7 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cno7gtexritug" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Wood/Wood.png" id="6_ub875"]
 [ext_resource type="PackedScene" uid="uid://fiet0evwc1x6" path="res://scenes/stat_system.tscn" id="7_k4vhr"]
 [ext_resource type="PackedScene" uid="uid://bccayam2ern5x" path="res://scenes/ui.tscn" id="8_i3qqm"]
-[ext_resource type="PackedScene" path="res://scenes/soundtrack.tscn" id="9_m6685"]
+[ext_resource type="PackedScene" uid="uid://d0y4sflbf30ra" path="res://scenes/soundtrack.tscn" id="9_m6685"]
+[ext_resource type="Texture2D" uid="uid://c3yta62dkekra" path="res://textures/light.tres" id="10_qsit7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvrvd"]
 atlas = ExtResource("2_dmfg2")
@@ -282,7 +283,14 @@ zoom = Vector2(3, 3)
 [node name="Soundtrack" parent="." instance=ExtResource("9_m6685")]
 autoplay = false
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(2.26831, 2.21439)
+energy = 0.5
+texture = ExtResource("10_qsit7")
+
+[connection signal="player_healed" from="." to="UI" method="_on_player_player_healed"]
 [connection signal="player_hit" from="." to="UI" method="_on_player_player_hit"]
 [connection signal="dead" from="StatSystem" to="." method="_on_stat_system_dead"]
+[connection signal="healed" from="StatSystem" to="." method="_on_stat_system_healed"]
 [connection signal="hit" from="StatSystem" to="." method="_on_stat_system_hit"]
 [connection signal="animation_finished" from="Animations" to="." method="_on_animations_animation_finished"]

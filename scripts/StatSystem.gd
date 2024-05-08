@@ -10,6 +10,7 @@ var is_dead = false
 var current_health = 1
 signal dead
 signal hit
+signal healed
 
 func take_damage(damage):
 	var dodge_sim = randi() % 100 + 1
@@ -55,6 +56,7 @@ func heal(health):
 	current_health += health
 	if current_health >max_health:
 		current_health = max_health
+	emit_signal("healed")
 func add_defense(buff):
 	defense += buff
 func add_dodge(buff):

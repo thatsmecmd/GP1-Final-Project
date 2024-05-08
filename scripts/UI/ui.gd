@@ -27,3 +27,7 @@ func _on_greed_timer_timeout():
 	Global.greed -= 1
 	current_greed = Global.greed
 	greed_bar.value = current_greed
+
+
+func _on_player_player_healed():
+	heal_player.emit()
