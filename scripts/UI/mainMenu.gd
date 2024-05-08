@@ -31,14 +31,16 @@ func _on_back_button_pressed():
 func _on_save_button_pressed():
 	pass # Replace with function body.
 
-
 func _on_english_button_pressed():
 	translate("en")
-
 
 func _on_french_button_pressed():
 	translate("fr")
 
-
 func _on_spanish_button_pressed():
 	translate("es")
+
+func _on_volume_slider_value_changed(value):
+	var bus_index = AudioServer.get_bus_index("Master")
+	var new_volume = linear_to_db(value)
+	AudioServer.set_bus_volume_db(bus_index,new_volume)

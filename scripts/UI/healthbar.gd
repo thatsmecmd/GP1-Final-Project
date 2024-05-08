@@ -1,9 +1,8 @@
 extends ProgressBar
 
 @onready var health_bar = $"."
-@onready var button = $"../Button"
 @onready var damage_rect = $"../DamageRect"
-
+@onready var heal_rect = $"../HealRect"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	health_bar.set_max(Global.max_health)
@@ -17,7 +16,16 @@ func _on_ui_take_damage():
 	var health_tween = create_tween()
 	if(!(Global.current_health <= 0)):
 		health_tween.tween_property(health_bar, "value", Global.current_health, 0.1)
-	
+	else:
+		health_tween.tween_property(health_bar, "value", 0, 0.1)
 	var red_tween = create_tween()
 	red_tween.tween_property(damage_rect, "modulate", Color("ffffff"), 0.1)
 	red_tween.tween_property(damage_rect, "modulate", Color.TRANSPARENT, 0.1)
+
+func _on_ui_heal_player():
+	var health_tween = create_tween()
+	if(!(Global.current_health <= 0)):
+		health_tween.tween_property(health_bar, "value", Global.current_health, 0.1)
+	var green_tween = create_tween()
+	green_tween.tween_property(heal_rect, "modulate", Color("ffffff"), 0.1)
+	green_tween.tween_property(heal_rect, "modulate", Color.TRANSPARENT, 0.1)

@@ -14,6 +14,8 @@ var spawn_point = 0
 @onready var stats =  $StatSystem
 
 signal player_hit
+signal player_dead
+
 var input: Vector2
 func _ready():
 	stats.max_health = Global.max_health
@@ -87,6 +89,7 @@ func secondary_attack():
 			print("Unimplemented attack type...")
 func _on_stat_system_dead():
 	animations.play("dead")
+	emit_signal("player_dead")
 
 func _on_animations_animation_finished(anim_name):
 	if anim_name == "dead":
