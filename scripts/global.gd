@@ -7,5 +7,7 @@ var current_health = 100
 var defense = 0
 var dodge = 0
 var attack = 10
-var greed = 100
 var player_class = "Wizzard"
+
+var greed = 100
+var current_greed = 0
