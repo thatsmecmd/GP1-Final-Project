@@ -64,6 +64,7 @@ locale/translations=PackedStringArray("res://assets/Translations/Translation.en.
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Pickups"
 2d_physics/layer_5="Projectiles"
+2d_physics/layer_6="ennemy_area"
 
 [rendering]
 

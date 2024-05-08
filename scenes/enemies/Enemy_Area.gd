@@ -1,8 +1,13 @@
 extends Area2D
+class_name Enemy_Area2D
 
 const SPAWN_POINT_SRC = "res://scenes/enemies/spawn_point.tscn"
 
-@export var number_of_enemy: int # The number of enemy to spawn in the area
+@export var number_of_enemy = {
+	"Skeleton_Warrior": 0,
+	"Orc_Warrior": 0,
+	"Skeleton_Mage": 0
+}
 @onready var area: CollisionShape2D = $CollisionShape2D # the area shape
 @onready var spawn_point_scene = preload(SPAWN_POINT_SRC) # the spawn point scene
 
@@ -35,10 +40,12 @@ func get_coordinates():
 	
 # instantiates a spawnpoint at a random spot within the area
 func generate_spawnpoints():
-	for i in number_of_enemy:
-		var instance = spawn_point_scene.instantiate()
-		instance.global_position = generate_position_within_area()
-		add_child(instance)
+	for enemy in number_of_enemy:
+		for i in number_of_enemy[enemy]:
+			var instance = spawn_point_scene.instantiate()
+			instance.enemy = enemy
+			instance.global_position = generate_position_within_area()
+			add_child(instance)
 	
 func generate_position_within_area():
 	var rng = RandomNumberGenerator.new() # the random generator instance

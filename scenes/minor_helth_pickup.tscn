@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd44vq8772xb"]
+
+[ext_resource type="Script" path="res://scripts/minor_helth_pickup.gd" id="1_gj1kb"]
+[ext_resource type="Texture2D" uid="uid://c6tborws57dkp" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/candle_01b.png" id="1_xe5fx"]
+[ext_resource type="Texture2D" uid="uid://c3yta62dkekra" path="res://textures/light.tres" id="2_0svh8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhx7i"]
+
+[node name="MinorHelthPickup" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_gj1kb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xe5fx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qhx7i")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.7
+texture = ExtResource("2_0svh8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

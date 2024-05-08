@@ -1,106 +1,180 @@
-[gd_scene load_steps=3 format=3 uid="uid://md1qs38ci005"]
+[gd_scene load_steps=8 format=3 uid="uid://md1qs38ci005"]
 
 [ext_resource type="Script" path="res://scripts/CharacterSelect.gd" id="1_qlctr"]
-[ext_resource type="Texture2D" uid="uid://oajsnodn4nsj" path="res://assets/attacks/overhead/A200-1.png" id="2_jsm88"]
+[ext_resource type="Texture2D" uid="uid://ohssn683fx28" path="res://assets/16.png" id="2_aqafe"]
+[ext_resource type="Texture2D" uid="uid://cn6bsj57h1jgi" path="res://assets/edits/wizard_pfp.png" id="3_7m0o3"]
+[ext_resource type="Texture2D" uid="uid://dbvc1bu0ijy5d" path="res://assets/edits/rouge_pfp.png" id="4_n646i"]
+[ext_resource type="Texture2D" uid="uid://boqmigyxnpovw" path="res://assets/edits/knight_pfp.png" id="5_ntbpw"]
+[ext_resource type="AudioStream" uid="uid://r7f3pyhbtwdc" path="res://assets/audio/menu_music/Path to Lake Land.ogg" id="6_86kfx"]
+[ext_resource type="Texture2D" uid="uid://i6lqaysi8vfm" path="res://assets/edits/bglore.png" id="7_1fmhb"]
 
 [node name="CharacterSelect" type="CanvasLayer"]
 script = ExtResource("1_qlctr")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aqafe")
+expand_mode = 3
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_86kfx")
+volume_db = -10.0
+autoplay = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -193.0
-offset_top = -195.0
-offset_right = 201.0
-offset_bottom = 190.0
+offset_left = -349.0
+offset_top = -323.0
+offset_right = 349.0
+offset_bottom = 323.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="CharacterSelect" type="HBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer2/CharacterSelect"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2/CharacterSelect/PanelContainer"]
 custom_minimum_size = Vector2(230, 400)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer2/CharacterSelect/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Wizzard"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/CharacterSelect/PanelContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_jsm88")
+texture = ExtResource("3_7m0o3")
 expand_mode = 4
+stretch_mode = 5
 
-[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="HBoxContainer2/CharacterSelect/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 350)
 layout_mode = 2
-text = "A Follower of the arcane arts
+text = "An accomplished spell caster who in his pursuit of knowledge purchased a strange grimoire from a merchant. It’s words claw at his mind driving him to hunger for wealth.
+
+Stats:
 hp: 125
 damage: 20
 defense: 0
 dodge: 5"
+autowrap_mode = 3
 clip_text = true
 
-[node name="WizzardSelect" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="WizzardSelect" type="Button" parent="HBoxContainer2/CharacterSelect/PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Select"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer2/CharacterSelect"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer2/CharacterSelect/PanelContainer2"]
 custom_minimum_size = Vector2(230, 400)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="HBoxContainer2/CharacterSelect/PanelContainer2/VBoxContainer2"]
 layout_mode = 2
 text = "Rogue"
 horizontal_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/VBoxContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer2/CharacterSelect/PanelContainer2/VBoxContainer2"]
 layout_mode = 2
-texture = ExtResource("2_jsm88")
+texture = ExtResource("4_n646i")
 expand_mode = 4
+stretch_mode = 5
 
-[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer2"]
+[node name="Label2" type="Label" parent="HBoxContainer2/CharacterSelect/PanelContainer2/VBoxContainer2"]
+custom_minimum_size = Vector2(200, 350)
 layout_mode = 2
-text = "A no-good vagabond 
+text = "A highwayman who once held up a strange man for his amulet. Now it murmurs in his very soul, yearning for opulence.
+
+Stats:
 hp: 100
 damage: 15
 defense: 5
 dodge 20"
+autowrap_mode = 3
 
-[node name="RogueSelect" type="Button" parent="HBoxContainer/VBoxContainer2"]
+[node name="RogueSelect" type="Button" parent="HBoxContainer2/CharacterSelect/PanelContainer2/VBoxContainer2"]
 layout_mode = 2
 text = "Select"
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer"]
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer2/CharacterSelect"]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer2/CharacterSelect/PanelContainer3"]
 custom_minimum_size = Vector2(230, 400)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer4"]
+[node name="Label" type="Label" parent="HBoxContainer2/CharacterSelect/PanelContainer3/VBoxContainer4"]
 layout_mode = 2
 text = "Knight"
 horizontal_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/VBoxContainer4"]
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer2/CharacterSelect/PanelContainer3/VBoxContainer4"]
 layout_mode = 2
-texture = ExtResource("2_jsm88")
+texture = ExtResource("5_ntbpw")
 expand_mode = 4
+stretch_mode = 5
 
-[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer4"]
+[node name="Label2" type="Label" parent="HBoxContainer2/CharacterSelect/PanelContainer3/VBoxContainer4"]
+custom_minimum_size = Vector2(200, 350)
 layout_mode = 2
-text = "A Stalwart Defender 
+text = "A once noble knight who after a bloody siege found a mysterious chalice in the ruins of a raided monastery. Now it whispers, longing for more riches.
+
+Stats:
 hp: 200
 damage: 10
 defense: 20
 dodge 0"
+autowrap_mode = 3
 
-[node name="KnightSelect" type="Button" parent="HBoxContainer/VBoxContainer4"]
+[node name="KnightSelect" type="Button" parent="HBoxContainer2/CharacterSelect/PanelContainer3/VBoxContainer4"]
 layout_mode = 2
 text = "Select"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+[node name="controls" type="VBoxContainer" parent="HBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="LoreButton" type="Button" parent="HBoxContainer2/controls"]
+layout_mode = 2
+text = "Background"
+
+[node name="MainMenuButton" type="Button" parent="HBoxContainer2/controls"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="BackgroundLore" type="HBoxContainer" parent="HBoxContainer2"]
+visible = false
 layout_mode = 2
 
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/WizzardSelect" to="." method="_on_wizzard_select_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer2/RogueSelect" to="." method="_on_rogue_select_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer4/KnightSelect" to="." method="_on_knight_select_pressed"]
+[node name="Label" type="Label" parent="HBoxContainer2/BackgroundLore"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+text = "After the intangible congress transcendental beings born from the malice of man, hungry for their folly.As their influence grows their voices gnaw at people’s very souls. One of these beings is known only as “Greed”. Greed manifests itself in some sort of artefact, this can be an amulet, ring or even a book. People who obtain one of these artefacts are subject to the voices of Greed itself  causing them to have an insatiable lust for wealth and treasure that if left unfed will kill its victim. This hunger leads people here to the halls of greed, a dungeon of unending depth and unknown origin, brimming with treasure where they will meet their demise whether by force or by their hunger."
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/BackgroundLore"]
+layout_mode = 2
+texture = ExtResource("7_1fmhb")
+stretch_mode = 5
+
+[connection signal="pressed" from="HBoxContainer2/CharacterSelect/PanelContainer/VBoxContainer/WizzardSelect" to="." method="_on_wizzard_select_pressed"]
+[connection signal="pressed" from="HBoxContainer2/CharacterSelect/PanelContainer2/VBoxContainer2/RogueSelect" to="." method="_on_rogue_select_pressed"]
+[connection signal="pressed" from="HBoxContainer2/CharacterSelect/PanelContainer3/VBoxContainer4/KnightSelect" to="." method="_on_knight_select_pressed"]
+[connection signal="pressed" from="HBoxContainer2/controls/LoreButton" to="." method="_on_lore_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/controls/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
