@@ -15,6 +15,7 @@ var spawn_point = 0
 
 signal player_hit
 signal player_dead
+signal player_healed
 
 var input: Vector2
 func _ready():
@@ -107,3 +108,10 @@ func save_stats():
 func _on_stat_system_hit():
 	save_stats()
 	emit_signal("player_hit")
+	
+
+
+func _on_stat_system_healed():
+	save_stats()
+	emit_signal("player_healed")
+	print("player healed")

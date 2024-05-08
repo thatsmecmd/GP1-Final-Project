@@ -8,6 +8,7 @@ class_name Follower
 @export var walk_string: String
 @export var die_string: String
 @export var idle_string: String
+@export var drop_percentage: int = 25
 
 var attacking: bool = false # if the follower is currently attacking
 var is_dead: bool = false # check if the follower is dead
@@ -16,6 +17,7 @@ var stopped = false # if the follower is stopped or not
 @onready var stats: StatSystem = $StatSystem # all the enemy's stats.
 var is_flipped = false # if the follower is flipped or not
 const flip_tolerance = 0.1  # tolerance for flipping. Do not touch
+@onready var health_collectable = load("res://scenes/minor_helth_pickup.tscn")
 
 func _ready():
 	sync_to_physics = false
@@ -77,4 +79,13 @@ func _on_statsystem_dead():
 	is_dead = true
 	sprite.play(die_string)
 	await sprite.animation_finished
+	# maybe add a health potion
+	var rng = RandomNumberGenerator.new()
+	var random_number = rng.randf()*100
+	if(random_number < drop_percentage):
+		# pick a random health item
+		var instance = health_collectable.instantiate()
+		instance.global_position = global_position
+		get_tree().root.add_child(instance)
+		pass
 	queue_free()
