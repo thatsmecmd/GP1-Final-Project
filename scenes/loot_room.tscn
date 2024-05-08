@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwenmbak5c01l"]
+
+[ext_resource type="PackedScene" uid="uid://cfa0csq1dxr6v" path="res://scenes/stat_pickup.tscn" id="1_yj1eq"]
+[ext_resource type="PackedScene" uid="uid://rn4lxjhf57f7" path="res://scenes/greed_pickup.tscn" id="2_s7h58"]
+[ext_resource type="PackedScene" uid="uid://1lxd8m4qqxfo" path="res://scenes/attacks/random_ability_pickup.tscn" id="3_2306u"]
+[ext_resource type="PackedScene" uid="uid://cd44vq8772xb" path="res://scenes/minor_helth_pickup.tscn" id="4_i4rja"]
+
+[node name="LootRoom" type="Node2D"]
+
+[node name="StatPickup" parent="." instance=ExtResource("1_yj1eq")]
+position = Vector2(53, -27)
+
+[node name="GreedPickup" parent="." instance=ExtResource("2_s7h58")]
+position = Vector2(-51, -29)
+
+[node name="ability_pickup" parent="." instance=ExtResource("3_2306u")]
+position = Vector2(-56, 54)
+
+[node name="MinorHelthPickup" parent="." instance=ExtResource("4_i4rja")]
+position = Vector2(58, 57)
+
+[connection signal="taken" from="StatPickup" to="GreedPickup" method="_on_stat_pickup_taken"]
+[connection signal="taken" from="GreedPickup" to="StatPickup" method="_on_greed_pickup_taken"]

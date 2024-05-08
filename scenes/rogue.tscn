@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://5isrtp40s8lj"]
+[gd_scene load_steps=32 format=3 uid="uid://5isrtp40s8lj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_kdhas"]
 [ext_resource type="Texture2D" uid="uid://cse57ysbgppcc" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Rogue/Death/Death-Sheet.png" id="2_1d6xp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cno7gtexritug" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Wood/Wood.png" id="6_t7yqj"]
 [ext_resource type="PackedScene" uid="uid://fiet0evwc1x6" path="res://scenes/stat_system.tscn" id="7_88wf2"]
 [ext_resource type="PackedScene" uid="uid://bccayam2ern5x" path="res://scenes/ui.tscn" id="8_q5nfy"]
+[ext_resource type="PackedScene" uid="uid://d0y4sflbf30ra" path="res://scenes/soundtrack.tscn" id="9_ykxjk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aaywc"]
 atlas = ExtResource("2_1d6xp")
@@ -284,6 +285,8 @@ region_rect = Rect2(33.5403, 15.5543, 12.2673, 28.7405)
 zoom = Vector2(3, 3)
 
 [node name="UI" parent="." instance=ExtResource("8_q5nfy")]
+
+[node name="Soundtrack" parent="." instance=ExtResource("9_ykxjk")]
 
 [connection signal="player_hit" from="." to="UI" method="_on_player_player_hit"]
 [connection signal="dead" from="StatSystem" to="." method="_on_stat_system_dead"]

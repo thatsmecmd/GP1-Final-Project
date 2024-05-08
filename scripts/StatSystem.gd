@@ -54,7 +54,7 @@ func reduce_dodge(reduction):
 func heal(health):
 	current_health += health
 	if current_health >max_health:
-		current_health = max_health 
+		current_health = max_health
 func add_defense(buff):
 	defense += buff
 func add_dodge(buff):
@@ -62,6 +62,10 @@ func add_dodge(buff):
 	#prevent imortality 
 	if dodge >= 100:
 		dodge = 99
+func add_attack(buff):
+	attack += buff
+func add_hp(buff):
+	max_health += buff
 func reset_health():
 	current_health = max_health
 # Called when the node enters the scene tree for the first time.

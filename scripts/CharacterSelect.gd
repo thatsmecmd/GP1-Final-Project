@@ -1,5 +1,5 @@
 extends CanvasLayer
-
+var lore_mode = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,3 +46,20 @@ func _on_knight_select_pressed():
 	Abilities.set_primary("overhead_strike")
 	Abilities.set_secondary("flurry_of_blades")
 	get_tree().change_scene_to_file("res://scenes/proto_levelTO.tscn")
+
+
+func _on_lore_button_pressed():
+	if lore_mode:
+		lore_mode = !lore_mode
+		$HBoxContainer2/CharacterSelect.visible = false
+		$HBoxContainer2/BackgroundLore.visible  = true
+		$HBoxContainer2/controls/LoreButton.text = "Back"
+	else:
+		lore_mode = !lore_mode
+		$HBoxContainer2/CharacterSelect.visible = true
+		$HBoxContainer2/BackgroundLore.visible = false
+		$HBoxContainer2/controls/LoreButton.text = "Background"
+
+
+func _on_main_menu_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
