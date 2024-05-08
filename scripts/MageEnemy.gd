@@ -23,11 +23,13 @@ func attack():
 		
 		# spawn a projectile and have it move towards the player
 		var projectile_instance = projectile_preload.instantiate() as Area2D
-		projectile_instance.direction = (target.global_position - self.global_position).normalized()
 		projectile_instance.damage = stats.attack
-		projectile_instance.global_position = magic_spawner.position
-		projectile_instance.collision_mask = 2
-		add_child(projectile_instance)
+		projectile_instance.global_position = magic_spawner.global_position
+		projectile_instance.set_collision_mask_value(3, false)
+		projectile_instance.set_collision_mask_value(2, true)
+		projectile_instance.set_collision_mask_value(1, true)
+		projectile_instance.direction = (target.global_position - self.global_position).normalized()
+		get_tree().root.add_child(projectile_instance)
 
 
 func _on_timer_timeout():
