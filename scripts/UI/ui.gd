@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var greed_bar = $HSlider
 var game_over_scene = preload("res://Scenes/game_over.tscn")
 var current_greed = 100
+
 signal take_damage
 signal heal_player
 

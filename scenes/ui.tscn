@@ -23,9 +23,17 @@ fill_from = Vector2(0.491, 0.514)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1imy"]
 bg_color = Color(0.854902, 0.686275, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbkk7"]
 bg_color = Color(0.854902, 0.686275, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [sub_resource type="Theme" id="Theme_nitwm"]
 HSlider/icons/grabber = ExtResource("4_xdbyr")
@@ -50,12 +58,14 @@ modulate = Color(1, 1, 1, 0)
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = SubResource("GradientTexture2D_qf1xj")
+expand_mode = 3
 
 [node name="HealRect" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = SubResource("GradientTexture2D_1wwfb")
+expand_mode = 3
 
 [node name="HSlider" type="HSlider" parent="."]
 offset_right = 383.0

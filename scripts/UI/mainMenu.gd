@@ -3,14 +3,6 @@ extends CanvasLayer
 @onready var main_vbox = $MainVbox
 @onready var option_v_box = $OptionVBox
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func translate(language_code):
 	TranslationServer.set_locale(language_code)
 
@@ -44,3 +36,15 @@ func _on_volume_slider_value_changed(value):
 	var bus_index = AudioServer.get_bus_index("Master")
 	var new_volume = linear_to_db(value)
 	AudioServer.set_bus_volume_db(bus_index,new_volume)
+
+
+func _on_default_pressed():
+	pass # Replace with function body.
+
+
+func _on_fullscreen_pressed():
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+
+func _on_windowed_pressed():
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

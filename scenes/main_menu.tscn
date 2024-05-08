@@ -63,7 +63,6 @@ text = "QUIT"
 alignment = 0
 
 [node name="OptionVBox" type="VBoxContainer" parent="."]
-visible = false
 offset_left = 358.0
 offset_top = 119.0
 offset_right = 813.0
@@ -102,19 +101,19 @@ text = "DISPLAY"
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Button" type="Button" parent="OptionVBox/Options/DisplayButtons"]
+[node name="Default" type="Button" parent="OptionVBox/Options/DisplayButtons"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("5_4scr4")
 text = "DISPLAY_DEFAULT"
 
-[node name="Button2" type="Button" parent="OptionVBox/Options/DisplayButtons"]
+[node name="Windowed" type="Button" parent="OptionVBox/Options/DisplayButtons"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("5_4scr4")
 text = "DISPLAY_WIND"
 
-[node name="Button3" type="Button" parent="OptionVBox/Options/DisplayButtons"]
+[node name="Fullscreen" type="Button" parent="OptionVBox/Options/DisplayButtons"]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("5_4scr4")
@@ -175,6 +174,9 @@ text = "SAVE"
 [connection signal="pressed" from="MainVbox/ButtonsVBox/optionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MainVbox/ButtonsVBox/quitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="value_changed" from="OptionVBox/Options/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="OptionVBox/Options/DisplayButtons/Default" to="." method="_on_default_pressed"]
+[connection signal="pressed" from="OptionVBox/Options/DisplayButtons/Windowed" to="." method="_on_windowed_pressed"]
+[connection signal="pressed" from="OptionVBox/Options/DisplayButtons/Fullscreen" to="." method="_on_fullscreen_pressed"]
 [connection signal="pressed" from="OptionVBox/Options/LanguageButtons/EnglishButton" to="." method="_on_english_button_pressed"]
 [connection signal="pressed" from="OptionVBox/Options/LanguageButtons/FrenchButton" to="." method="_on_french_button_pressed"]
 [connection signal="pressed" from="OptionVBox/Options/LanguageButtons/SpanishButton" to="." method="_on_spanish_button_pressed"]
