@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bccayam2ern5x"]
+[gd_scene load_steps=12 format=3 uid="uid://bccayam2ern5x"]
 
 [ext_resource type="Script" path="res://scripts/UI/ui.gd" id="1_l0ggl"]
 [ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="2_rk13c"]
@@ -6,18 +6,34 @@
 [ext_resource type="Texture2D" uid="uid://b0xhvyvet5tb2" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/crystal_01c.png" id="4_xdbyr"]
 
 [sub_resource type="Gradient" id="Gradient_rqkog"]
-colors = PackedColorArray(1, 1, 1, 0, 0, 0.592157, 0, 0.611765)
+colors = PackedColorArray(1, 1, 1, 0, 0.827451, 0, 0, 0.611765)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_qf1xj"]
 gradient = SubResource("Gradient_rqkog")
 fill = 1
 fill_from = Vector2(0.490826, 0.513761)
 
+[sub_resource type="Gradient" id="Gradient_r5d5k"]
+colors = PackedColorArray(1, 1, 1, 0, 0.0329451, 0.681101, 0, 0.603922)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1wwfb"]
+gradient = SubResource("Gradient_r5d5k")
+fill = 1
+fill_from = Vector2(0.491, 0.514)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1imy"]
 bg_color = Color(0.854902, 0.686275, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbkk7"]
 bg_color = Color(0.854902, 0.686275, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [sub_resource type="Theme" id="Theme_nitwm"]
 HSlider/icons/grabber = ExtResource("4_xdbyr")
@@ -42,21 +58,25 @@ modulate = Color(1, 1, 1, 0)
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = SubResource("GradientTexture2D_qf1xj")
+expand_mode = 3
 
 [node name="HealRect" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = SubResource("GradientTexture2D_qf1xj")
+texture = SubResource("GradientTexture2D_1wwfb")
+expand_mode = 3
 
 [node name="HSlider" type="HSlider" parent="."]
 offset_right = 383.0
 offset_bottom = 16.0
 theme = SubResource("Theme_nitwm")
 step = 0.1
+value = 100.0
 tick_count = 10
 
 [node name="GreedTimer" type="Timer" parent="HSlider"]
+autostart = true
 
 [connection signal="heal_player" from="." to="HealthBar" method="_on_ui_heal_player"]
 [connection signal="take_damage" from="." to="HealthBar" method="_on_ui_take_damage"]

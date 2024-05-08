@@ -3,14 +3,19 @@ extends ProgressBar
 @onready var health_bar = $"."
 @onready var damage_rect = $"../DamageRect"
 @onready var heal_rect = $"../HealRect"
+
+var cur_max_health = 100
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	health_bar.set_max(Global.max_health)
+	cur_max_health = health_bar.max_value
 	health_bar.value = Global.current_health
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if !(cur_max_health == Global.max_health):
+		health_bar.set_max(Global.max_health)
+		cur_max_health = Global.max_health
 
 func _on_ui_take_damage():
 	var health_tween = create_tween()
