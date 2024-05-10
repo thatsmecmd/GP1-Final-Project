@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ske46jk5c082"]
+[gd_scene load_steps=25 format=3 uid="uid://ske46jk5c082"]
 
 [ext_resource type="Script" path="res://scripts/WariorEnnemy.gd" id="1_0v4mg"]
 [ext_resource type="Texture2D" uid="uid://owy8f3ovo35o" path="res://assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Warrior/Death/Death-Sheet.png" id="2_qoqtk"]
@@ -13,31 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://cey51idps3gvq" path="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Footsteps/Stone/Stone Walk 1.wav" id="11_rjscg"]
 [ext_resource type="AudioStream" uid="uid://jbna55gxa1a5" path="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Footsteps/Stone/Stone Walk 2.wav" id="12_tl37u"]
 [ext_resource type="AudioStream" uid="uid://d26dfvh2nr4ff" path="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Chopping and Mining/mine 2.wav" id="13_qtkei"]
+[ext_resource type="AudioStream" uid="uid://dy5wjpvs3fgr8" path="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Attacks/Sword Attacks Hits and Blocks/Sword Attack 3.wav" id="14_r1t8v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eqqnd"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_138xf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_bnhmt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_6ees5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_qc6po")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_5de8l")
-}],
-"loop": false,
-"name": &"Attack",
-"speed": 6.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iec6g"]
-size = Vector2(244.444, 255.556)
 
 [sub_resource type="Animation" id="Animation_aphx8"]
 resource_name = "Die"
@@ -375,6 +353,106 @@ _data = {
 "Walk": SubResource("Animation_ui2xm")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_miujv"]
+size = Vector2(17, 27)
+
+[sub_resource type="Animation" id="Animation_ncb50"]
+resource_name = "Attack"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_bnhmt"), ExtResource("8_6ees5"), ExtResource("9_qc6po"), ExtResource("10_5de8l")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_hwywf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_bnhmt")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Area2D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jk005"]
+_data = {
+"Attack": SubResource("Animation_ncb50"),
+"RESET": SubResource("Animation_hwywf")
+}
+
 [node name="Skeleton_Warrior" type="AnimatableBody2D"]
 position = Vector2(667, 193)
 collision_layer = 4
@@ -402,22 +480,6 @@ shape = SubResource("CapsuleShape2D_eqqnd")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Attack" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(14, -6.00001)
-scale = Vector2(0.0821094, 0.0879688)
-sprite_frames = SubResource("SpriteFrames_138xf")
-animation = &"Attack"
-
-[node name="Area2D" type="Area2D" parent="Attack"]
-collision_layer = 16
-collision_mask = 2
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Area2D"]
-position = Vector2(55.5557, 127.778)
-shape = SubResource("RectangleShape2D_iec6g")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_5viht")
@@ -427,11 +489,37 @@ speed_scale = 0.7
 [node name="footstep1" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, -1)
 stream = ExtResource("11_rjscg")
-volume_db = -15.0
+bus = &"FootSteps"
 
 [node name="footstep2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_tl37u")
-volume_db = -15.0
+bus = &"FootSteps"
+
+[node name="Attack" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Attack"]
+visible = false
+position = Vector2(13, -6)
+scale = Vector2(0.082, 0.082)
+texture = ExtResource("7_bnhmt")
+
+[node name="Area2D" type="Area2D" parent="Attack"]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Area2D"]
+position = Vector2(17, 1)
+shape = SubResource("RectangleShape2D_miujv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Attack"]
+libraries = {
+"": SubResource("AnimationLibrary_jk005")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Attack"]
+position = Vector2(17, 1)
+stream = ExtResource("14_r1t8v")
+bus = &"Attacks"
 
 [connection signal="hit" from="StatSystem" to="." method="_on_stat_system_hit"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
