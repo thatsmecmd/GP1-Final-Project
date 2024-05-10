@@ -456,7 +456,7 @@ _data = {
 [node name="Skeleton_Warrior" type="AnimatableBody2D"]
 position = Vector2(667, 193)
 collision_layer = 4
-collision_mask = 7
+collision_mask = 5
 script = ExtResource("1_0v4mg")
 range = 30.0
 speed = 2.5
