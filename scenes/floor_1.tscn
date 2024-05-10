@@ -1277,10 +1277,10 @@ layer_0/tile_data = PackedInt32Array(393241, 0, 196608, 458777, 0, 196608, 52431
 position = Vector2(1224, -464)
 
 [node name="key_collectible" parent="." instance=ExtResource("3_xoc8k")]
-position = Vector2(1239, -149)
+position = Vector2(1780, 459)
 
 [node name="PlayerSpawner" parent="." instance=ExtResource("5_g20u4")]
-position = Vector2(1222, -95)
+position = Vector2(22, 190)
 
 [node name="LootRoom" parent="." instance=ExtResource("6_miuqb")]
 position = Vector2(132, 182)

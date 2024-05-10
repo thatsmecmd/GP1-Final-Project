@@ -12,7 +12,7 @@ func _ready():
 		floor = "res://scenes/floor_2.tscn"
 	elif rand == 3:
 		print("floor 3")
-		floor = "res://scenes/floor_1.tscn"
+		floor = "res://scenes/floor_3.tscn"
 	elif rand == 4:
 		print("floor 4")
 		floor = "res://scenes/floor_2.tscn"

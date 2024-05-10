@@ -1333,3 +1333,5 @@ number_of_enemy = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_spawner/Enemy_Area2D5"]
 position = Vector2(1487.5, 268)
 shape = SubResource("RectangleShape2D_12tiy")
+
+[connection signal="key_collect" from="key_collectible" to="end_door" method="_on_key_collectible_key_collect"]
