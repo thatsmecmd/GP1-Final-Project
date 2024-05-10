@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://kdipvkhfdif0"
+path="res://.godot/imported/Beach Storm.wav-c3a86893172105237b204d64d6fbaf8b.sample"
+
+[deps]
+
+source_file="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/BGS Loops/Beach/Beach Storm.wav"
+dest_files=["res://.godot/imported/Beach Storm.wav-c3a86893172105237b204d64d6fbaf8b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

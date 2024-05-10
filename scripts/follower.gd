@@ -12,16 +12,17 @@ class_name Follower
 
 var attacking: bool = false # if the follower is currently attacking
 var is_dead: bool = false # check if the follower is dead
-var sprite: AnimatedSprite2D # The follower's sprite
+#var sprite: AnimatedSprite2D # The follower's sprite
 var stopped = false # if the follower is stopped or not
 @onready var stats: StatSystem = $StatSystem # all the enemy's stats.
 var is_flipped = false # if the follower is flipped or not
 const flip_tolerance = 0.1  # tolerance for flipping. Do not touch
-@onready var health_collectable = load("res://scenes/minor_helth_pickup.tscn")
+@onready var health_collectable = load("res://scenes/minor_helth_pickup.tscn") # the health collectable object that might drop upon dying
+@onready var anim: AnimationPlayer = $AnimationPlayer
 
 func _ready():
 	sync_to_physics = false
-	sprite = get_node("AnimatedSprite2D")
+	#sprite = get_node("AnimatedSprite2D")
 	stats.dead.connect(_on_statsystem_dead)
 	stats.hit.connect(_on_statsystem_hit)
 	
@@ -43,14 +44,14 @@ func _physics_process(delta):
 		if(!stopped):
 			stopped = true
 		else:
-			sprite.play(idle_string)
+			anim.play(idle_string)
 	
 	# flip the follower
 	flip(direction.normalized())
 
 # moves the follower towards the target
 func move(direction: Vector2):
-	sprite.play(walk_string)
+	anim.play(walk_string)
 	var move_vector: Vector2 = direction * speed
 	move_and_collide(move_vector)
 
@@ -77,8 +78,8 @@ func is_in_range(direction: Vector2):
 # kills the follower
 func _on_statsystem_dead():
 	is_dead = true
-	sprite.play(die_string)
-	await sprite.animation_finished
+	anim.play(die_string)
+	await anim.animation_finished
 	# maybe add a health potion
 	var rng = RandomNumberGenerator.new()
 	var random_number = rng.randf()*100
