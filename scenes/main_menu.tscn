@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/UI/mainMenu.gd" id="1_3pwqm"]
 [ext_resource type="Texture2D" uid="uid://b4on7exho2xpb" path="res://assets/Tower 6.png" id="2_vr3sp"]
-[ext_resource type="Theme" uid="uid://ddu5v0s6t3rx6" path="res://assets/fonts/main_font.tres" id="3_h8l0w"]
-[ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/fonts/sub_theme.tres" id="4_raxnr"]
-[ext_resource type="Theme" uid="uid://degy52b8tdyrn" path="res://assets/fonts/option_theme.tres" id="5_4scr4"]
+[ext_resource type="Theme" uid="uid://ddu5v0s6t3rx6" path="res://assets/Fonts/main_font.tres" id="3_h8l0w"]
+[ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="4_raxnr"]
+[ext_resource type="Theme" uid="uid://degy52b8tdyrn" path="res://assets/Fonts/option_theme.tres" id="5_4scr4"]
 
 [node name="mainMenu" type="CanvasLayer"]
 script = ExtResource("1_3pwqm")
@@ -47,7 +47,7 @@ theme = ExtResource("4_raxnr")
 text = "OPTIONS_TITLE"
 alignment = 0
 
-[node name="Button" type="Button" parent="MainVbox/ButtonsVBox"]
+[node name="tutorialButton" type="Button" parent="MainVbox/ButtonsVBox"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("4_raxnr")
@@ -172,6 +172,7 @@ text = "SAVE"
 
 [connection signal="pressed" from="MainVbox/ButtonsVBox/playButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainVbox/ButtonsVBox/optionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MainVbox/ButtonsVBox/tutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="MainVbox/ButtonsVBox/quitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="value_changed" from="OptionVBox/Options/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="OptionVBox/Options/DisplayButtons/Default" to="." method="_on_default_pressed"]

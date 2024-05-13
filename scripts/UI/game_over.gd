@@ -13,7 +13,9 @@ func _process(delta):
 	pass
 
 func _on_exit_main_pressed():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _on_retry_pressed():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/character_select.tscn")
