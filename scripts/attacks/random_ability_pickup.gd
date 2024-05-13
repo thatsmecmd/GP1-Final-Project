@@ -31,8 +31,8 @@ func _on_body_entered(body):
 		Abilities.set_primary(ability)
 	elif action == "secondary":
 		Abilities.set_secondary(ability)
-	$"PickupOverlay".visible = true
-	$OverlayTime.start()
+	#$"PickupOverlay".visible = true
+	#$OverlayTime.start()
 
 func _on_overlay_time_timeout():
 
