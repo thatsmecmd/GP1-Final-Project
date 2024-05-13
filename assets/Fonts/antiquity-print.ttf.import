@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bfj8xry61toky"
-path="res://.godot/imported/antiquity-print.ttf-720f4db86cde8af56578d145dfa659e8.fontdata"
+path="res://.godot/imported/antiquity-print.ttf-929e51cd2ba6ff1c92486a6cad582189.fontdata"
 
 [deps]
 
-source_file="res://assets/Fonts/antiquity-print.ttf"
-dest_files=["res://.godot/imported/antiquity-print.ttf-720f4db86cde8af56578d145dfa659e8.fontdata"]
+source_file="res://assets/fonts/antiquity-print.ttf"
+dest_files=["res://.godot/imported/antiquity-print.ttf-929e51cd2ba6ff1c92486a6cad582189.fontdata"]
 
 [params]
 

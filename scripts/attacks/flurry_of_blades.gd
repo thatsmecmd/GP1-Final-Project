@@ -4,6 +4,8 @@ var damage = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AudioStreamPlayer2D.stream = load(Abilities.abilities["flurry_of_blades"]["sfx"])
+	$AudioStreamPlayer2D.play()
 	Abilities.can_flurry_of_blades = false
 
 
