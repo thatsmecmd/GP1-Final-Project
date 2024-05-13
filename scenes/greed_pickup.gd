@@ -58,6 +58,8 @@ func _on_body_entered(body):
 	if check_greed > 100:
 		var greed_difference = check_greed - 100
 		Global.greed += value - greed_difference
+	else:
+		Global.greed += value
 	print("Greed: ",Global.greed)
 	emit_signal("taken")
 	self.queue_free()
