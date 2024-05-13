@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://5isrtp40s8lj"]
+[gd_scene load_steps=36 format=3 uid="uid://5isrtp40s8lj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_kdhas"]
 [ext_resource type="Texture2D" uid="uid://cse57ysbgppcc" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Rogue/Death/Death-Sheet.png" id="2_1d6xp"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d0y4sflbf30ra" path="res://scenes/soundtrack.tscn" id="9_ykxjk"]
 [ext_resource type="Texture2D" uid="uid://c3yta62dkekra" path="res://textures/light.tres" id="10_winev"]
 [ext_resource type="AudioStream" uid="uid://hsnw6fif6iin" path="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Footsteps/Stone/Stone Walk 5.wav" id="11_3ohhd"]
+[ext_resource type="PackedScene" path="res://scenes/game_over.tscn" id="12_4nytr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aaywc"]
 atlas = ExtResource("2_1d6xp")
@@ -334,6 +335,9 @@ one_shot = true
 one_shot = true
 
 [node name="cast" type="AudioStreamPlayer2D" parent="."]
+
+[node name="game_over" parent="." instance=ExtResource("12_4nytr")]
+visible = false
 
 [connection signal="player_healed" from="." to="UI" method="_on_player_player_healed"]
 [connection signal="player_hit" from="." to="UI" method="_on_player_player_hit"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://crh8lhq232k5l"]
+[gd_scene load_steps=36 format=3 uid="uid://crh8lhq232k5l"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ojta2"]
 [ext_resource type="Texture2D" uid="uid://b54d14s5kcuhx" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Death/Death-Sheet.png" id="2_dmfg2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d0y4sflbf30ra" path="res://scenes/soundtrack.tscn" id="9_m6685"]
 [ext_resource type="Texture2D" uid="uid://c3yta62dkekra" path="res://textures/light.tres" id="10_qsit7"]
 [ext_resource type="AudioStream" uid="uid://hsnw6fif6iin" path="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Footsteps/Stone/Stone Walk 5.wav" id="11_c6x6i"]
+[ext_resource type="PackedScene" path="res://scenes/game_over.tscn" id="12_bhpny"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvrvd"]
 atlas = ExtResource("2_dmfg2")
@@ -328,6 +329,9 @@ one_shot = true
 one_shot = true
 
 [node name="cast" type="AudioStreamPlayer2D" parent="."]
+
+[node name="game_over" parent="." instance=ExtResource("12_bhpny")]
+visible = false
 
 [connection signal="player_healed" from="." to="UI" method="_on_player_player_healed"]
 [connection signal="player_hit" from="." to="UI" method="_on_player_player_hit"]

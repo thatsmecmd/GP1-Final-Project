@@ -117,6 +117,7 @@ func _on_stat_system_dead():
 func _on_animations_animation_finished(anim_name):
 	if anim_name == "dead" or "greed_death":
 		get_tree().set_pause(true)
+		$game_over.visible = true
 		
 func save_stats():
 	Global.current_health = stats.current_health
