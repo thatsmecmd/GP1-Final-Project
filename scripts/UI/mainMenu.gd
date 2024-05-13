@@ -7,7 +7,7 @@ func translate(language_code):
 	TranslationServer.set_locale(language_code)
 
 func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/TestFolder/LPTest.tscn")
+	get_tree().change_scene_to_file("res://scenes/character_select.tscn")
 
 func _on_quit_button_pressed():
 	get_tree().quit()
@@ -39,7 +39,8 @@ func _on_volume_slider_value_changed(value):
 
 
 func _on_default_pressed():
-	pass # Replace with function body.
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	get_window().size = Vector2(1152, 648)
 
 
 func _on_fullscreen_pressed():
@@ -48,3 +49,7 @@ func _on_fullscreen_pressed():
 
 func _on_windowed_pressed():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	get_window().size = Vector2(1920, 1080)
+
+func _on_tutorial_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/tutorial.tscn")

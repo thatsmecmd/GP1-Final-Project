@@ -14,3 +14,9 @@ DISPLAY,Display,Affichage,Monitor
 DISPLAY_FULL,Fullscreen,Plein ecran,Pantalla completa
 DISPLAY_WIND,Windowed,Fenetre,Ventana
 DISPLAY_DEFAULT,Default,prereglage,predeterminado
+TUTORIAL,Tutorial,Tutoriel,Tutorial
+CURRENT_SCORE,Current Score: ,Score Actuel: ,Puntuación actual: 
+HIGH_SCORE,High Score: ,Meilleur score: ,Mejor puntuación: 
+GAME_OVER,Game Over,Fin de jeu,Fin del juego
+RETRY,Retry,reessayer,reintentar
+EXIT_MAIN,Main menu,Menu principal,Menú principal
