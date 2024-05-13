@@ -29,7 +29,7 @@ var abilities = {
 		"type" : "ranged",
 		"sprite" : "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01b.png",
 		"action" : "primary",
-		"cooldown": 1,
+		"cooldown": 0.2,
 		"sfx" : "res://assets/audio/attacks/shot2.wav"
 	},
 	"magic_disk" : {
@@ -39,7 +39,7 @@ var abilities = {
 		"type" : "ranged",
 		"sprite": "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01c.png",
 		"action": "secondary",
-		"cooldown" : 1,
+		"cooldown" : 0.5,
 		"sfx" : "res://assets/audio/attacks/shot2.wav"
 	},
 	"tracking_arrow" : {
@@ -89,7 +89,7 @@ var abilities = {
 		"type" : "ranged",
 		"sprite": "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01e.png",
 		"action": "primary",
-		"cooldown" : 1,
+		"cooldown" : 0.5,
 		"sfx" : "res://assets/audio/attacks/shot2.wav"
 	}
 }

@@ -33,9 +33,9 @@ position = Vector2(3, 10)
 collision_mask = 2
 script = ExtResource("2_k0sd4")
 number_of_enemy = {
-"Orc_Warrior": 0,
+"Orc_Warrior": 1,
 "Skeleton_Mage": 1,
-"Skeleton_Warrior": 0
+"Skeleton_Warrior": 1
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Area2D"]

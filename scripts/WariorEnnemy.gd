@@ -14,7 +14,7 @@ func _process(delta):
 
 func attack():
 	# If the timer is finished, start it back and perform attack animation
-	if(is_timer_finished && target_is_player):
+	if(is_timer_finished && target_is_player && not is_dead):
 		is_timer_finished = false
 		timer.start()
 		weapon_animation.play("Attack")
