@@ -18,7 +18,7 @@ var items = {
 	},
 	"topaz" : {
 		"name" : "topaz",
-		"value" : 50,
+		"value" : 51,
 		"sprite" : "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/crystal_01b.png"
 	},
 	"emrald" : {
