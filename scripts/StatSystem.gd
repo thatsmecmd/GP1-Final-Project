@@ -22,7 +22,8 @@ func take_damage(damage):
 			damage = 1
 		current_health -= damage
 		print(current_health)
-		emit_signal("hit")
+		if get_parent().has_node("playerSprite"):
+			emit_signal("hit")
 	else:
 		print("Dodged!")
 		pass
@@ -33,7 +34,8 @@ func ap_attack(damage):
 	if dodge <= dodge_sim:
 		print("hit")
 		current_health -= damage
-		emit_signal("hit")
+		if get_parent().has_node("playerSprite"):
+			emit_signal("hit")
 	else:
 		print("Dodged!")
 		pass
@@ -42,16 +44,24 @@ func sure_attack(damage):
 	if damage < 1:
 		damage = 1
 	current_health -= damage
-	emit_signal("hit")
+	if get_parent().has_node("playerSprite"):
+		emit_signal("hit")
 func inert_attack(damage):
 	current_health -= damage
-	emit_signal("hit")
+	if get_parent().has_node("playerSprite"):
+		emit_signal("hit")
 func reduce_attack(reduction):
 	attack = attack - reduction
+	if attack <= 0:
+		attack = 1
 func reduce_defense(reduction):
 	defense = defense - reduction
+	if defense < 0:
+		defense = 0
 func reduce_dodge(reduction):
 	dodge = dodge - reduction
+	if dodge < 0:
+		dodge = 0
 func heal(health):
 	current_health += health
 	if current_health >max_health:

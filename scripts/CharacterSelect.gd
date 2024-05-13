@@ -20,7 +20,7 @@ func _on_wizzard_select_pressed():
 	Global.player_class = "Wizzard"
 	Abilities.set_primary("fallen_stars")
 	Abilities.set_secondary("magic_disk")
-	get_tree().change_scene_to_file("res://scenes/proto_levelTO.tscn")
+	get_tree().change_scene_to_file("res://scenes/rand_gen_floor.tscn")
 	
 
 
@@ -33,19 +33,19 @@ func _on_rogue_select_pressed():
 	Global.player_class = "Rogue"
 	Abilities.set_primary("tracking_arrow")
 	Abilities.set_secondary("flurry_of_blades")
-	get_tree().change_scene_to_file("res://scenes/proto_levelTO.tscn")
+	get_tree().change_scene_to_file("res://scenes/rand_gen_floor.tscn")
 
 
 func _on_knight_select_pressed():
 	Global.max_health = 200
 	Global.defense = 20
 	Global.dodge = 0
-	Global.attack = 10
+	Global.attack = 1000
 	Global.current_health = Global.max_health
 	Global.player_class = "Knight"
 	Abilities.set_primary("overhead_strike")
-	Abilities.set_secondary("flurry_of_blades")
-	get_tree().change_scene_to_file("res://scenes/proto_levelTO.tscn")
+	Abilities.set_secondary("possessed_knife")
+	get_tree().change_scene_to_file("res://scenes/rand_gen_floor.tscn")
 
 
 func _on_lore_button_pressed():

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bsyu7j4e1jvrk"
+path="res://.godot/imported/Sea Rain.wav-9341c8e713e53f1070db60a5b0cd0bdf.sample"
+
+[deps]
+
+source_file="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/BGS Loops/Sea/Sea Rain.wav"
+dest_files=["res://.godot/imported/Sea Rain.wav-9341c8e713e53f1070db60a5b0cd0bdf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

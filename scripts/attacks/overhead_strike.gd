@@ -3,6 +3,8 @@ var damage = 10
 @onready var sprite = $Sprite
 
 func _ready():
+	$AudioStreamPlayer2D.stream = load(Abilities.abilities["overhead_strike"]["sfx"])
+	$AudioStreamPlayer2D.play()
 	Abilities.can_overhead_strike = false
 	
 func _on_body_entered(body):

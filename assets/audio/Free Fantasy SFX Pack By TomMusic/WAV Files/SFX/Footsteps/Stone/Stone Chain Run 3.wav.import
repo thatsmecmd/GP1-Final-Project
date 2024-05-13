@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://kkuwg3j8h48g"
+path="res://.godot/imported/Stone Chain Run 3.wav-5302a8ccd392f5e3455f548e4884464f.sample"
+
+[deps]
+
+source_file="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Footsteps/Stone/Stone Chain Run 3.wav"
+dest_files=["res://.godot/imported/Stone Chain Run 3.wav-5302a8ccd392f5e3455f548e4884464f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

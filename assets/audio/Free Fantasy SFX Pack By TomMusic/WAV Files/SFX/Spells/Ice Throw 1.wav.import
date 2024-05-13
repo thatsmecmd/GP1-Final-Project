@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvsc7sucynurb"
+path="res://.godot/imported/Ice Throw 1.wav-a7c568c6380f1b651efe5ed7b4699caa.sample"
+
+[deps]
+
+source_file="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Spells/Ice Throw 1.wav"
+dest_files=["res://.godot/imported/Ice Throw 1.wav-a7c568c6380f1b651efe5ed7b4699caa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
