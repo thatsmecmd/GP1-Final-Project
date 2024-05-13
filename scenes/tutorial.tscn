@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dkuej8lhcsdo4" path="res://scenes/key_collectible.tscn" id="4_k42kb"]
 [ext_resource type="PackedScene" uid="uid://bwenmbak5c01l" path="res://scenes/loot_room.tscn" id="5_uv804"]
 [ext_resource type="Script" path="res://scenes/enemies/Enemy_Area.gd" id="6_pogqa"]
-[ext_resource type="Theme" uid="uid://ba72lonygf53b" path="res://assets/Fonts/option_theme.tres" id="7_ro2lj"]
-[ext_resource type="PackedScene" uid="uid://du73byusivnyq" path="res://scenes/player_spawner.tscn" id="8_wmsfh"]
+[ext_resource type="Theme" uid="uid://degy52b8tdyrn" path="res://assets/Fonts/option_theme.tres" id="7_ro2lj"]
+[ext_resource type="PackedScene" uid="uid://cqnxq2k3iwuxv" path="res://scenes/player_spawner.tscn" id="8_wmsfh"]
 [ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="9_qsmfw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oeoq"]

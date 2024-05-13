@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dkuej8lhcsdo4" path="res://scenes/key_collectible.tscn" id="4_52y16"]
 [ext_resource type="Script" path="res://scenes/enemies/Enemy_Area.gd" id="5_bqo6m"]
 [ext_resource type="PackedScene" uid="uid://bwenmbak5c01l" path="res://scenes/loot_room.tscn" id="6_2t1qo"]
-[ext_resource type="PackedScene" uid="uid://du73byusivnyq" path="res://scenes/player_spawner.tscn" id="7_nsx52"]
+[ext_resource type="PackedScene" uid="uid://cqnxq2k3iwuxv" path="res://scenes/player_spawner.tscn" id="7_nsx52"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8a65a"]
 texture = ExtResource("1_4lb7l")
