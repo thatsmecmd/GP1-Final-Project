@@ -12,6 +12,7 @@ func _process(delta):
 
 
 func _on_wizzard_select_pressed():
+	Global.greed = 100
 	Global.max_health = 125
 	Global.defense = 0
 	Global.dodge = 5
@@ -25,6 +26,7 @@ func _on_wizzard_select_pressed():
 
 
 func _on_rogue_select_pressed():
+	Global.greed = 100
 	Global.max_health = 100
 	Global.defense = 5
 	Global.dodge = 20
@@ -37,6 +39,7 @@ func _on_rogue_select_pressed():
 
 
 func _on_knight_select_pressed():
+	Global.greed = 100
 	Global.max_health = 200
 	Global.defense = 20
 	Global.dodge = 0
