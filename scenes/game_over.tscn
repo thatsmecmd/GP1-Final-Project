@@ -1,13 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfickm81nkedt"]
+[gd_scene load_steps=4 format=3 uid="uid://dfickm81nkedt"]
 
+[ext_resource type="Script" path="res://scripts/UI/game_over.gd" id="1_3s8ck"]
 [ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="1_ljypt"]
 [ext_resource type="Theme" uid="uid://degy52b8tdyrn" path="res://assets/Fonts/option_theme.tres" id="2_1xnl7"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_3s8ck")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = -1.0
+offset_top = -20.0
+offset_right = 1151.0
+offset_bottom = 628.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0, 0, 0, 0.372549)
@@ -32,12 +36,14 @@ theme_override_font_sizes/font_size = 70
 text = "GAME_OVER"
 
 [node name="Retry" type="Button" parent="VBoxContainer"]
+process_mode = 3
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_1xnl7")
 text = "RETRY"
 
 [node name="ExitMain" type="Button" parent="VBoxContainer"]
+process_mode = 3
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("2_1xnl7")
@@ -52,6 +58,20 @@ theme_override_colors/font_shadow_color = Color(0.607843, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "CURRENT_SCORE"
 
+[node name="CurNum" type="Label" parent="VBoxContainer/CurrentScore"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.033
+anchor_top = 0.115
+anchor_right = 1.033
+anchor_bottom = 0.115
+offset_left = 3.02701
+offset_top = 0.00999999
+offset_right = 22.027
+offset_bottom = 51.01
+theme_override_font_sizes/font_size = 20
+text = "0"
+
 [node name="HighScore" type="Label" parent="VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
@@ -60,3 +80,20 @@ theme = ExtResource("1_ljypt")
 theme_override_colors/font_shadow_color = Color(0.607843, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "HIGH_SCORE"
+
+[node name="HighNum" type="Label" parent="VBoxContainer/HighScore"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.076
+anchor_top = 0.154
+anchor_right = 1.076
+anchor_bottom = 0.154
+offset_left = 0.0439911
+offset_top = -0.00400019
+offset_right = 16.044
+offset_bottom = 50.996
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[connection signal="pressed" from="VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitMain" to="." method="_on_exit_main_pressed"]

@@ -39,7 +39,8 @@ func _on_volume_slider_value_changed(value):
 
 
 func _on_default_pressed():
-	pass # Replace with function body.
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	get_window().size = Vector2(1152, 648)
 
 
 func _on_fullscreen_pressed():
@@ -48,3 +49,4 @@ func _on_fullscreen_pressed():
 
 func _on_windowed_pressed():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	get_window().size = Vector2(1920, 1080)
