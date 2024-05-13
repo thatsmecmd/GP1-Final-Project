@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwenmbak5c01l" path="res://scenes/loot_room.tscn" id="5_uv804"]
 [ext_resource type="Script" path="res://scenes/enemies/Enemy_Area.gd" id="6_pogqa"]
 [ext_resource type="Theme" uid="uid://degy52b8tdyrn" path="res://assets/Fonts/option_theme.tres" id="7_ro2lj"]
-[ext_resource type="PackedScene" uid="uid://cqnxq2k3iwuxv" path="res://scenes/player_spawner.tscn" id="8_wmsfh"]
+[ext_resource type="PackedScene" uid="uid://crh8lhq232k5l" path="res://scenes/player.tscn" id="9_1owsj"]
 [ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="9_qsmfw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oeoq"]
@@ -962,7 +962,7 @@ text = "Controls: W, A, S and D
 
 Attacks:
 left click for primary
-right click for sgecondary"
+right click for secondary"
 
 [node name="weapon" type="Label" parent="labels"]
 layout_mode = 0
@@ -1013,15 +1013,6 @@ offset_right = 357.0
 offset_bottom = 163.0
 theme_override_font_sizes/font_size = 9
 text = "<-- Health pick-up"
-
-[node name="or" type="Label" parent="labels"]
-layout_mode = 0
-offset_left = 145.0
-offset_top = 51.0
-offset_right = 185.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 15
-text = "Or"
 
 [node name="enemies" type="Label" parent="labels"]
 layout_mode = 0
@@ -1078,11 +1069,11 @@ number_of_enemy = {
 position = Vector2(640, 104)
 shape = SubResource("RectangleShape2D_wrtri")
 
-[node name="PlayerSpawner" parent="Enemy_Area2D" instance=ExtResource("8_wmsfh")]
-position = Vector2(-302, 104)
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.25098, 0.25098, 0.25098, 1)
 blend_mode = 1
+
+[node name="player" parent="." instance=ExtResource("9_1owsj")]
+position = Vector2(-299, 97)
 
 [connection signal="key_collect" from="key_collectible" to="end_door" method="_on_key_collectible_key_collect"]

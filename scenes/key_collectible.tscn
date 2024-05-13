@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkuej8lhcsdo4"]
+[gd_scene load_steps=6 format=3 uid="uid://dkuej8lhcsdo4"]
 
 [ext_resource type="Texture2D" uid="uid://b3mussbp7o0hw" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/key_02a.png" id="1_20lc0"]
 [ext_resource type="Script" path="res://scripts/key_collectible.gd" id="2_aixjb"]
@@ -6,6 +6,16 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hakft"]
 radius = 3.0
 height = 16.0
+
+[sub_resource type="Gradient" id="Gradient_1o1v3"]
+offsets = PackedFloat32Array(0, 0.487013, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.61039, 0.61039, 0.61039, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s0c0u"]
+gradient = SubResource("Gradient_1o1v3")
+fill = 1
+fill_from = Vector2(0.53211, 0.481651)
+fill_to = Vector2(0.922018, 0.119266)
 
 [node name="key_collectible" type="Sprite2D"]
 texture = ExtResource("1_20lc0")
@@ -17,5 +27,9 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_hakft")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.764706, 0.403922, 0, 1)
+texture = SubResource("GradientTexture2D_s0c0u")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
