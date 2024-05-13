@@ -30,7 +30,7 @@ func _on_body_entered(body):
 	if body.has_node("StatSystem"):
 		
 		var stats = body.get_node("StatSystem")
-		stats.take_damage(10)
+		stats.take_damage(damage)
 		self.queue_free()
 	#if body.has_method("take_hit"):
 		#body.take_hit(damage)

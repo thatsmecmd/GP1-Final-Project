@@ -28,4 +28,4 @@ func _on_lifetime_timeout():
 func _on_area_2d_body_entered(body):
 	if body.has_node("StatSystem"):
 		var stats = body.get_node("StatSystem")
-		stats.take_damage(10)
+		stats.take_damage(damage)
