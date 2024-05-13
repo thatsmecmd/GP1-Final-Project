@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d0y4sflbf30ra" path="res://scenes/soundtrack.tscn" id="9_pwql4"]
 [ext_resource type="Texture2D" uid="uid://c3yta62dkekra" path="res://textures/light.tres" id="10_jeth5"]
 [ext_resource type="AudioStream" uid="uid://hsnw6fif6iin" path="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Footsteps/Stone/Stone Walk 5.wav" id="11_2jkkx"]
-[ext_resource type="PackedScene" path="res://scenes/game_over.tscn" id="12_e0sef"]
+[ext_resource type="PackedScene" uid="uid://dfickm81nkedt" path="res://scenes/game_over.tscn" id="12_e0sef"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_utv20"]
 atlas = ExtResource("2_65b73")
