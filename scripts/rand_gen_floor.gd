@@ -16,9 +16,7 @@ func _ready():
 	elif rand == 4:
 		print("floor 4")
 		floor = "res://scenes/floor_2.tscn"
-	# change this later, add more file paths to the floors
-	# can be more than 4, minimum is 4
-	
+	Global.floor += 1
 func _process(delta):
 	get_tree().change_scene_to_file(floor)
 	
