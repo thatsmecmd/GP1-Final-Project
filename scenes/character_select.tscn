@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ohssn683fx28" path="res://assets/16.png" id="2_aqafe"]
 [ext_resource type="Texture2D" uid="uid://cn6bsj57h1jgi" path="res://assets/edits/wizard_pfp.png" id="3_7m0o3"]
 [ext_resource type="Texture2D" uid="uid://dbvc1bu0ijy5d" path="res://assets/edits/rouge_pfp.png" id="4_n646i"]
-[ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="4_u23em"]
+[ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/fonts/sub_theme.tres" id="4_u23em"]
 [ext_resource type="Texture2D" uid="uid://boqmigyxnpovw" path="res://assets/edits/knight_pfp.png" id="5_ntbpw"]
 [ext_resource type="AudioStream" uid="uid://r7f3pyhbtwdc" path="res://assets/audio/menu_music/Path to Lake Land.ogg" id="6_86kfx"]
 [ext_resource type="Texture2D" uid="uid://i6lqaysi8vfm" path="res://assets/edits/bglore.png" id="7_1fmhb"]

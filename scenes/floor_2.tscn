@@ -2447,7 +2447,6 @@ position = Vector2(42, 80)
 position = Vector2(141, 63)
 
 [node name="enemy_spawner" type="Node2D" parent="."]
-visible = false
 
 [node name="Enemy_Area2D" type="Area2D" parent="enemy_spawner"]
 collision_layer = 32

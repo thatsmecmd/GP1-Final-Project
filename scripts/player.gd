@@ -29,6 +29,8 @@ func _ready():
 	stats.current_health = Global.current_health
 	print(stats.max_health)
 	Abilities.player = $"."
+	Abilities.can_ranged_attack = true
+	Abilities.can_ranged_attack_secondary = true
 	
 func get_input():
 	input.x = Input.get_action_strength("right") - Input.get_action_strength("left")
