@@ -1,6 +1,7 @@
 extends Node
 
 var floor = 0
+var best_floor = 0
 # Global Script
 var max_health = 100
 var current_health = 100

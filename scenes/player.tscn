@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cno7gtexritug" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Wood/Wood.png" id="6_ub875"]
 [ext_resource type="PackedScene" uid="uid://fiet0evwc1x6" path="res://scenes/stat_system.tscn" id="7_k4vhr"]
 [ext_resource type="PackedScene" uid="uid://bccayam2ern5x" path="res://scenes/ui.tscn" id="8_i3qqm"]
-[ext_resource type="PackedScene" uid="uid://d0y4sflbf30ra" path="res://scenes/soundtrack.tscn" id="9_m6685"]
+[ext_resource type="PackedScene" path="res://scenes/soundtrack.tscn" id="9_m6685"]
 [ext_resource type="Texture2D" uid="uid://c3yta62dkekra" path="res://textures/light.tres" id="10_qsit7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvrvd"]
