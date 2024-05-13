@@ -1,10 +1,10 @@
 [gd_scene load_steps=20 format=3 uid="uid://cgygdxsall143"]
 
 [ext_resource type="Texture2D" uid="uid://dykn80fhmoqo6" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Tiles.png" id="1_snkxw"]
-[ext_resource type="PackedScene" uid="uid://blrlbl401bemg" path="res://scenes/end_door.tscn" id="2_1x44y"]
-[ext_resource type="PackedScene" uid="uid://dkuej8lhcsdo4" path="res://scenes/key_collectible.tscn" id="3_xoc8k"]
+[ext_resource type="PackedScene" path="res://scenes/end_door.tscn" id="2_1x44y"]
+[ext_resource type="PackedScene" path="res://scenes/key_collectible.tscn" id="3_xoc8k"]
 [ext_resource type="PackedScene" uid="uid://dcic7yn2ubpvr" path="res://scenes/trap.tscn" id="4_r5ox2"]
-[ext_resource type="PackedScene" uid="uid://cqnxq2k3iwuxv" path="res://scenes/player_spawner.tscn" id="5_g20u4"]
+[ext_resource type="PackedScene" path="res://scenes/player_spawner.tscn" id="5_g20u4"]
 [ext_resource type="PackedScene" uid="uid://bwenmbak5c01l" path="res://scenes/loot_room.tscn" id="6_miuqb"]
 [ext_resource type="Script" path="res://scenes/enemies/Enemy_Area.gd" id="7_nife5"]
 
