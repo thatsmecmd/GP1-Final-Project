@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://wjon1llram6e"]
+[gd_scene load_steps=17 format=3 uid="uid://wjon1llram6e"]
 
 [ext_resource type="Script" path="res://scripts/MageEnemy.gd" id="1_hvx7w"]
 [ext_resource type="PackedScene" path="res://scenes/scaling.tscn" id="2_nxxm8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bdevh6hmuffuv" path="res://assets/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Rogue/Run/Run-Sheet.png" id="6_ylbkb"]
 [ext_resource type="AudioStream" uid="uid://d26dfvh2nr4ff" path="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Chopping and Mining/mine 2.wav" id="7_rtxt5"]
 [ext_resource type="AudioStream" uid="uid://jbna55gxa1a5" path="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Footsteps/Stone/Stone Walk 2.wav" id="9_8ofbp"]
+[ext_resource type="AudioStream" uid="uid://t78jcrn32244" path="res://assets/audio/attacks/shot.wav" id="10_heevl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_34iqt"]
 
@@ -414,5 +415,8 @@ bus = &"FootSteps"
 [node name="footstep2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_8ofbp")
 bus = &"FootSteps"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_heevl")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -12,6 +12,8 @@ extends Node2D
 var direction_flip = false
 var can_overhead_strike = true
 var can_flurry_of_blades = true
+var can_ranged_attack = true
+var can_ranged_attack_secondary = true
 var possessed_knife_count = 0
 #var testhp = 0
 
@@ -26,7 +28,9 @@ var abilities = {
 		"flavor" : "A simple shot of magic!",
 		"type" : "ranged",
 		"sprite" : "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01b.png",
-		"action" : "primary"
+		"action" : "primary",
+		"cooldown": 1,
+		"sfx" : "res://assets/audio/attacks/shot2.wav"
 	},
 	"magic_disk" : {
 		"cast" : "magic_disk",
@@ -34,7 +38,9 @@ var abilities = {
 		"flavor" : "Bouncy!",
 		"type" : "ranged",
 		"sprite": "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01c.png",
-		"action": "secondary"
+		"action": "secondary",
+		"cooldown" : 1,
+		"sfx" : "res://assets/audio/attacks/shot2.wav"
 	},
 	"tracking_arrow" : {
 		"cast" : "tracking_arrow",
@@ -42,7 +48,9 @@ var abilities = {
 		"flavor" : "Think you could get away?",
 		"type" : "ranged",
 		"sprite": "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01d.png",
-		"action": "primary"
+		"action": "primary",
+		"cooldown" : 0.7,
+		"sfx" : "res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Attacks/Bow Attacks Hits and Blocks/Bow Attack 1.wav"
 	},
 	"possessed_knife" : {
 		"cast" : "possessed_knife",
@@ -50,7 +58,9 @@ var abilities = {
 		"flavor" : "They hunger...",
 		"type" : "ranged",
 		"sprite" : "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/sword_03e.png",
-		"action": "secondary"
+		"action": "secondary",
+		"cooldown" : 0,
+		"sfx" : "res://assets/audio/attacks/nothing.wav"
 	},
 	"overhead_strike":{
 		"cast" : "overhead_strike",
@@ -58,7 +68,9 @@ var abilities = {
 		"flavor" : "PLACEHOLDER",
 		"type" : "melee",
 		"sprite" : "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_03a.png",
-		"action" : "primary"
+		"action" : "primary",
+		"cooldown" : 0,
+		"sfx" : "res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Attacks/Sword Attacks Hits and Blocks/Sword Attack 2.wav"
 	},
 	"flurry_of_blades":{
 		"cast" : "flurry_of_blades",
@@ -66,7 +78,9 @@ var abilities = {
 		"flavor" : "Death by a thousand cuts",
 		"type" : "melee",
 		"sprite" : "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_03b.png",
-		"action" : "secondary"
+		"action" : "secondary",
+		"cooldown" : 0,
+		"sfx" : "res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Attacks/Sword Attacks Hits and Blocks/Sword Attack 2.wav"
 	},
 	"fallen_stars":{
 		"cast" : "fallen_stars",
@@ -74,7 +88,9 @@ var abilities = {
 		"flavor" : "PLACEHOLDER",
 		"type" : "ranged",
 		"sprite": "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01e.png",
-		"action": "primary"
+		"action": "primary",
+		"cooldown" : 1,
+		"sfx" : "res://assets/audio/attacks/shot2.wav"
 	}
 }
 
@@ -84,9 +100,21 @@ var secondary_ability = abilities["magic_shot"]
 
 #Ability call functions
 func primary(spawn, damage):
-	call(primary_ability["cast"], spawn, damage)
+	if primary_ability["type"] == "ranged":
+		if can_ranged_attack:
+			call(primary_ability["cast"], spawn, damage)
+		else:
+			print("primary on Cooldown")
+	else:
+		call(primary_ability["cast"], spawn, damage)
 func secondary(spawn,damage):
-	call(secondary_ability["cast"], spawn, damage)
+	if secondary_ability["type"] == "ranged":
+		if can_ranged_attack_secondary:
+			call(secondary_ability["cast"], spawn, damage)
+		else:
+			print("Secondary on cooldown")
+	else:
+		call(secondary_ability["cast"], spawn, damage)
 #Ability spawners
 func magic_shot(spawn, damage):
 	var new_attack = magic_shot_scene.instantiate() as Area2D
@@ -124,7 +152,7 @@ func possessed_knife(spawn, damage):
 func overhead_strike(spawn, damage):
 	if can_overhead_strike:
 		var new_attack = overhead_strike_scene.instantiate() as Area2D
-		new_attack.damage = 10
+		new_attack.damage = damage
 		if direction_flip == true:
 			var sprite = new_attack.get_node("Sprite") as AnimatedSprite2D
 			sprite.flip_h = true
@@ -133,7 +161,7 @@ func overhead_strike(spawn, damage):
 func flurry_of_blades(spawn, damage):
 	if can_flurry_of_blades:
 		var new_attack = flurry_of_blades_scene.instantiate() as Area2D
-		new_attack.damage = 1 
+		new_attack.damage = damage
 		if direction_flip == true:
 			var sprite = new_attack.get_node("Sprite") as AnimatedSprite2D
 			sprite.flip_h = true

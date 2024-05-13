@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://crh8lhq232k5l"]
+[gd_scene load_steps=36 format=3 uid="uid://crh8lhq232k5l"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ojta2"]
 [ext_resource type="Texture2D" uid="uid://b54d14s5kcuhx" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Wizzard/Death/Death-Sheet.png" id="2_dmfg2"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bccayam2ern5x" path="res://scenes/ui.tscn" id="8_i3qqm"]
 [ext_resource type="PackedScene" uid="uid://d0y4sflbf30ra" path="res://scenes/soundtrack.tscn" id="9_m6685"]
 [ext_resource type="Texture2D" uid="uid://c3yta62dkekra" path="res://textures/light.tres" id="10_qsit7"]
+[ext_resource type="AudioStream" uid="uid://hsnw6fif6iin" path="res://assets/audio/Free Fantasy SFX Pack By TomMusic/WAV Files/SFX/Footsteps/Stone/Stone Walk 5.wav" id="11_c6x6i"]
+[ext_resource type="PackedScene" path="res://scenes/game_over.tscn" id="12_bhpny"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvrvd"]
 atlas = ExtResource("2_dmfg2")
@@ -198,10 +200,38 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(0.941176, 0.0784314, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_whuw4"]
+resource_name = "greed_death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("playerSprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hands:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qufpu"]
 _data = {
 "RESET": SubResource("Animation_rkpyg"),
-"dead": SubResource("Animation_tltps")
+"dead": SubResource("Animation_tltps"),
+"greed_death": SubResource("Animation_whuw4")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vg005"]
@@ -209,7 +239,7 @@ size = Vector2(20, 5)
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("1_ojta2")
 
 [node name="playerSprite" type="AnimatedSprite2D" parent="."]
@@ -288,9 +318,26 @@ scale = Vector2(2.26831, 2.21439)
 energy = 0.5
 texture = ExtResource("10_qsit7")
 
+[node name="footsteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_c6x6i")
+volume_db = -10.0
+
+[node name="cooldowns" type="Timer" parent="."]
+one_shot = true
+
+[node name="secondary" type="Timer" parent="."]
+one_shot = true
+
+[node name="cast" type="AudioStreamPlayer2D" parent="."]
+
+[node name="game_over" parent="." instance=ExtResource("12_bhpny")]
+visible = false
+
 [connection signal="player_healed" from="." to="UI" method="_on_player_player_healed"]
 [connection signal="player_hit" from="." to="UI" method="_on_player_player_hit"]
 [connection signal="dead" from="StatSystem" to="." method="_on_stat_system_dead"]
 [connection signal="healed" from="StatSystem" to="." method="_on_stat_system_healed"]
 [connection signal="hit" from="StatSystem" to="." method="_on_stat_system_hit"]
 [connection signal="animation_finished" from="Animations" to="." method="_on_animations_animation_finished"]
+[connection signal="timeout" from="cooldowns" to="." method="_on_cooldowns_timeout"]
+[connection signal="timeout" from="secondary" to="." method="_on_secondary_timeout"]

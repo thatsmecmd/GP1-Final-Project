@@ -19,5 +19,12 @@ position = Vector2(-56, 54)
 [node name="MinorHelthPickup" parent="." instance=ExtResource("4_i4rja")]
 position = Vector2(58, 57)
 
+[node name="Label" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -40.0
+offset_right = 29.0
+offset_bottom = -17.0
+text = "CHOICE"
+
 [connection signal="taken" from="StatPickup" to="GreedPickup" method="_on_stat_pickup_taken"]
 [connection signal="taken" from="GreedPickup" to="StatPickup" method="_on_greed_pickup_taken"]
