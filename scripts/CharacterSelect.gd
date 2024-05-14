@@ -43,7 +43,7 @@ func _on_knight_select_pressed():
 	Global.max_health = 200
 	Global.defense = 20
 	Global.dodge = 0
-	Global.attack = 1000
+	Global.attack = 10
 	Global.current_health = Global.max_health
 	Global.player_class = "Knight"
 	Abilities.set_primary("overhead_strike")
