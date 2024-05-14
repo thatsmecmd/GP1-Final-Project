@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var player = $".."
 @onready var health_bar = $"HealthBar"
 @onready var greed_bar = $HSlider
-var game_over_scene = preload("res://Scenes/game_over.tscn")
+var game_over_scene = preload("res://scenes/game_over.tscn")
 var current_greed = 100
 
 signal take_damage
