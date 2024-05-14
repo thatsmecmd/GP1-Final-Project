@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://bj27cbk0v3jmp"]
+[gd_scene load_steps=25 format=3 uid="uid://bj27cbk0v3jmp"]
 
 [ext_resource type="Script" path="res://scripts/WariorEnnemy.gd" id="1_b6q44"]
 [ext_resource type="Texture2D" uid="uid://c7op1oarwldpw" path="res://assets/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc - Warrior/Death/Death-Sheet.png" id="2_x1bfj"]
+[ext_resource type="PackedScene" path="res://scenes/scaling.tscn" id="3_c84y1"]
 [ext_resource type="Texture2D" uid="uid://dvmi0ndn88kr3" path="res://assets/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc - Warrior/Idle/Idle-Sheet.png" id="3_f8ks3"]
 [ext_resource type="Texture2D" uid="uid://d3adli6txojpl" path="res://assets/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc - Warrior/Run/Run-Sheet.png" id="4_ixxt0"]
 [ext_resource type="Script" path="res://scripts/StatSystem.gd" id="5_bu3so"]
@@ -449,6 +450,8 @@ one_shot = true
 script = ExtResource("5_bu3so")
 max_health = 150
 attack = 15
+
+[node name="Scaling" parent="." instance=ExtResource("3_c84y1")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_f8ks3")
