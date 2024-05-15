@@ -17,6 +17,15 @@ func _ready():
 	var new_player = player_scene.instantiate()
 	new_player.position = $".".global_position
 	$".".get_parent().add_child.call_deferred(new_player)
+	
+	# smooth scene transitions:
+	var light = $DirectionalLight2D
+	print(light)
+	light.visible = true
+	var tween = create_tween()
+	tween.tween_property(light, "energy", 0, 0.1)
+	await tween.finished
+	light.queue_free()
 		
 
 
