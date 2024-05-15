@@ -1567,7 +1567,7 @@ offset_right = -59.0
 offset_bottom = 43.0
 theme = ExtResource("9_qsmfw")
 theme_override_font_sizes/font_size = 25
-text = "Welcome to greed Hero"
+text = "WELCOME_TUT"
 
 [node name="controls" type="Label" parent="labels"]
 layout_mode = 0
@@ -1576,11 +1576,7 @@ offset_top = 62.0
 offset_right = -161.0
 offset_bottom = 139.0
 theme_override_font_sizes/font_size = 9
-text = "Controls: W, A, S and D
-
-Attacks:
-left click for primary
-right click for secondary"
+text = "CONTROLS_TUT"
 
 [node name="weapon" type="Label" parent="labels"]
 layout_mode = 0
@@ -1589,7 +1585,7 @@ offset_top = 139.0
 offset_right = 78.0
 offset_bottom = 162.0
 theme_override_font_sizes/font_size = 9
-text = "new weapon pick-up -->"
+text = "WEAPONS_TUT"
 
 [node name="greed" type="Label" parent="labels"]
 layout_mode = 0
@@ -1598,11 +1594,7 @@ offset_top = 59.0
 offset_right = -19.0
 offset_bottom = 136.0
 theme_override_font_sizes/font_size = 9
-text = "Take notice of the greed meter
-in the top left of the screen.
-
-It will slowly decrease.
-If it hits 0, you lose"
+text = "GREED_TUT"
 
 [node name="valuable" type="Label" parent="labels"]
 layout_mode = 0
@@ -1611,8 +1603,7 @@ offset_top = 38.0
 offset_right = 152.0
 offset_bottom = 67.0
 theme_override_font_sizes/font_size = 9
-text = "this will inrease 
-the greed meter -->"
+text = "VALUABLE_TUT"
 
 [node name="power-up" type="Label" parent="labels"]
 layout_mode = 0
@@ -1621,7 +1612,7 @@ offset_top = 55.0
 offset_right = 345.0
 offset_bottom = 84.0
 theme_override_font_sizes/font_size = 9
-text = "<-- this is a power-up"
+text = "POWER_UP_TUT"
 
 [node name="health" type="Label" parent="labels"]
 layout_mode = 0
@@ -1630,7 +1621,7 @@ offset_top = 140.0
 offset_right = 357.0
 offset_bottom = 163.0
 theme_override_font_sizes/font_size = 9
-text = "<-- Health pick-up"
+text = "HEALTH_TUT"
 
 [node name="enemies" type="Label" parent="labels"]
 layout_mode = 0
@@ -1639,11 +1630,7 @@ offset_top = 48.0
 offset_right = 533.0
 offset_bottom = 125.0
 theme_override_font_sizes/font_size = 9
-text = "This is a fight room.
-There are 3 types of enemies:
-- Skeleton warrior
-- Orc warrior
-- Skeleton magew"
+text = "ENEMIES_TUT"
 
 [node name="traps" type="Label" parent="labels"]
 layout_mode = 0
@@ -1652,7 +1639,7 @@ offset_top = 55.0
 offset_right = 942.0
 offset_bottom = 78.0
 theme_override_font_sizes/font_size = 9
-text = "Be careful of traps"
+text = "TRAPS_TUT"
 
 [node name="end door" type="Label" parent="labels"]
 layout_mode = 0
@@ -1661,8 +1648,7 @@ offset_top = 87.0
 offset_right = 1191.0
 offset_bottom = 132.0
 theme_override_font_sizes/font_size = 9
-text = "To open the door to the next floor 
-you need to find the key."
+text = "END_DOOR_TUT"
 
 [node name="start" type="Label" parent="labels"]
 layout_mode = 0
@@ -1671,8 +1657,7 @@ offset_top = 1.0
 offset_right = 1225.0
 offset_bottom = 30.0
 theme_override_font_sizes/font_size = 9
-text = "Lets get
-started"
+text = "START_TUT"
 
 [node name="key_collectible" parent="." instance=ExtResource("4_k42kb")]
 position = Vector2(1177, 149)

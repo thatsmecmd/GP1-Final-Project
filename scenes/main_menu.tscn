@@ -25,7 +25,7 @@ offset_bottom = 274.0
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("3_h8l0w")
-text = "Greed Hero"
+text = "TITLE"
 
 [node name="ButtonsVBox" type="VBoxContainer" parent="MainVbox"]
 layout_mode = 2

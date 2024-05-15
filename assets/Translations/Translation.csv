@@ -5,7 +5,7 @@ PLAY,Play,Jouer,Jugar
 OPTIONS_TITLE,Options,Parametres,Opciones
 OPTIONS,OPTIONS,PARAMETRES,OPCIONES
 QUIT,Quit,Quitter,Salir
-TITLE,Greed Hero,Héros Cupide,Héroe de la codicia
+TITLE,Greed Hero,Hero Cupide,Heroe de la codicia
 VOLUME,Volume,Volume,volumen
 LANGUAGE,Languages,Langues,Idiomas
 BACK,Back,Retour,Atrás
@@ -84,3 +84,55 @@ LORE,"After the intangible congress transcendental beings born from the malice o
 SELECT,Select,Selectionner,Seleccionar
 MAIN_MENU,Main Menu,Menu Principal,Menú principal
 BACKGROUND,Background,Histoire,Historia
+HEALTH_STAT,Max health: ,Point de Vie: ,Salud máxima: 
+DEFENSE_STAT,Defense: ,Defense: ,Defensa: 
+DODGE_STAT,Dodge: ,Esquive: ,Regate: 
+ATTACK_STAT,Attack: ,Attaque: ,Atacar: 
+MENU,Menu,Menu,Menú
+WELCOME_TUT,Welcome to greed Hero,Bienvenu dans Greed Hero,Bienvenido a greed Hero
+CONTROLS_TUT,"Controls: W, A, S and D
+
+Attacks:
+left click for primary
+right click for secondary","Commandes : W, A, S et D
+
+Attaques:
+Clic gauche pour le primaire
+Clic droit pour le secondaire","Controles: W, A, S y D
+
+Ataques:
+Haga clic con el botón izquierdo para Primario
+Haga clic con el botón derecho para secundario"
+WEAPONS_TUT,new weapon pick-up -->,Nouveau ramassage d’armes -->,Nueva recogida de armas -->
+GREED_TUT,"Take notice of the greed meter
+in the top left of the screen.","Prenez note du compteur de cupidité
+en haut à gauche de l’écran.","Fíjate en el medidor de codicia
+en la parte superior izquierda de la pantalla."
+VALUABLE_TUT,"this will inrease 
+the greed meter -->","cela va entraîner 
+Le compteur de cupidité -->","Esto inrease 
+El medidor de codicia -->"
+POWER_UP_TUT,<-- this is a power-up,<-- c’est un power-up,<-- este es un potenciador
+HEALTH_TUT,<-- Health pick-up,<-- Collecte de soins de santé,<-- Recogida de salud
+ENEMIES_TUT,"This is a fight room.
+There are 3 types of enemies:
+- Skeleton warrior
+- Orc warrior
+- Skeleton mage","C’est une salle de combat.
+Il existe 3 types d’ennemis :
+- Guerrier squelette
+- Guerrier orc
+- Mage squelette","Esta es una sala de lucha.
+Hay 3 tipos de enemigos:
+- Guerrero esqueleto
+- Guerrero orco
+- Mago esqueleto"
+TRAPS_TUT,Be careful of traps,Attention aux pièges,Ten cuidado con las trampas
+END_DOOR_TUT,"To open the door to the next floor 
+you need to find the key.","Pour ouvrir la porte de l’étage suivant 
+Vous devez trouver la clé.","Para abrir la puerta del siguiente piso 
+Necesitas encontrar la llave."
+START_TUT,"Lets get
+started","Allons-y
+Commencé","Vamos a conseguir
+Comenzó"
