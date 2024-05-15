@@ -18,7 +18,7 @@ var items = {
 	},
 	"topaz" : {
 		"name" : "topaz",
-		"value" : 50,
+		"value" : 51,
 		"sprite" : "res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/crystal_01b.png"
 	},
 	"emrald" : {
@@ -58,6 +58,8 @@ func _on_body_entered(body):
 	if check_greed > 100:
 		var greed_difference = check_greed - 100
 		Global.greed += value - greed_difference
+	else:
+		Global.greed += value
 	print("Greed: ",Global.greed)
 	emit_signal("taken")
 	self.queue_free()

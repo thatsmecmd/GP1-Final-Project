@@ -43,7 +43,7 @@ func _on_knight_select_pressed():
 	Global.max_health = 200
 	Global.defense = 20
 	Global.dodge = 0
-	Global.attack = 1000
+	Global.attack = 10
 	Global.current_health = Global.max_health
 	Global.player_class = "Knight"
 	Abilities.set_primary("overhead_strike")
@@ -56,12 +56,12 @@ func _on_lore_button_pressed():
 		lore_mode = !lore_mode
 		$HBoxContainer2/CharacterSelect.visible = false
 		$HBoxContainer2/BackgroundLore.visible  = true
-		$HBoxContainer2/controls/LoreButton.text = "Back"
+		$HBoxContainer2/controls/LoreButton.text = "BACK"
 	else:
 		lore_mode = !lore_mode
 		$HBoxContainer2/CharacterSelect.visible = true
 		$HBoxContainer2/BackgroundLore.visible = false
-		$HBoxContainer2/controls/LoreButton.text = "Background"
+		$HBoxContainer2/controls/LoreButton.text = "BACKGROUND"
 
 
 func _on_main_menu_button_pressed():

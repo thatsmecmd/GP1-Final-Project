@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ohssn683fx28" path="res://assets/16.png" id="2_aqafe"]
 [ext_resource type="Texture2D" uid="uid://cn6bsj57h1jgi" path="res://assets/edits/wizard_pfp.png" id="3_7m0o3"]
 [ext_resource type="Texture2D" uid="uid://dbvc1bu0ijy5d" path="res://assets/edits/rouge_pfp.png" id="4_n646i"]
-[ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="4_u23em"]
+[ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/fonts/sub_theme.tres" id="4_u23em"]
 [ext_resource type="Texture2D" uid="uid://boqmigyxnpovw" path="res://assets/edits/knight_pfp.png" id="5_ntbpw"]
 [ext_resource type="AudioStream" uid="uid://r7f3pyhbtwdc" path="res://assets/audio/menu_music/Path to Lake Land.ogg" id="6_86kfx"]
 [ext_resource type="Texture2D" uid="uid://i6lqaysi8vfm" path="res://assets/edits/bglore.png" id="7_1fmhb"]
@@ -55,7 +55,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer2/CharacterSelect/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Wizard"
+text = "WIZARD"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer2/CharacterSelect/PanelContainer/VBoxContainer"]
@@ -68,20 +68,14 @@ stretch_mode = 5
 custom_minimum_size = Vector2(200, 350)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "An accomplished spell caster who in his pursuit of knowledge purchased a strange grimoire from a merchant. It’s words claw at his mind driving him to hunger for wealth.
-
-Stats:
-hp: 125
-damage: 20
-defense: 0
-dodge: 5"
+text = "WIZARD_DESCRIPTION"
 autowrap_mode = 3
 clip_text = true
 
 [node name="WizzardSelect" type="Button" parent="HBoxContainer2/CharacterSelect/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Select"
+text = "SELECT"
 
 [node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer2/CharacterSelect"]
 layout_mode = 2
@@ -94,7 +88,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer2/CharacterSelect/PanelContainer2/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Rogue"
+text = "ROGUE"
 horizontal_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="HBoxContainer2/CharacterSelect/PanelContainer2/VBoxContainer2"]
@@ -107,19 +101,13 @@ stretch_mode = 5
 custom_minimum_size = Vector2(200, 350)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "A highwayman who once held up a strange man for his amulet. Now it murmurs in his very soul, yearning for opulence.
-
-Stats:
-hp: 100
-damage: 15
-defense: 5
-dodge 20"
+text = "ROGUE_DESCRIPTION"
 autowrap_mode = 3
 
 [node name="RogueSelect" type="Button" parent="HBoxContainer2/CharacterSelect/PanelContainer2/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Select"
+text = "SELECT"
 
 [node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer2/CharacterSelect"]
 layout_mode = 2
@@ -132,7 +120,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer2/CharacterSelect/PanelContainer3/VBoxContainer4"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Knight"
+text = "KNIGHT"
 horizontal_alignment = 1
 
 [node name="TextureRect2" type="TextureRect" parent="HBoxContainer2/CharacterSelect/PanelContainer3/VBoxContainer4"]
@@ -145,19 +133,13 @@ stretch_mode = 5
 custom_minimum_size = Vector2(200, 350)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "A once noble knight who after a bloody siege found a mysterious chalice in the ruins of a raided monastery. Now it whispers, longing for more riches.
-
-Stats:
-hp: 200
-damage: 10
-defense: 20
-dodge 0"
+text = "KNIGHT_DESCRIPTION"
 autowrap_mode = 3
 
 [node name="KnightSelect" type="Button" parent="HBoxContainer2/CharacterSelect/PanelContainer3/VBoxContainer4"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Select"
+text = "SELECT"
 
 [node name="controls" type="VBoxContainer" parent="HBoxContainer2"]
 layout_mode = 2
@@ -167,12 +149,12 @@ alignment = 1
 [node name="LoreButton" type="Button" parent="HBoxContainer2/controls"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Background"
+text = "BACKGROUND"
 
 [node name="MainMenuButton" type="Button" parent="HBoxContainer2/controls"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Main Menu"
+text = "MAIN_MENU"
 
 [node name="BackgroundLore" type="HBoxContainer" parent="HBoxContainer2"]
 visible = false
@@ -183,7 +165,7 @@ custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 theme = ExtResource("4_u23em")
 theme_override_font_sizes/font_size = 20
-text = "After the intangible congress transcendental beings born from the malice of man, hungry for their folly.As their influence grows their voices gnaw at people’s very souls. One of these beings is known only as “Greed”. Greed manifests itself in some sort of artefact, this can be an amulet, ring or even a book. People who obtain one of these artefacts are subject to the voices of Greed itself  causing them to have an insatiable lust for wealth and treasure that if left unfed will kill its victim. This hunger leads people here to the halls of greed, a dungeon of unending depth and unknown origin, brimming with treasure where they will meet their demise whether by force or by their hunger."
+text = "LORE"
 autowrap_mode = 3
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer2/BackgroundLore"]

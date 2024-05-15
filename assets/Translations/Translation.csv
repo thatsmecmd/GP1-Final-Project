@@ -20,3 +20,67 @@ HIGH_SCORE,High Score: ,Meilleur score: ,Mejor puntuación:
 GAME_OVER,Game Over,Fin de jeu,Fin del juego
 RETRY,Retry,reessayer,reintentar
 EXIT_MAIN,Main menu,Menu principal,Menú principal
+CHOICE,Choice,Choix,elección
+WIZARD,Wizard,Mage,Mago
+ROGUE,Rogue,Voyou,Picaro
+KNIGHT,Knight,Chevalier,Caballero
+WIZARD_DESCRIPTION,"An accomplished spell caster who in his pursuit of knowledge purchased a strange grimoire from a merchant. It’s words claw at his mind driving him to hunger for wealth.
+
+Stats:
+hp: 125
+damage: 20
+defense: 0
+dodge: 5","Un lanceur de sorts accompli qui, dans sa quête de connaissances, a acheté un étrange grimoire à un marchand. Ce sont les mots qui lui viennent à l’esprit qui le poussent à avoir soif de richesse.
+Stats:
+pv: 125
+dommages: 20
+defense: 0
+esquive: 5","Un consumado lanzador de hechizos que, en su búsqueda de conocimiento, compró un extraño grimorio a un comerciante. Son las palabras que arañan su mente y lo llevan al hambre de riqueza.
+Stats:
+ps: 125
+dano: 20
+defensa: 0
+esquivar: 5"
+ROGUE_DESCRIPTION,"A highwayman who once held up a strange man for his amulet. Now it murmurs in his very soul, yearning for opulence.
+
+stats:
+hp: 100
+damage: 15
+defense: 5
+dodge: 20","
+Un voleur de grands chemins qui a un jour braqué un homme étrange pour son amulette. Maintenant, cela murmure dans son âme même, aspirant à l'opulence.
+
+Statistiques:
+ch : 100
+dégâts : 15
+défense : 5
+esquive : 20","Un bandolero que una vez atracó a un hombre extraño para obtener su amuleto. Ahora murmura en su misma alma, anhelando opulencia.
+
+estadísticas:
+CV: 100
+daño: 15
+defensa: 5
+esquivar: 20"
+KNIGHT_DESCRIPTION,"A once noble knight who after a bloody siege found a mysterious chalice in the ruins of a raided monastery. Now it whispers, longing for more riches.
+
+Stats:
+hp: 200
+damage: 10
+defense: 20
+dodge 0","Un chevalier autrefois noble qui, après un siège sanglant, a trouvé un mystérieux calice dans les ruines d'un monastère attaqué. Maintenant, il murmure, aspirant à plus de richesses.
+
+Statistiques:
+ch : 200
+dégâts : 10
+défense : 20
+esquiver 0","Un caballero que alguna vez fue noble y que después de un asedio sangriento encontró un cáliz misterioso en las ruinas de un monasterio saqueado. Ahora susurra, anhelando más riquezas.
+
+Estadísticas:
+CV: 200
+daño: 10
+defensa: 20
+esquivar 0"
+LORE,"After the intangible congress transcendental beings born from the malice of man, hungry for their folly.As their influence grows their voices gnaw at people’s very souls. One of these beings is known only as “Greed”. Greed manifests itself in some sort of artefact, this can be an amulet, ring or even a book. People who obtain one of these artefacts are subject to the voices of Greed itself  causing them to have an insatiable lust for wealth and treasure that if left unfed will kill its victim. This hunger leads people here to the halls of greed, a dungeon of unending depth and unknown origin, brimming with treasure where they will meet their demise whether by force or by their hunger.","Après le congrès intangible, naissent des êtres transcendantaux de la méchanceté de l'homme, avides de sa folie. À mesure que leur influence grandit, leurs voix rongent l’âme des gens. L'un de ces êtres est connu uniquement sous le nom de « Cupidité ». La cupidité se manifeste dans un certain type d'artefact, il peut s'agir d'une amulette, d'une bague ou même d'un livre. Les personnes qui obtiennent l'un de ces artefacts sont soumises aux voix de leur propre cupidité, ce qui les amène à avoir une soif insatiable de richesses et de trésors qui, s'ils ne sont pas nourris, tueront leur victime. Cette faim pousse les gens ici dans les couloirs de l'avidité, un donjon d'une profondeur infinie et d'origine inconnue, regorgeant de trésors où ils rencontreront la mort, que ce soit par la force ou par la faim.","Después del congreso intangible, seres trascendentales nacen de la malicia del hombre, hambrientos de su locura. A medida que su influencia crece, sus voces roen las almas de las personas. Uno de estos seres es conocido únicamente como “Codicia”. La codicia se manifiesta en algún tipo de artefacto, puede ser un amuleto, un anillo o incluso un libro. Las personas que obtienen uno de estos artefactos están sujetas a las voces de la propia codicia, lo que les provoca un ansia insaciable de riquezas y tesoros que, si no se alimentan, matará a su víctima. Esta hambre lleva a la gente aquí a los pasillos de la codicia, una mazmorra de profundidad infinita y origen desconocido, rebosante de tesoros donde encontrarán su muerte, ya sea por la fuerza o por el hambre."
+SELECT,Select,Selectionner,Seleccionar
+MAIN_MENU,Main Menu,Menu Principal,Menú principal
+BACKGROUND,Background,Histoire,Historia

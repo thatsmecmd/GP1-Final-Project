@@ -9,9 +9,7 @@ extends CanvasLayer
 @onready var defense_num = $Menu/MenuVbox/DefenseLabel/DefenseNum
 @onready var dodge_num = $Menu/MenuVbox/DodgeLabel/DodgeNum
 @onready var attack_num = $Menu/MenuVbox/AttackLabel/AttackNum
-
-
-var game_over_scene = preload("res://Scenes/game_over.tscn")
+var game_over_scene = preload("res://scenes/game_over.tscn")
 var current_greed = 100
 
 signal take_damage
@@ -23,12 +21,6 @@ func _ready():
 func _process(delta):
 	if !(current_greed == Global.greed):
 		greed_bar.value = Global.greed
-
-func init_menu_stats():
-	health_num.text = str(Global.max_health)
-	defense_num.text = str(Global.defense)
-	dodge_num.text = str(Global.dodge)
-	attack_num.text = str(Global.attack)
 
 func _on_player_player_hit():
 	take_damage.emit()
@@ -46,15 +38,3 @@ func _on_greed_timer_timeout():
 
 func _on_player_player_healed():
 	heal_player.emit()
-
-func _on_menu_button_pressed():
-	init_menu_stats()
-	menu.visible = true
-	get_tree().paused = true
-
-func _on_back_button_pressed():
-	menu.visible = false
-	get_tree().paused = false
-
-func _on_home_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
