@@ -56,12 +56,12 @@ func _on_lore_button_pressed():
 		lore_mode = !lore_mode
 		$HBoxContainer2/CharacterSelect.visible = false
 		$HBoxContainer2/BackgroundLore.visible  = true
-		$HBoxContainer2/controls/LoreButton.text = "Back"
+		$HBoxContainer2/controls/LoreButton.text = "BACK"
 	else:
 		lore_mode = !lore_mode
 		$HBoxContainer2/CharacterSelect.visible = true
 		$HBoxContainer2/BackgroundLore.visible = false
-		$HBoxContainer2/controls/LoreButton.text = "Background"
+		$HBoxContainer2/controls/LoreButton.text = "BACKGROUND"
 
 
 func _on_main_menu_button_pressed():

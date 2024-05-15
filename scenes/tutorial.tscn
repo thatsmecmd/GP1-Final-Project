@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dykn80fhmoqo6" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Tiles.png" id="1_w8sbb"]
 [ext_resource type="Texture2D" uid="uid://dj5fh7ymuvmwf" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Props.png" id="2_8an0n"]
 [ext_resource type="PackedScene" uid="uid://dcic7yn2ubpvr" path="res://scenes/trap.tscn" id="2_yuegk"]
-[ext_resource type="PackedScene" uid="uid://blrlbl401bemg" path="res://scenes/end_door.tscn" id="3_0s85x"]
+[ext_resource type="PackedScene" uid="uid://bipvdfkmjf1ow" path="res://scenes/end_door.tscn" id="3_0s85x"]
 [ext_resource type="PackedScene" uid="uid://dkuej8lhcsdo4" path="res://scenes/key_collectible.tscn" id="4_k42kb"]
 [ext_resource type="PackedScene" uid="uid://bwenmbak5c01l" path="res://scenes/loot_room.tscn" id="5_uv804"]
 [ext_resource type="Script" path="res://scenes/enemies/Enemy_Area.gd" id="6_pogqa"]
