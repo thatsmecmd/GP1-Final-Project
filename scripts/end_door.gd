@@ -16,7 +16,7 @@ func _on_area_2d_body_entered(body):
 	print("door entered")
 	sound.play()
 	var tween = create_tween()
-	tween.tween_property(light, "energy", 1, 0.1)
+	tween.tween_property(light, "energy", 2, 0.1)
 	await tween.finished
 	await sound.finished
 	get_tree().change_scene_to_file("res://scenes/rand_gen_floor.tscn")
