@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=7 format=3 uid="uid://dj3bjscfypv45"]
 
-[ext_resource type="FontFile" uid="uid://b0yx2lcga2yoc" path="res://assets/Fonts/DungeonFont.ttf" id="1_adauu"]
+[ext_resource type="FontFile" uid="uid://b0yx2lcga2yoc" path="res://assets/fonts/DungeonFont.ttf" id="1_adauu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wmql5"]
 

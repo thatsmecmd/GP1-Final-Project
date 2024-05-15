@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cysh8rkqb8jxp" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01a.png" id="9_3ki6b"]
 [ext_resource type="PackedScene" uid="uid://bmsam2kbx3ca4" path="res://scenes/TestFolder/damage_tester.tscn" id="10_xqvnv"]
 [ext_resource type="PackedScene" uid="uid://1lxd8m4qqxfo" path="res://scenes/attacks/random_ability_pickup.tscn" id="12_glsis"]
-[ext_resource type="PackedScene" uid="uid://cqnxq2k3iwuxv" path="res://scenes/player_spawner.tscn" id="12_q7hjt"]
+[ext_resource type="PackedScene" uid="uid://b4nee2et06g86" path="res://scenes/player_spawner.tscn" id="12_q7hjt"]
 [ext_resource type="PackedScene" uid="uid://cfa0csq1dxr6v" path="res://scenes/stat_pickup.tscn" id="12_wbo56"]
 [ext_resource type="PackedScene" uid="uid://rn4lxjhf57f7" path="res://scenes/greed_pickup.tscn" id="13_ffo4b"]
 [ext_resource type="PackedScene" uid="uid://bwenmbak5c01l" path="res://scenes/loot_room.tscn" id="14_dcr6f"]
