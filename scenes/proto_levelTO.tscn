@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dykn80fhmoqo6" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Tiles.png" id="1_6w4m0"]
 [ext_resource type="PackedScene" uid="uid://beswc0nlkf77y" path="res://scenes/main_return.tscn" id="3_ko20i"]
-[ext_resource type="PackedScene" path="res://scenes/test_target.tscn" id="4_g7wl4"]
+[ext_resource type="PackedScene" uid="uid://bwukj8jxjsqt4" path="res://scenes/test_target.tscn" id="4_g7wl4"]
 [ext_resource type="PackedScene" uid="uid://diva5mx4nwkga" path="res://scenes/attacks/ability_pickup.tscn" id="5_vb5bg"]
 [ext_resource type="Texture2D" uid="uid://pqbtykvraypg" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_02a.png" id="6_hexo7"]
 [ext_resource type="Texture2D" uid="uid://bbq5xqsmjittb" path="res://assets/Kyrise's 16x16 RPG Icon Pack - V1.3/icons/16x16/book_01f.png" id="7_71bbn"]
@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://bmsam2kbx3ca4" path="res://scenes/TestFolder/damage_tester.tscn" id="10_xqvnv"]
 [ext_resource type="PackedScene" uid="uid://1lxd8m4qqxfo" path="res://scenes/attacks/random_ability_pickup.tscn" id="12_glsis"]
 [ext_resource type="PackedScene" uid="uid://b4nee2et06g86" path="res://scenes/player_spawner.tscn" id="12_q7hjt"]
-[ext_resource type="PackedScene" path="res://scenes/stat_pickup.tscn" id="12_wbo56"]
-[ext_resource type="PackedScene" path="res://scenes/greed_pickup.tscn" id="13_ffo4b"]
-[ext_resource type="PackedScene" path="res://scenes/loot_room.tscn" id="14_dcr6f"]
+[ext_resource type="PackedScene" uid="uid://cfa0csq1dxr6v" path="res://scenes/stat_pickup.tscn" id="12_wbo56"]
+[ext_resource type="PackedScene" uid="uid://rn4lxjhf57f7" path="res://scenes/greed_pickup.tscn" id="13_ffo4b"]
+[ext_resource type="PackedScene" uid="uid://bwenmbak5c01l" path="res://scenes/loot_room.tscn" id="14_dcr6f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxo0a"]
 texture = ExtResource("1_6w4m0")

@@ -56,4 +56,5 @@ func _on_back_button_pressed():
 
 func _on_home_button_pressed():
 	get_tree().paused = false
+	Global.floor = 0
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
