@@ -18,11 +18,6 @@ func attack():
 		is_timer_finished = false
 		timer.start()
 		weapon_animation.play("Attack")
-		#attack_sprite.visible = true
-		#weapon_hitbox.monitoring = true
-		#await attack_sprite.animation_finished
-		#attack_sprite.visible = false
-		#weapon_hitbox.monitoring = false
 
 
 func _on_timer_timeout():

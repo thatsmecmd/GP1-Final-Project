@@ -383,9 +383,12 @@ die_string = "Death"
 idle_string = "Idle"
 
 [node name="Scaling" parent="." instance=ExtResource("2_nxxm8")]
+hp_scale = 2
 
 [node name="StatSystem" type="Node" parent="."]
 script = ExtResource("3_ju8cn")
+max_health = 20
+attack = 15
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

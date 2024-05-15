@@ -448,10 +448,11 @@ one_shot = true
 
 [node name="StatSystem" type="Node" parent="."]
 script = ExtResource("5_bu3so")
-max_health = 150
-attack = 15
+max_health = 50
+attack = 25
 
 [node name="Scaling" parent="." instance=ExtResource("3_c84y1")]
+hp_scale = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_f8ks3")

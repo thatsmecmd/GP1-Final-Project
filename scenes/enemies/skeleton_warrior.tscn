@@ -465,8 +465,11 @@ die_string = "Die"
 idle_string = "Idle"
 
 [node name="StatSystem" parent="." instance=ExtResource("6_vccwi")]
+max_health = 20
+attack = 15
 
 [node name="Scaling" parent="." instance=ExtResource("3_0bukj")]
+hp_scale = 2
 
 [node name="SkeletonWarriorSprite" type="Sprite2D" parent="."]
 texture = ExtResource("4_l3r2k")
