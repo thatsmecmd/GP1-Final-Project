@@ -17,6 +17,8 @@ func _on_exit_main_pressed():
 	Global.floor = 0
 	#Prevents sponanious death
 	Global.current_health = Global.max_health
+	SaveData.high_score = Global.best_floor
+	SaveData.save_game()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _on_retry_pressed():
@@ -24,4 +26,6 @@ func _on_retry_pressed():
 	Global.floor = 0
 	#Prevents sponanious death
 	Global.current_health = Global.max_health
+	SaveData.high_score = Global.best_floor
+	SaveData.save_game()
 	get_tree().change_scene_to_file("res://scenes/character_select.tscn")

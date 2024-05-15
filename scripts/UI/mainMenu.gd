@@ -2,15 +2,30 @@ extends CanvasLayer
 
 @onready var main_vbox = $MainVbox
 @onready var option_v_box = $OptionVBox
+var current_best
+func _ready():
+	current_best = Global.best_floor
+	if FileAccess.file_exists("user://saveGREEDHERO.save"):
+		var save_data = SaveData.load_data()
+		if save_data:
+			var saved_language = save_data["language"]
+			translate(save_data["language"])
+			load_highscore(save_data["high_score"])
+
 
 func translate(language_code):
 	TranslationServer.set_locale(language_code)
+	SaveData.current_language = language_code
+
+func load_highscore(high_score):
+	Global.best_floor = high_score
 
 func _on_play_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/character_select.tscn")
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
 
 func _on_options_button_pressed():
 	main_vbox.visible = false
@@ -21,7 +36,7 @@ func _on_back_button_pressed():
 	option_v_box.visible = false
 
 func _on_save_button_pressed():
-	pass # Replace with function body.
+	SaveData.save_game()
 
 func _on_english_button_pressed():
 	translate("en")

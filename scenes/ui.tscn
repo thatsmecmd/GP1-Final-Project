@@ -168,6 +168,7 @@ theme_override_font_sizes/font_size = 25
 text = "Defense: "
 
 [node name="DefenseNum" type="Label" parent="Menu/MenuVbox/DefenseLabel"]
+layout_mode = 0
 offset_left = 87.0
 offset_top = 2.0
 offset_right = 98.0
@@ -184,6 +185,7 @@ theme_override_font_sizes/font_size = 25
 text = "Dodge: "
 
 [node name="DodgeNum" type="Label" parent="Menu/MenuVbox/DodgeLabel"]
+layout_mode = 0
 offset_left = 71.0
 offset_top = 2.0
 offset_right = 82.0
@@ -200,6 +202,7 @@ theme_override_font_sizes/font_size = 25
 text = "Attack: "
 
 [node name="AttackNum" type="Label" parent="Menu/MenuVbox/AttackLabel"]
+layout_mode = 0
 offset_left = 84.0
 offset_top = 2.0
 offset_right = 95.0

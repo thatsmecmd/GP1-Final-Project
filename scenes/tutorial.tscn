@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://dj5fh7ymuvmwf" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Props.png" id="2_8an0n"]
 [ext_resource type="PackedScene" uid="uid://dcic7yn2ubpvr" path="res://scenes/trap.tscn" id="2_yuegk"]
 [ext_resource type="PackedScene" uid="uid://dkuej8lhcsdo4" path="res://scenes/key_collectible.tscn" id="4_k42kb"]
-[ext_resource type="PackedScene" uid="uid://b7borypo73ik6" path="res://scenes/end_door_toutorial.tscn" id="4_q7uvg"]
-[ext_resource type="PackedScene" uid="uid://bwenmbak5c01l" path="res://scenes/loot_room.tscn" id="5_uv804"]
+[ext_resource type="PackedScene" path="res://scenes/end_door_toutorial.tscn" id="4_q7uvg"]
+[ext_resource type="PackedScene" path="res://scenes/loot_room.tscn" id="5_uv804"]
 [ext_resource type="Script" path="res://scenes/enemies/Enemy_Area.gd" id="6_pogqa"]
-[ext_resource type="Theme" uid="uid://degy52b8tdyrn" path="res://assets/fonts/option_theme.tres" id="7_ro2lj"]
+[ext_resource type="Theme" uid="uid://degy52b8tdyrn" path="res://assets/Fonts/option_theme.tres" id="7_ro2lj"]
 [ext_resource type="PackedScene" uid="uid://crh8lhq232k5l" path="res://scenes/player.tscn" id="9_1owsj"]
-[ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/fonts/sub_theme.tres" id="9_qsmfw"]
+[ext_resource type="Theme" uid="uid://dj3bjscfypv45" path="res://assets/Fonts/sub_theme.tres" id="9_qsmfw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8oeoq"]
 texture = ExtResource("1_w8sbb")
