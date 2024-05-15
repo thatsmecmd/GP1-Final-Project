@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c8prvdccxjrlh"]
+[gd_scene load_steps=23 format=3 uid="uid://c8prvdccxjrlh"]
 
 [ext_resource type="Texture2D" uid="uid://dykn80fhmoqo6" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Tiles.png" id="1_525qg"]
 [ext_resource type="Texture2D" uid="uid://dj5fh7ymuvmwf" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Props.png" id="2_ugw4w"]
@@ -1812,11 +1812,11 @@ texture = ExtResource("2_ugw4w")
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.125, -8, 0.125)
 5:0/0 = 0
 5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:0/0/physics_layer_0/angular_velocity = 0.0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.125, -8, 0.125)
 6:0/0 = 0
 6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1874,9 +1874,11 @@ texture = ExtResource("2_ugw4w")
 12:1/0 = 0
 12:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:1/0/physics_layer_0/angular_velocity = 0.0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4.5, -8, -4.625)
 13:1/0 = 0
 13:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:1/0/physics_layer_0/angular_velocity = 0.0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4.5, -8, -4.625)
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
@@ -2030,12 +2032,15 @@ texture = ExtResource("2_ugw4w")
 12:5/0 = 0
 12:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:5/0/physics_layer_0/angular_velocity = 0.0
+12:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.875, -8, -1.875)
 13:5/0 = 0
 13:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:5/0/physics_layer_0/angular_velocity = 0.0
+13:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.875, -8, -1.875)
 14:5/0 = 0
 14:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:5/0/physics_layer_0/angular_velocity = 0.0
+14:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.875, -8, -1.875)
 0:6/0 = 0
 0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:6/0/physics_layer_0/angular_velocity = 0.0
@@ -2213,12 +2218,15 @@ texture = ExtResource("2_ugw4w")
 8:10/0 = 0
 8:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:10/0/physics_layer_0/angular_velocity = 0.0
+8:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.875, -8, -1.875)
 9:10/0 = 0
 9:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:10/0/physics_layer_0/angular_velocity = 0.0
+9:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.875, -8, -1.875)
 10:10/0 = 0
 10:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:10/0/physics_layer_0/angular_velocity = 0.0
+10:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.875, -8, -1.875)
 12:10/0 = 0
 12:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:10/0/physics_layer_0/angular_velocity = 0.0
@@ -2282,9 +2290,11 @@ texture = ExtResource("2_ugw4w")
 6:12/0 = 0
 6:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:12/0/physics_layer_0/angular_velocity = 0.0
+6:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.875, -8, -1.875)
 7:12/0 = 0
 7:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:12/0/physics_layer_0/angular_velocity = 0.0
+7:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -1.875, -8, -1.875)
 8:12/0 = 0
 8:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:12/0/physics_layer_0/angular_velocity = 0.0
@@ -2417,6 +2427,15 @@ size = Vector2(247, 250)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12tiy"]
 size = Vector2(371, 171)
 
+[sub_resource type="Gradient" id="Gradient_38cbs"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fm3u7"]
+gradient = SubResource("Gradient_38cbs")
+fill = 1
+fill_from = Vector2(0.504587, 0.509174)
+fill_to = Vector2(0.899083, 0.133028)
+
 [node name="floor_2" type="Node2D"]
 
 [node name="background" type="TileMap" parent="."]
@@ -2427,9 +2446,9 @@ layer_0/tile_data = PackedInt32Array(131074, 917504, 0, 196610, 917504, 1, 26214
 [node name="decor" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_w1jng")
 format = 2
+layer_0/tile_data = PackedInt32Array(983085, 458752, 18, 1048620, 393216, 19, 1114156, 393216, 20, 1179692, 393216, 21, 1048621, 458752, 19, 1114157, 458752, 20, 1179693, 458752, 21, 1048622, 524288, 19, 1114158, 524288, 20, 1179694, 524288, 21, 1900623, 262144, 18, 1966158, 196608, 19, 2031694, 196608, 20, 2097230, 196608, 21, 1966159, 262144, 19, 2031695, 262144, 20, 2097231, 262144, 21, 1966160, 327680, 19, 2031696, 327680, 20, 2097232, 327680, 21, 65538, 1, 0, 131074, 1, 1, 65539, 1, 0, 131075, 1, 1, 65540, 1, 0, 131076, 1, 1, 65548, 196609, 0, 131084, 196609, 1, 131083, 131073, 1, 458763, 131073, 1, 458762, 131073, 1, 458760, 131073, 1, 393218, 262145, 0, 458754, 262145, 1, 393219, 327681, 0, 458755, 327681, 1, 196653, 786433, 1, 262189, 786433, 2, 196654, 786433, 1, 262190, 786433, 2, 1179677, 655361, 2, 1245213, 655361, 3, 1310749, 655361, 4, 1179678, 720897, 2, 1245214, 720897, 3, 1310750, 720897, 4, 2097208, 524289, 10, 2162744, 524289, 11, 2097209, 589825, 10, 2162745, 589825, 11, 2097210, 655361, 10, 2162746, 655361, 11, 2097211, 524289, 10, 2162747, 524289, 11, 2097212, 589825, 10, 2162748, 589825, 11, 2097213, 655361, 10, 2162749, 655361, 11, 1179715, 1, 0, 1245251, 1, 1, 1179716, 1, 0, 1245252, 1, 1, 1179717, 1, 0, 1245253, 1, 1, 1179726, 65537, 0, 1245262, 65537, 1, 1245261, 131073, 1, 1245260, 131073, 1, 196703, 786433, 1, 262239, 786433, 2, 524386, 851969, 1, 589922, 851969, 2, 131085, 327681, 15, 131086, 327681, 15, 1179673, 327681, 15, 2031668, 327681, 15, 2031684, 327681, 15, 131167, 327681, 15, 917552, 131073, 12, 983088, 131073, 13, 917556, 131073, 12, 983092, 131073, 13, 1835078, 65537, 12, 1900614, 65537, 13, 589913, 1, 12, 655449, 1, 13, 589907, 1, 12, 655443, 1, 13, 131121, 327680, 10, 131122, 393216, 10, 196657, 327680, 13, 196658, 393216, 13, 1179682, 327680, 10, 1245218, 327680, 13, 1179683, 393216, 10, 1245219, 393216, 13, 851980, 327680, 10, 917516, 327680, 13, 851981, 393216, 10, 917517, 393216, 13, 1245259, 131073, 3, 1376336, 196609, 3, 1179718, 1, 2, 1245254, 1, 3, 1441863, 1, 4, 1507399, 1, 4, 1310751, 1, 4, 1245216, 1, 2, 1310752, 1, 3, 1310753, 196609, 3, 458761, 131073, 3, 458759, 131073, 2)
 
 [node name="traps" type="TileMap" parent="."]
-position = Vector2(11, 8)
 tile_set = SubResource("TileSet_sxx5p")
 format = 2
 layer_0/tile_data = PackedInt32Array(1179696, 0, 65536, 1179697, 0, 65536, 1179698, 0, 65536, 1179699, 0, 65536, 1179700, 0, 65536, 1507376, 0, 65536, 1507377, 0, 65536, 1507378, 0, 65536, 1507379, 0, 65536, 1507380, 0, 65536, 1179709, 0, 65536, 1245245, 0, 65536, 1310781, 0, 65536, 1376317, 0, 65536, 1441853, 0, 65536, 1507389, 0, 65536, 1114151, 0, 65536, 1179687, 0, 65536, 1245223, 0, 65536, 1310759, 0, 65536, 1376295, 0, 65536, 1441831, 0, 65536, 1507367, 0, 65536, 2031686, 0, 65536, 2097223, 0, 65536, 2031699, 0, 65536, 2097234, 0, 65536, 2883667, 0, 65536, 2818130, 0, 65536, 2883654, 0, 65536, 2818119, 0, 65536, 2424911, 0, 65536, 2359374, 0, 65536, 2490446, 0, 65536, 2424909, 0, 65536, 2424906, 0, 65536, 2359371, 0, 65536, 2490443, 0, 65536, 2424908, 0, 65536)
@@ -2524,5 +2543,49 @@ shape = SubResource("RectangleShape2D_12tiy")
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.341176, 0.341176, 0.341176, 1)
 blend_mode = 1
+
+[node name="lights" type="Node2D" parent="."]
+
+[node name="lamp" type="PointLight2D" parent="lights"]
+position = Vector2(216, 40)
+texture = SubResource("GradientTexture2D_fm3u7")
+texture_scale = 1.2
+
+[node name="lamp2" type="PointLight2D" parent="lights"]
+position = Vector2(232, 39)
+texture = SubResource("GradientTexture2D_fm3u7")
+texture_scale = 1.2
+
+[node name="lamp3" type="PointLight2D" parent="lights"]
+position = Vector2(408, 296)
+texture = SubResource("GradientTexture2D_fm3u7")
+texture_scale = 1.2
+
+[node name="lamp4" type="PointLight2D" parent="lights"]
+position = Vector2(840, 504)
+texture = SubResource("GradientTexture2D_fm3u7")
+texture_scale = 1.2
+
+[node name="lamp5" type="PointLight2D" parent="lights"]
+position = Vector2(1096, 504)
+texture = SubResource("GradientTexture2D_fm3u7")
+texture_scale = 1.2
+
+[node name="lamp6" type="PointLight2D" parent="lights"]
+position = Vector2(1528, 40)
+texture = SubResource("GradientTexture2D_fm3u7")
+texture_scale = 1.2
+
+[node name="grate" type="PointLight2D" parent="lights"]
+position = Vector2(729, 268)
+color = Color(0, 1, 0, 1)
+texture = SubResource("GradientTexture2D_fm3u7")
+texture_scale = 1.2
+
+[node name="grate2" type="PointLight2D" parent="lights"]
+position = Vector2(1273, 492)
+color = Color(0, 0, 1, 1)
+texture = SubResource("GradientTexture2D_fm3u7")
+texture_scale = 1.2
 
 [connection signal="key_collect" from="key_collectible" to="end_door" method="_on_key_collectible_key_collect"]
